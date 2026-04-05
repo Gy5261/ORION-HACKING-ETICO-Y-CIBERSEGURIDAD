@@ -1,29 +1,28 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-build_singlefile_site.py - Constructor de sitio HTML monolítico con dataset embebido.
+build_singlefile_site.py - Constructor de sitio HTML monolÃ­tico con dataset embebido.
 
-Genera página HTML única autónoma que contiene:
+Genera pÃ¡gina HTML Ãºnica autÃ³noma que contiene:
 - Toda la base de conocimientos ORION-HACKING
 - CSS y JavaScript integrados (sin dependencias externas)
 - Dataset JSON embebido para scraping por IA
-- Búsqueda y filtrado en el cliente
-- Diseño responsivo y accesible
+- BÃºsqueda y filtrado en el cliente
+- DiseÃ±o responsivo y accesible
 - Metadatos machine-readable
 
-Características:
+CaracterÃ­sticas:
 - Escanea recursivamente archivos .md, .py, .ps1, .sh, .json
-- Extrae títulos automáticamente de documentos
-- Clasifica contenido por categoría
+- Extrae tÃ­tulos automÃ¡ticamente de documentos
+- Clasifica contenido por categorÃ­a
 - Genera tabla de contenidos navegable
-- Proporciona búsqueda de texto completo en el cliente
+- Proporciona bÃºsqueda de texto completo en el cliente
 - Exporta JSON embebido para parseo por agentes IA
 
 Uso:
     python3 build_singlefile_site.py
     
 Salida:
-    ORION-HACKING-singlefile.html (raíz)
-    orion/ORION-HACKING-singlefile.html (copia)
+    orion/ORION-HACKING-singlefile.html
 """
 
 import html
@@ -38,7 +37,6 @@ from collections import defaultdict
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parents[2]
 OUT_PATHS = [
-    REPO_ROOT / "ORION-HACKING-singlefile.html",
     REPO_ROOT / "orion" / "ORION-HACKING-singlefile.html",
 ]
 INCLUDE_EXTS = {".md", ".json", ".py", ".ps1", ".sh"}
@@ -46,7 +44,7 @@ SKIP_PARTS = {"__pycache__", ".git", "node_modules", ".venv"}
 
 
 def slugify(value: str) -> str:
-    """Convierte texto a identificador HTML válido."""
+    """Convierte texto a identificador HTML vÃ¡lido."""
     value = value.lower()
     value = re.sub(r"[^a-z0-9]+", "-", value)
     return value.strip("-")
@@ -77,7 +75,7 @@ def classify(path: pathlib.Path) -> str:
 
 
 def title_from_path(path: pathlib.Path) -> str:
-    """Extrae título de un archivo (primero encabezado H1 para .md)."""
+    """Extrae tÃ­tulo de un archivo (primero encabezado H1 para .md)."""
     rel = path.relative_to(REPO_ROOT).as_posix()
     
     if path.suffix == ".md":
@@ -96,7 +94,7 @@ def title_from_path(path: pathlib.Path) -> str:
 
 
 def get_file_size(path: pathlib.Path) -> int:
-    """Retorna tamaño del archivo en bytes."""
+    """Retorna tamaÃ±o del archivo en bytes."""
     try:
         return path.stat().st_size
     except OSError:
@@ -104,7 +102,7 @@ def get_file_size(path: pathlib.Path) -> int:
 
 
 def extract_summary(path: pathlib.Path, max_length: int = 200) -> str:
-    """Extrae resumen de primeras líneas del archivo."""
+    """Extrae resumen de primeras lÃ­neas del archivo."""
     try:
         text = path.read_text(encoding="utf-8", errors="ignore")
         # Omite encabezados markdown
@@ -113,7 +111,7 @@ def extract_summary(path: pathlib.Path, max_length: int = 200) -> str:
             for line in text.splitlines() 
             if line.strip() and not line.startswith("#")
         ]
-        summary = " ".join(lines[:3])  # Primeras 3 líneas no vacías
+        summary = " ".join(lines[:3])  # Primeras 3 lÃ­neas no vacÃ­as
         return summary[:max_length] + ("..." if len(summary) > max_length else "")
     except Exception:
         return ""
@@ -138,7 +136,7 @@ def files_to_include() -> List[pathlib.Path]:
 
 def build_sections(files: List[pathlib.Path]) -> Tuple[str, str, List[Dict], Dict]:
     """
-    Construye secciones de navegación, cuerpo y dataset.
+    Construye secciones de navegaciÃ³n, cuerpo y dataset.
     
     Retorna: (nav_html, body_html, data_array, statistics)
     """
@@ -164,7 +162,7 @@ def build_sections(files: List[pathlib.Path]) -> Tuple[str, str, List[Dict], Dic
         stats[category] += 1
         stats["total_size"] += file_size
         
-        # Navegación
+        # NavegaciÃ³n
         nav_parts.append(
             f'<a class="toc-link" href="#{anchor}" data-category="{category}" '
             f'data-size="{file_size}" title="{html.escape(title)}">'
@@ -212,15 +210,15 @@ def build_sections(files: List[pathlib.Path]) -> Tuple[str, str, List[Dict], Dic
 
 
 def build_html() -> str:
-    """Construye página HTML completa."""
-    print("📦 Escaneando archivos...", file=sys.stderr)
+    """Construye pÃ¡gina HTML completa."""
+    print("ðŸ“¦ Escaneando archivos...", file=sys.stderr)
     files = files_to_include()
-    print(f"   ✓ {len(files)} archivos encontrados", file=sys.stderr)
+    print(f"   âœ“ {len(files)} archivos encontrados", file=sys.stderr)
     
-    print("🔨 Construyendo secciones...", file=sys.stderr)
+    print("ðŸ”¨ Construyendo secciones...", file=sys.stderr)
     nav_html, body_html, data, raw_stats = build_sections(files)
     
-    # Procesa estadísticas
+    # Procesa estadÃ­sticas
     counts = {
         cat: raw_stats.get(cat, 0) 
         for cat in ["root", "core", "reference", "playbook", "script", "eval", "result", "sample", "other"]
@@ -230,7 +228,7 @@ def build_html() -> str:
     total_docs = len(data)
     total_size = raw_stats.get("total_size", 0)
     
-    # Genera HTML de estadísticas
+    # Genera HTML de estadÃ­sticas
     stats_html = ""
     for key in ["root", "core", "reference", "playbook", "script", "eval", "result", "sample"]:
         if key in counts:
@@ -261,7 +259,7 @@ def build_html() -> str:
         indent=2,
     ).replace("</script>", "<\\/script>")  # Previene ruptura de script tag
     
-    print(f"✓ {total_docs} documentos, {total_size:,} bytes totales", file=sys.stderr)
+    print(f"âœ“ {total_docs} documentos, {total_size:,} bytes totales", file=sys.stderr)
     
     # Construye HTML final
     html_content = f"""<!doctype html>
@@ -792,15 +790,15 @@ def build_html() -> str:
         <div class="brand">
           <div class="eyebrow">singlefile knowledge</div>
           <h1>ORION-HACKING</h1>
-          <p>Base de conocimientos integrada para flujos de ciberseguridad autorizada y automatización segura.</p>
+          <p>Base de conocimientos integrada para flujos de ciberseguridad autorizada y automatizaciÃ³n segura.</p>
         </div>
         
         <div class="sidebar-block">
           <input id="search" class="search" type="search" placeholder="Buscar documentos...">
           <div class="filters" id="filters">
             <button class="filter active" data-filter="all">Todos</button>
-            <button class="filter" data-filter="root">Raíz</button>
-            <button class="filter" data-filter="core">Núcleo</button>
+            <button class="filter" data-filter="root">RaÃ­z</button>
+            <button class="filter" data-filter="core">NÃºcleo</button>
             <button class="filter" data-filter="reference">Referencias</button>
             <button class="filter" data-filter="playbook">Playbooks</button>
             <button class="filter" data-filter="script">Scripts</button>
@@ -824,18 +822,18 @@ def build_html() -> str:
 
  Integrada</h2>
           </div>
-          <div class="masthead-badge">JSON embebido · Sin dependencias externas</div>
+          <div class="masthead-badge">JSON embebido Â· Sin dependencias externas</div>
         </section>
         
         <section class="hero">
           <h2>ORION-HACKING Singlefile</h2>
-          <p>Página HTML autónoma que contiene la base de conocimientos completa con búsqueda en el cliente, filtrado interactivo y dataset JSON embebido para scraping por agentes IA. Sin requiere conexión de red ni servidor externo.</p>
+          <p>PÃ¡gina HTML autÃ³noma que contiene la base de conocimientos completa con bÃºsqueda en el cliente, filtrado interactivo y dataset JSON embebido para scraping por agentes IA. Sin requiere conexiÃ³n de red ni servidor externo.</p>
           <div class="info-box">
-            <strong>Características:</strong> Texto completo searchable, navegación por categoría, responsivo, accesible, datos machine-readable.
+            <strong>CaracterÃ­sticas:</strong> Texto completo searchable, navegaciÃ³n por categorÃ­a, responsivo, accesible, datos machine-readable.
           </div>
         </section>
         
-        <section class="stats" aria-label="Estadísticas del dataset">
+        <section class="stats" aria-label="EstadÃ­sticas del dataset">
           <div class="stat">
             <strong>{total_docs}</strong>
             <span>Documentos</span>
@@ -933,26 +931,27 @@ def build_html() -> str:
 
 def main() -> int:
     """Construye y escribe archivos HTML."""
-    print("🏗️  ORION-HACKING Single-File Builder", file=sys.stderr)
+    print("ðŸ—ï¸  ORION-HACKING Single-File Builder", file=sys.stderr)
     print("=" * 50, file=sys.stderr)
     
     try:
         html_content = build_html()
         
-        print("📝 Escribiendo archivos de salida...", file=sys.stderr)
+        print("ðŸ“ Escribiendo archivos de salida...", file=sys.stderr)
         for out_path in OUT_PATHS:
             out_path.write_text(html_content, encoding="utf-8")
             size_mb = out_path.stat().st_size / (1024 * 1024)
-            print(f"   ✓ {out_path.name} ({size_mb:.2f} MB)", file=sys.stderr)
+            print(f"   âœ“ {out_path.name} ({size_mb:.2f} MB)", file=sys.stderr)
         
         print("=" * 50, file=sys.stderr)
-        print("✅ Build completado exitosamente", file=sys.stderr)
+        print("âœ… Build completado exitosamente", file=sys.stderr)
         return 0
     
     except Exception as e:
-        print(f"❌ Error durante build: {e}", file=sys.stderr)
+        print(f"âŒ Error durante build: {e}", file=sys.stderr)
         return 1
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

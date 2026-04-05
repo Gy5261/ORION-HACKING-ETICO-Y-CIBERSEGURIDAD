@@ -14,7 +14,7 @@ Hecho por ORION-IA.
 - `orion/references/`: biblioteca modular de seguridad
 - `orion/playbooks/`: flujos operativos por dominio
 - `orion/scripts/`: utilidades seguras de ejemplo
-- `ORION-HACKING-singlefile.html`: version monolitica con HTML, CSS, JavaScript y dataset embebido
+- `orion/ORION-HACKING-singlefile.html`: version monolitica con HTML, CSS, JavaScript y dataset embebido
 
 ## Dominios cubiertos
 
