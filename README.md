@@ -43,5 +43,3 @@ Abre `orion/SKILL.md` y luego carga solo los modulos de `orion/references/` que 
 
 Si la tarea es recurrente o muy concreta, entra por `orion/PLAYBOOK_INDEX.md` y desde ahi baja
 al playbook correspondiente.
-
-Si necesitas una sola pieza webscrapeable para IAs, usa `ORION-HACKING-singlefile.html`.
