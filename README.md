@@ -2,6 +2,8 @@
 
 ORION-HACKING es un sistema documental y operativo para ciberseguridad autorizada y automatizacion segura con IA.
 
+Hecho por ORION-IA.
+
 ## Contenido
 
 - `orion/SKILL.md`: orquestador principal
