@@ -1,0 +1,4 @@
+*.zip
+*.skill
+__pycache__/
+*.pyc

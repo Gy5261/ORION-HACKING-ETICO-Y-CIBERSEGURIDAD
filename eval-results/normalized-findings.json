@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Open CORS policy",
+    "severity": "medium",
+    "asset": "api.example.internal",
+    "evidence": "Access-Control-Allow-Origin: *",
+    "recommendation": "Restrict allowed origins"
+  },
+  {
+    "title": "Public bucket",
+    "severity": "high",
+    "asset": "stg-artifacts-bucket",
+    "evidence": "Anonymous read allowed",
+    "recommendation": "Remove public access and rotate exposed artifacts"
+  }
+]

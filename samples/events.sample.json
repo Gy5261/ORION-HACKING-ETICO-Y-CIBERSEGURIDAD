@@ -1,0 +1,17 @@
+[
+  {
+    "type": "auth_failed",
+    "user": "admin",
+    "source": "10.10.10.50"
+  },
+  {
+    "type": "auth_failed",
+    "user": "admin",
+    "source": "10.10.10.50"
+  },
+  {
+    "type": "token_created",
+    "user": "svc-ci",
+    "source": "ci-runner-01"
+  }
+]

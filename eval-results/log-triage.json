@@ -1,0 +1,12 @@
+{
+  "total_events": 3,
+  "users": [
+    "admin",
+    "svc-ci"
+  ],
+  "sources": [
+    "10.10.10.50",
+    "ci-runner-01"
+  ],
+  "failed_auth": 2
+}
