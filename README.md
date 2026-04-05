@@ -1,19 +1,19 @@
-# ORION-HACKING
+# ORION-HACKING v.0.1
 
-ORION-HACKING es un sistema documental y operativo para ciberseguridad autorizada y automatizacion segura con IA.
+ORION-HACKING v.0.1 es una base de skills para ciberseguridad autorizada y automatizacion segura con IA.
 
 Hecho por ORION-IA.
 
 ## Contenido
 
-- `orion/SKILL.md`: orquestador principal
+- `orion/SKILL.md`: skill principal
 - `orion/ARCHITECTURE.md`: arquitectura del sistema
 - `orion/MODULE_MAP.md`: mapa de modulos
 - `orion/PLAYBOOK_INDEX.md`: indice de playbooks
 - `orion/DOMAIN_TAXONOMY.md`: taxonomia macro
 - `orion/references/`: biblioteca modular de seguridad
-- `orion/playbooks/`: flujos operativos por dominio
-- `orion/scripts/`: utilidades seguras de ejemplo
+- `orion/playbooks/`: skills operativos por dominio
+- `orion/scripts/`: utilidades seguras de apoyo
 - `orion/ORION-HACKING-singlefile.html`: version monolitica con HTML, CSS, JavaScript y dataset embebido
 
 ## Dominios cubiertos
@@ -41,7 +41,7 @@ Hecho por ORION-IA.
 
 ## Uso
 
-Abre `orion/SKILL.md` y luego carga solo los modulos de `orion/references/` que apliquen al caso.
+Abre `orion/SKILL.md` como skill principal y luego carga solo los modulos de `orion/references/` que apliquen al caso.
 
 Si la tarea es recurrente o muy concreta, entra por `orion/PLAYBOOK_INDEX.md` y desde ahi baja
-al playbook correspondiente.
+al skill operativo correspondiente.
