@@ -127,3 +127,58 @@
 3. Implement alert fatigue reduction (consolidate low-severity alerts)
 4. Track MTTD/MTTR metrics weekly
 5. Do weekly training on real cases
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - SOC Operations Use Cases - Playbooks, Triage, Incident Response
+
+### Integraciones ampliadas
+
+- SOAR: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- TheHive: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Cortex: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- MISP: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: cola saturada.
+- Integracion recomendada: SOAR.
+- Senal principal: MTTR alto.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: enrichment de alertas.
+- Integracion recomendada: TheHive.
+- Senal principal: runbook parcial.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: handoff a DFIR.
+- Integracion recomendada: Cortex.
+- Senal principal: sin enrichment.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 04
+- Contexto: cola saturada.
+- Integracion recomendada: MISP.
+- Senal principal: MTTR alto.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 05
+- Contexto: enrichment de alertas.
+- Integracion recomendada: SOAR.
+- Senal principal: runbook parcial.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

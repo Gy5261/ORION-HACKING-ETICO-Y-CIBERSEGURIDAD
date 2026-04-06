@@ -96,3 +96,42 @@ Response: ✅ Remote wipe, ✅ Detection, ✅ Playbook
 - [ ] Patch compliance: __% (target 95%+)
 - [ ] Apps with MFA: __% (target 100%)
 - [ ] Security incidents: __ (target 0)
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - Mobile Client Security - Apps, Devices & Data Protection
+
+### Integraciones ampliadas
+
+- MobSF: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Frida: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Burp Suite: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Firebase: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: storage local sensible.
+- Integracion recomendada: MobSF.
+- Senal principal: secretos hardcoded.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: pinning inconsistente.
+- Integracion recomendada: Frida.
+- Senal principal: storage inseguro.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: SDK excesivo.
+- Integracion recomendada: Burp Suite.
+- Senal principal: backend assumptions.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

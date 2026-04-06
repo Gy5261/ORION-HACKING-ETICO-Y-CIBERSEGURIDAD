@@ -579,3 +579,210 @@ LONG-TERM (Year 3+): OPTIMIZATION & INNOVATION
 ```
 
 **Key Insight**: GRC no es "proyecto finished in 1 year". Es **transformation cultural de 2-3 años** que cambias cómo la organización piensa sobre riesgo, mejora, y responsabilidad compartida.
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - GRC, Risk & Maturity - Governance, Risk Management & Control Frameworks
+
+### Integraciones ampliadas
+
+- Jira: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- ServiceNow: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- PowerBI: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Confluence: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: revision HIPAA.
+- Integracion recomendada: Jira.
+- Senal principal: control sin owner.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: gap PCI.
+- Integracion recomendada: ServiceNow.
+- Senal principal: riesgo sin ranking.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: madurez NIST.
+- Integracion recomendada: PowerBI.
+- Senal principal: backlog sin fechas.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 04
+- Contexto: revision HIPAA.
+- Integracion recomendada: Confluence.
+- Senal principal: control sin owner.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 05
+- Contexto: gap PCI.
+- Integracion recomendada: Jira.
+- Senal principal: riesgo sin ranking.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 06
+- Contexto: madurez NIST.
+- Integracion recomendada: ServiceNow.
+- Senal principal: backlog sin fechas.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 07
+- Contexto: revision HIPAA.
+- Integracion recomendada: PowerBI.
+- Senal principal: control sin owner.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 08
+- Contexto: gap PCI.
+- Integracion recomendada: Confluence.
+- Senal principal: riesgo sin ranking.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 09
+- Contexto: madurez NIST.
+- Integracion recomendada: Jira.
+- Senal principal: backlog sin fechas.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 10
+- Contexto: revision HIPAA.
+- Integracion recomendada: ServiceNow.
+- Senal principal: control sin owner.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 11
+- Contexto: gap PCI.
+- Integracion recomendada: PowerBI.
+- Senal principal: riesgo sin ranking.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 12
+- Contexto: madurez NIST.
+- Integracion recomendada: Confluence.
+- Senal principal: backlog sin fechas.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 13
+- Contexto: revision HIPAA.
+- Integracion recomendada: Jira.
+- Senal principal: control sin owner.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 14
+- Contexto: gap PCI.
+- Integracion recomendada: ServiceNow.
+- Senal principal: riesgo sin ranking.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 15
+- Contexto: madurez NIST.
+- Integracion recomendada: PowerBI.
+- Senal principal: backlog sin fechas.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 16
+- Contexto: revision HIPAA.
+- Integracion recomendada: Confluence.
+- Senal principal: control sin owner.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 17
+- Contexto: gap PCI.
+- Integracion recomendada: Jira.
+- Senal principal: riesgo sin ranking.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 18
+- Contexto: madurez NIST.
+- Integracion recomendada: ServiceNow.
+- Senal principal: backlog sin fechas.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 19
+- Contexto: revision HIPAA.
+- Integracion recomendada: PowerBI.
+- Senal principal: control sin owner.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 20
+- Contexto: gap PCI.
+- Integracion recomendada: Confluence.
+- Senal principal: riesgo sin ranking.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 21
+- Contexto: madurez NIST.
+- Integracion recomendada: Jira.
+- Senal principal: backlog sin fechas.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 22
+- Contexto: revision HIPAA.
+- Integracion recomendada: ServiceNow.
+- Senal principal: control sin owner.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 23
+- Contexto: gap PCI.
+- Integracion recomendada: PowerBI.
+- Senal principal: riesgo sin ranking.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 24
+- Contexto: madurez NIST.
+- Integracion recomendada: Confluence.
+- Senal principal: backlog sin fechas.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

@@ -169,3 +169,66 @@ Evidencia: misma referencia de secreto en ambos entornos
 Impacto real: aumenta radio de impacto ante fuga o uso indebido
 Recomendacion: separar materiales criptograficos por entorno y rotar
 ```
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - Cryptography & Key Management - Securing Secrets
+
+### Integraciones ampliadas
+
+- Vault: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- AWS KMS: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Azure Key Vault: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- OpenSSL: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: rotacion mTLS.
+- Integracion recomendada: Vault.
+- Senal principal: algoritmo legacy.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: llaves compartidas.
+- Integracion recomendada: AWS KMS.
+- Senal principal: llave sin rotacion.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: tokenizacion parcial.
+- Integracion recomendada: Azure Key Vault.
+- Senal principal: secreto exportable.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 04
+- Contexto: rotacion mTLS.
+- Integracion recomendada: OpenSSL.
+- Senal principal: algoritmo legacy.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 05
+- Contexto: llaves compartidas.
+- Integracion recomendada: Vault.
+- Senal principal: llave sin rotacion.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 06
+- Contexto: tokenizacion parcial.
+- Integracion recomendada: AWS KMS.
+- Senal principal: secreto exportable.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

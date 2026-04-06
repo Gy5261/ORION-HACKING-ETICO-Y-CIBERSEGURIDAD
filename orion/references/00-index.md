@@ -81,3 +81,42 @@ abre solo lo que haga falta para la tarea actual.
 - No observado: no hubo evidencia, no equivale a seguro.
 - Fuera de alcance: existe riesgo potencial pero no puede validarse.
 - Requiere decision del dueno: el equipo tecnico no debe asumir por negocio.
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - ORION-HACKING Reference Index
+
+### Integraciones ampliadas
+
+- Markdown: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- HTML: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- OpenSearch: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Singlefile: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: navegacion de modulos.
+- Integracion recomendada: Markdown.
+- Senal principal: modulo huerfano.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: lectura offline.
+- Integracion recomendada: HTML.
+- Senal principal: enlace roto.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: carga selectiva IA.
+- Integracion recomendada: OpenSearch.
+- Senal principal: material repetido.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

@@ -114,3 +114,50 @@ VPN: MFA, modern protocol, TLS 1.2+, AES-256, posture checking, kill switch
 MONITORING: Login logs, impossible travel alerts, volume anomalies
 REMEDIATION: Implement missing items by risk (MFA first, segmentation next)
 ```
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - Wireless & Remote Access - Securing Distributed Work
+
+### Integraciones ampliadas
+
+- Kismet: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Aircrack-ng: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Cisco ISE: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Aruba Central: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: WPA2-Enterprise debil.
+- Integracion recomendada: Kismet.
+- Senal principal: SSID huerfano.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: guest con salto lateral.
+- Integracion recomendada: Aircrack-ng.
+- Senal principal: EAP vencido.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: VPN heredada.
+- Integracion recomendada: Cisco ISE.
+- Senal principal: split tunneling.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 04
+- Contexto: WPA2-Enterprise debil.
+- Integracion recomendada: Aruba Central.
+- Senal principal: SSID huerfano.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

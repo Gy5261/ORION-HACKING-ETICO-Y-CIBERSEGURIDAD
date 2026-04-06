@@ -118,3 +118,50 @@ Risk 3: Stolen from database → Control: PCI-DSS compliance
 3. **Threat list** (prioritized by risk)
 4. **Control inventory** (existing mitigations)
 5. **Remediation roadmap** (implementation plan by priority)
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - Architecture & Threat Modeling - Design Before Code
+
+### Integraciones ampliadas
+
+- Threat Dragon: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- draw.io: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Terraform: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Kubernetes: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: app multi-tenant.
+- Integracion recomendada: Threat Dragon.
+- Senal principal: trust boundary difusa.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: microservicios.
+- Integracion recomendada: draw.io.
+- Senal principal: owner ausente.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: modelo de pagos.
+- Integracion recomendada: Terraform.
+- Senal principal: blast radius alto.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 04
+- Contexto: app multi-tenant.
+- Integracion recomendada: Kubernetes.
+- Senal principal: trust boundary difusa.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

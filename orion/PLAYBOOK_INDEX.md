@@ -872,3 +872,311 @@ Output: remediation plan, effort estimates
 
 **Regla de oro**: Si no sabes cuál usar, empieza con **Playbook 01** (authorized assessment).
 Es el más general; los otros 5 son "sub-workflows" más especializados.
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion del indice 2026
+
+### Criterios adicionales
+
+### Criterio avanzado 01
+- Factor dominante: madurez del cliente.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 02
+- Factor dominante: necesidad de evidencia.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 03
+- Factor dominante: integracion con backlog.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 04
+- Factor dominante: dependencias cloud y supply chain.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 05
+- Factor dominante: madurez del cliente.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 06
+- Factor dominante: necesidad de evidencia.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 07
+- Factor dominante: integracion con backlog.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 08
+- Factor dominante: dependencias cloud y supply chain.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 09
+- Factor dominante: madurez del cliente.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 10
+- Factor dominante: necesidad de evidencia.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 11
+- Factor dominante: integracion con backlog.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 12
+- Factor dominante: dependencias cloud y supply chain.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 13
+- Factor dominante: madurez del cliente.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 14
+- Factor dominante: necesidad de evidencia.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 15
+- Factor dominante: integracion con backlog.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 16
+- Factor dominante: dependencias cloud y supply chain.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 17
+- Factor dominante: madurez del cliente.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 18
+- Factor dominante: necesidad de evidencia.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 19
+- Factor dominante: integracion con backlog.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 20
+- Factor dominante: dependencias cloud y supply chain.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 21
+- Factor dominante: madurez del cliente.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 22
+- Factor dominante: necesidad de evidencia.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 23
+- Factor dominante: integracion con backlog.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 24
+- Factor dominante: dependencias cloud y supply chain.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 25
+- Factor dominante: madurez del cliente.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 26
+- Factor dominante: necesidad de evidencia.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 27
+- Factor dominante: integracion con backlog.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 28
+- Factor dominante: dependencias cloud y supply chain.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 29
+- Factor dominante: madurez del cliente.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 30
+- Factor dominante: necesidad de evidencia.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 31
+- Factor dominante: integracion con backlog.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 32
+- Factor dominante: dependencias cloud y supply chain.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 33
+- Factor dominante: madurez del cliente.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 34
+- Factor dominante: necesidad de evidencia.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 35
+- Factor dominante: integracion con backlog.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 36
+- Factor dominante: dependencias cloud y supply chain.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 37
+- Factor dominante: madurez del cliente.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 38
+- Factor dominante: necesidad de evidencia.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 39
+- Factor dominante: integracion con backlog.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 40
+- Factor dominante: dependencias cloud y supply chain.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 41
+- Factor dominante: madurez del cliente.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 42
+- Factor dominante: necesidad de evidencia.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 43
+- Factor dominante: integracion con backlog.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 44
+- Factor dominante: dependencias cloud y supply chain.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 45
+- Factor dominante: madurez del cliente.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 46
+- Factor dominante: necesidad de evidencia.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 47
+- Factor dominante: integracion con backlog.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 48
+- Factor dominante: dependencias cloud y supply chain.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 49
+- Factor dominante: madurez del cliente.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 50
+- Factor dominante: necesidad de evidencia.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 51
+- Factor dominante: integracion con backlog.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 52
+- Factor dominante: dependencias cloud y supply chain.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 53
+- Factor dominante: madurez del cliente.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 54
+- Factor dominante: necesidad de evidencia.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 55
+- Factor dominante: integracion con backlog.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 56
+- Factor dominante: dependencias cloud y supply chain.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 57
+- Factor dominante: madurez del cliente.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 58
+- Factor dominante: necesidad de evidencia.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 59
+- Factor dominante: integracion con backlog.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+
+### Criterio avanzado 60
+- Factor dominante: dependencias cloud y supply chain.
+- Ajuste recomendado: aumentar evidence, integracion o remediacion segun el riesgo.
+- Caso realista: combinar playbook principal con modulos secundarios.
+

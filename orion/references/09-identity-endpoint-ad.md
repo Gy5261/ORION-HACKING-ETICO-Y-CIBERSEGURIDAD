@@ -395,3 +395,146 @@ index=security (EventID=4625 OR EventID=4624)
 3. PAM (limit admin damage)
 4. Endpoint hardening (prevent infection)
 5. Legacy protocol removal (reduce attack surface)
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - Identity, Endpoint & Active Directory - Defense of the Human & Machine Identity
+
+### Integraciones ampliadas
+
+- AD: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Entra ID: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Okta: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- CrowdStrike: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: tiering insuficiente.
+- Integracion recomendada: AD.
+- Senal principal: grupo critico.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: claims excesivos.
+- Integracion recomendada: Entra ID.
+- Senal principal: servicio sin rotacion.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: MFA parcial.
+- Integracion recomendada: Okta.
+- Senal principal: admin sin aislamiento.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 04
+- Contexto: tiering insuficiente.
+- Integracion recomendada: CrowdStrike.
+- Senal principal: grupo critico.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 05
+- Contexto: claims excesivos.
+- Integracion recomendada: AD.
+- Senal principal: servicio sin rotacion.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 06
+- Contexto: MFA parcial.
+- Integracion recomendada: Entra ID.
+- Senal principal: admin sin aislamiento.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 07
+- Contexto: tiering insuficiente.
+- Integracion recomendada: Okta.
+- Senal principal: grupo critico.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 08
+- Contexto: claims excesivos.
+- Integracion recomendada: CrowdStrike.
+- Senal principal: servicio sin rotacion.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 09
+- Contexto: MFA parcial.
+- Integracion recomendada: AD.
+- Senal principal: admin sin aislamiento.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 10
+- Contexto: tiering insuficiente.
+- Integracion recomendada: Entra ID.
+- Senal principal: grupo critico.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 11
+- Contexto: claims excesivos.
+- Integracion recomendada: Okta.
+- Senal principal: servicio sin rotacion.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 12
+- Contexto: MFA parcial.
+- Integracion recomendada: CrowdStrike.
+- Senal principal: admin sin aislamiento.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 13
+- Contexto: tiering insuficiente.
+- Integracion recomendada: AD.
+- Senal principal: grupo critico.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 14
+- Contexto: claims excesivos.
+- Integracion recomendada: Entra ID.
+- Senal principal: servicio sin rotacion.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 15
+- Contexto: MFA parcial.
+- Integracion recomendada: Okta.
+- Senal principal: admin sin aislamiento.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 16
+- Contexto: tiering insuficiente.
+- Integracion recomendada: CrowdStrike.
+- Senal principal: grupo critico.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

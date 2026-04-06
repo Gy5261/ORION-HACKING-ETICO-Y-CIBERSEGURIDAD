@@ -847,3 +847,306 @@ Signature: __________________ Date: ______
 - Riesgos:
 - Entregable:
 ```
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - 02: Engagement Workflow - de Solicitud Informal a Operación Disciplinada
+
+### Integraciones ampliadas
+
+- Jira: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- ServiceNow: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Confluence: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Vault: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: kickoff multi-equipo.
+- Integracion recomendada: Jira.
+- Senal principal: sin acta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: assessment regulado.
+- Integracion recomendada: ServiceNow.
+- Senal principal: sin escalacion.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: cierre con backlog.
+- Integracion recomendada: Confluence.
+- Senal principal: sin exclusiones.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 04
+- Contexto: kickoff multi-equipo.
+- Integracion recomendada: Vault.
+- Senal principal: sin acta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 05
+- Contexto: assessment regulado.
+- Integracion recomendada: Jira.
+- Senal principal: sin escalacion.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 06
+- Contexto: cierre con backlog.
+- Integracion recomendada: ServiceNow.
+- Senal principal: sin exclusiones.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 07
+- Contexto: kickoff multi-equipo.
+- Integracion recomendada: Confluence.
+- Senal principal: sin acta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 08
+- Contexto: assessment regulado.
+- Integracion recomendada: Vault.
+- Senal principal: sin escalacion.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 09
+- Contexto: cierre con backlog.
+- Integracion recomendada: Jira.
+- Senal principal: sin exclusiones.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 10
+- Contexto: kickoff multi-equipo.
+- Integracion recomendada: ServiceNow.
+- Senal principal: sin acta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 11
+- Contexto: assessment regulado.
+- Integracion recomendada: Confluence.
+- Senal principal: sin escalacion.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 12
+- Contexto: cierre con backlog.
+- Integracion recomendada: Vault.
+- Senal principal: sin exclusiones.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 13
+- Contexto: kickoff multi-equipo.
+- Integracion recomendada: Jira.
+- Senal principal: sin acta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 14
+- Contexto: assessment regulado.
+- Integracion recomendada: ServiceNow.
+- Senal principal: sin escalacion.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 15
+- Contexto: cierre con backlog.
+- Integracion recomendada: Confluence.
+- Senal principal: sin exclusiones.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 16
+- Contexto: kickoff multi-equipo.
+- Integracion recomendada: Vault.
+- Senal principal: sin acta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 17
+- Contexto: assessment regulado.
+- Integracion recomendada: Jira.
+- Senal principal: sin escalacion.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 18
+- Contexto: cierre con backlog.
+- Integracion recomendada: ServiceNow.
+- Senal principal: sin exclusiones.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 19
+- Contexto: kickoff multi-equipo.
+- Integracion recomendada: Confluence.
+- Senal principal: sin acta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 20
+- Contexto: assessment regulado.
+- Integracion recomendada: Vault.
+- Senal principal: sin escalacion.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 21
+- Contexto: cierre con backlog.
+- Integracion recomendada: Jira.
+- Senal principal: sin exclusiones.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 22
+- Contexto: kickoff multi-equipo.
+- Integracion recomendada: ServiceNow.
+- Senal principal: sin acta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 23
+- Contexto: assessment regulado.
+- Integracion recomendada: Confluence.
+- Senal principal: sin escalacion.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 24
+- Contexto: cierre con backlog.
+- Integracion recomendada: Vault.
+- Senal principal: sin exclusiones.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 25
+- Contexto: kickoff multi-equipo.
+- Integracion recomendada: Jira.
+- Senal principal: sin acta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 26
+- Contexto: assessment regulado.
+- Integracion recomendada: ServiceNow.
+- Senal principal: sin escalacion.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 27
+- Contexto: cierre con backlog.
+- Integracion recomendada: Confluence.
+- Senal principal: sin exclusiones.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 28
+- Contexto: kickoff multi-equipo.
+- Integracion recomendada: Vault.
+- Senal principal: sin acta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 29
+- Contexto: assessment regulado.
+- Integracion recomendada: Jira.
+- Senal principal: sin escalacion.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 30
+- Contexto: cierre con backlog.
+- Integracion recomendada: ServiceNow.
+- Senal principal: sin exclusiones.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 31
+- Contexto: kickoff multi-equipo.
+- Integracion recomendada: Confluence.
+- Senal principal: sin acta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 32
+- Contexto: assessment regulado.
+- Integracion recomendada: Vault.
+- Senal principal: sin escalacion.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 33
+- Contexto: cierre con backlog.
+- Integracion recomendada: Jira.
+- Senal principal: sin exclusiones.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 34
+- Contexto: kickoff multi-equipo.
+- Integracion recomendada: ServiceNow.
+- Senal principal: sin acta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 35
+- Contexto: assessment regulado.
+- Integracion recomendada: Confluence.
+- Senal principal: sin escalacion.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 36
+- Contexto: cierre con backlog.
+- Integracion recomendada: Vault.
+- Senal principal: sin exclusiones.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

@@ -177,3 +177,74 @@ echo "SOC alerts received: $(curl https://siem.internal/api/alerts?type=login_an
 3. Externalize 1 hardcoded credential (move to Secrets Manager)
 4. Create runbook: "If automation fails, who do we call?"
 5. Set up weekly automation audit (review what changed)
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - Automation Patterns - Secure & Repeatable Security Processes
+
+### Integraciones ampliadas
+
+- GitHub Actions: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Cron: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Airflow: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- PowerShell: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: pipeline nocturno.
+- Integracion recomendada: GitHub Actions.
+- Senal principal: sin rollback.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: ticketing automatico.
+- Integracion recomendada: Cron.
+- Senal principal: credencial fija.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: evidence recurring.
+- Integracion recomendada: Airflow.
+- Senal principal: salida no normalizada.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 04
+- Contexto: pipeline nocturno.
+- Integracion recomendada: PowerShell.
+- Senal principal: sin rollback.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 05
+- Contexto: ticketing automatico.
+- Integracion recomendada: GitHub Actions.
+- Senal principal: credencial fija.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 06
+- Contexto: evidence recurring.
+- Integracion recomendada: Cron.
+- Senal principal: salida no normalizada.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 07
+- Contexto: pipeline nocturno.
+- Integracion recomendada: Airflow.
+- Senal principal: sin rollback.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

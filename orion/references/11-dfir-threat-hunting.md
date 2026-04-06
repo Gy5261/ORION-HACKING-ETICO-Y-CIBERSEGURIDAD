@@ -597,3 +597,218 @@ index=security EventID=4698 OR EventID=4702
 - ✅ Hunt proactively (don't wait for alerts)
 - ✅ Contain wisely (balance isolation vs investigation)
 - ✅ Learn systematically (root-cause analysis + implementation)
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - DFIR & Threat Hunting - Digital Forensics, Incident Response & Threat Intelligence
+
+### Integraciones ampliadas
+
+- Velociraptor: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Sysmon: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Defender: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Sigma: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: phishing con token.
+- Integracion recomendada: Velociraptor.
+- Senal principal: proceso anomalo.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: lateral movement.
+- Integracion recomendada: Sysmon.
+- Senal principal: persistencia nueva.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: living off the land.
+- Integracion recomendada: Defender.
+- Senal principal: host privilegiado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 04
+- Contexto: phishing con token.
+- Integracion recomendada: Sigma.
+- Senal principal: proceso anomalo.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 05
+- Contexto: lateral movement.
+- Integracion recomendada: Velociraptor.
+- Senal principal: persistencia nueva.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 06
+- Contexto: living off the land.
+- Integracion recomendada: Sysmon.
+- Senal principal: host privilegiado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 07
+- Contexto: phishing con token.
+- Integracion recomendada: Defender.
+- Senal principal: proceso anomalo.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 08
+- Contexto: lateral movement.
+- Integracion recomendada: Sigma.
+- Senal principal: persistencia nueva.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 09
+- Contexto: living off the land.
+- Integracion recomendada: Velociraptor.
+- Senal principal: host privilegiado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 10
+- Contexto: phishing con token.
+- Integracion recomendada: Sysmon.
+- Senal principal: proceso anomalo.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 11
+- Contexto: lateral movement.
+- Integracion recomendada: Defender.
+- Senal principal: persistencia nueva.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 12
+- Contexto: living off the land.
+- Integracion recomendada: Sigma.
+- Senal principal: host privilegiado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 13
+- Contexto: phishing con token.
+- Integracion recomendada: Velociraptor.
+- Senal principal: proceso anomalo.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 14
+- Contexto: lateral movement.
+- Integracion recomendada: Sysmon.
+- Senal principal: persistencia nueva.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 15
+- Contexto: living off the land.
+- Integracion recomendada: Defender.
+- Senal principal: host privilegiado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 16
+- Contexto: phishing con token.
+- Integracion recomendada: Sigma.
+- Senal principal: proceso anomalo.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 17
+- Contexto: lateral movement.
+- Integracion recomendada: Velociraptor.
+- Senal principal: persistencia nueva.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 18
+- Contexto: living off the land.
+- Integracion recomendada: Sysmon.
+- Senal principal: host privilegiado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 19
+- Contexto: phishing con token.
+- Integracion recomendada: Defender.
+- Senal principal: proceso anomalo.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 20
+- Contexto: lateral movement.
+- Integracion recomendada: Sigma.
+- Senal principal: persistencia nueva.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 21
+- Contexto: living off the land.
+- Integracion recomendada: Velociraptor.
+- Senal principal: host privilegiado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 22
+- Contexto: phishing con token.
+- Integracion recomendada: Sysmon.
+- Senal principal: proceso anomalo.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 23
+- Contexto: lateral movement.
+- Integracion recomendada: Defender.
+- Senal principal: persistencia nueva.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 24
+- Contexto: living off the land.
+- Integracion recomendada: Sigma.
+- Senal principal: host privilegiado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 25
+- Contexto: phishing con token.
+- Integracion recomendada: Velociraptor.
+- Senal principal: proceso anomalo.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

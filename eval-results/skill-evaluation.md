@@ -49,3 +49,26 @@ Se evaluo la version actual del skill en cuatro dimensiones:
 - agregar mas scripts seguros por dominio
 - incorporar plantillas de evidencia por tipo de hallazgo
 - crear escenarios de evaluacion cruzada por dominio
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion de evaluacion 2026
+
+### Nuevas suites
+
+### Suite adicional 01
+- Prompt de prueba: engagement con alcance autorizado, dependencia cloud e integracion externa.
+- Exito: ruta clara, evidencia verificable y backlog priorizado.
+- Falla: sin owner, sin control de alcance o sin salida accionable.
+
+### Suite adicional 02
+- Prompt de prueba: engagement con alcance autorizado, dependencia cloud e integracion externa.
+- Exito: ruta clara, evidencia verificable y backlog priorizado.
+- Falla: sin owner, sin control de alcance o sin salida accionable.
+
+### Suite adicional 03
+- Prompt de prueba: engagement con alcance autorizado, dependencia cloud e integracion externa.
+- Exito: ruta clara, evidencia verificable y backlog priorizado.
+- Falla: sin owner, sin control de alcance o sin salida accionable.
+

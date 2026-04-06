@@ -152,3 +152,66 @@
 3. Identify biggest gap (what attack type isn't detected)
 4. Update 1 detection rule based on gap
 5. Schedule monthly purple team exercise
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - Purple Teaming - Red Team Capabilities Validated by Blue Team Detection
+
+### Integraciones ampliadas
+
+- CALDERA: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Atomic Red Team: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Sigma: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- ATT&CK: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: validacion credential access.
+- Integracion recomendada: CALDERA.
+- Senal principal: sin coverage.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: campaign exfil.
+- Integracion recomendada: Atomic Red Team.
+- Senal principal: objetivo difuso.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: hardening iterativo.
+- Integracion recomendada: Sigma.
+- Senal principal: hallazgo fuera de backlog.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 04
+- Contexto: validacion credential access.
+- Integracion recomendada: ATT&CK.
+- Senal principal: sin coverage.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 05
+- Contexto: campaign exfil.
+- Integracion recomendada: CALDERA.
+- Senal principal: objetivo difuso.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 06
+- Contexto: hardening iterativo.
+- Integracion recomendada: Atomic Red Team.
+- Senal principal: hallazgo fuera de backlog.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

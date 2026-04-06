@@ -299,3 +299,114 @@
 - normalization
 - report generation
 - evidence formatting
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - Domain Taxonomy Extended - Detailed Security Domains
+
+### Integraciones ampliadas
+
+- OpenAI: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Azure OpenAI: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Langfuse: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- OpenTelemetry: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: agente de triage.
+- Integracion recomendada: OpenAI.
+- Senal principal: prompt injection.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: guardrail de prompts.
+- Integracion recomendada: Azure OpenAI.
+- Senal principal: tool misuse.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: generacion de evidencia.
+- Integracion recomendada: Langfuse.
+- Senal principal: salto de alcance.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 04
+- Contexto: agente de triage.
+- Integracion recomendada: OpenTelemetry.
+- Senal principal: prompt injection.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 05
+- Contexto: guardrail de prompts.
+- Integracion recomendada: OpenAI.
+- Senal principal: tool misuse.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 06
+- Contexto: generacion de evidencia.
+- Integracion recomendada: Azure OpenAI.
+- Senal principal: salto de alcance.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 07
+- Contexto: agente de triage.
+- Integracion recomendada: Langfuse.
+- Senal principal: prompt injection.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 08
+- Contexto: guardrail de prompts.
+- Integracion recomendada: OpenTelemetry.
+- Senal principal: tool misuse.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 09
+- Contexto: generacion de evidencia.
+- Integracion recomendada: OpenAI.
+- Senal principal: salto de alcance.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 10
+- Contexto: agente de triage.
+- Integracion recomendada: Azure OpenAI.
+- Senal principal: prompt injection.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 11
+- Contexto: guardrail de prompts.
+- Integracion recomendada: Langfuse.
+- Senal principal: tool misuse.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 12
+- Contexto: generacion de evidencia.
+- Integracion recomendada: OpenTelemetry.
+- Senal principal: salto de alcance.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

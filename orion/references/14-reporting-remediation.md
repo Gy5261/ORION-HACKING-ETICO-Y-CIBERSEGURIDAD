@@ -832,3 +832,298 @@ Las mejores técanicas de testing no importan si no puedes comunicar el resultad
 
 **Métrica de éxito**: % of findings fixed within SLA (target: 95%+)
 **Indicador de problema**: % of findings ignored >90 days (target: <5%)
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - Reporting & Remediation - Turning Findings Into Fixed Systems
+
+### Integraciones ampliadas
+
+- Jira: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Confluence: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- PowerBI: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- DefectDojo: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: heatmap ejecutivo.
+- Integracion recomendada: Jira.
+- Senal principal: finding sin owner.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: tracking 90 dias.
+- Integracion recomendada: Confluence.
+- Senal principal: riesgo sin negocio.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: reporte regulatorio.
+- Integracion recomendada: PowerBI.
+- Senal principal: evidencia no verificable.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 04
+- Contexto: heatmap ejecutivo.
+- Integracion recomendada: DefectDojo.
+- Senal principal: finding sin owner.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 05
+- Contexto: tracking 90 dias.
+- Integracion recomendada: Jira.
+- Senal principal: riesgo sin negocio.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 06
+- Contexto: reporte regulatorio.
+- Integracion recomendada: Confluence.
+- Senal principal: evidencia no verificable.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 07
+- Contexto: heatmap ejecutivo.
+- Integracion recomendada: PowerBI.
+- Senal principal: finding sin owner.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 08
+- Contexto: tracking 90 dias.
+- Integracion recomendada: DefectDojo.
+- Senal principal: riesgo sin negocio.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 09
+- Contexto: reporte regulatorio.
+- Integracion recomendada: Jira.
+- Senal principal: evidencia no verificable.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 10
+- Contexto: heatmap ejecutivo.
+- Integracion recomendada: Confluence.
+- Senal principal: finding sin owner.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 11
+- Contexto: tracking 90 dias.
+- Integracion recomendada: PowerBI.
+- Senal principal: riesgo sin negocio.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 12
+- Contexto: reporte regulatorio.
+- Integracion recomendada: DefectDojo.
+- Senal principal: evidencia no verificable.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 13
+- Contexto: heatmap ejecutivo.
+- Integracion recomendada: Jira.
+- Senal principal: finding sin owner.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 14
+- Contexto: tracking 90 dias.
+- Integracion recomendada: Confluence.
+- Senal principal: riesgo sin negocio.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 15
+- Contexto: reporte regulatorio.
+- Integracion recomendada: PowerBI.
+- Senal principal: evidencia no verificable.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 16
+- Contexto: heatmap ejecutivo.
+- Integracion recomendada: DefectDojo.
+- Senal principal: finding sin owner.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 17
+- Contexto: tracking 90 dias.
+- Integracion recomendada: Jira.
+- Senal principal: riesgo sin negocio.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 18
+- Contexto: reporte regulatorio.
+- Integracion recomendada: Confluence.
+- Senal principal: evidencia no verificable.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 19
+- Contexto: heatmap ejecutivo.
+- Integracion recomendada: PowerBI.
+- Senal principal: finding sin owner.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 20
+- Contexto: tracking 90 dias.
+- Integracion recomendada: DefectDojo.
+- Senal principal: riesgo sin negocio.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 21
+- Contexto: reporte regulatorio.
+- Integracion recomendada: Jira.
+- Senal principal: evidencia no verificable.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 22
+- Contexto: heatmap ejecutivo.
+- Integracion recomendada: Confluence.
+- Senal principal: finding sin owner.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 23
+- Contexto: tracking 90 dias.
+- Integracion recomendada: PowerBI.
+- Senal principal: riesgo sin negocio.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 24
+- Contexto: reporte regulatorio.
+- Integracion recomendada: DefectDojo.
+- Senal principal: evidencia no verificable.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 25
+- Contexto: heatmap ejecutivo.
+- Integracion recomendada: Jira.
+- Senal principal: finding sin owner.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 26
+- Contexto: tracking 90 dias.
+- Integracion recomendada: Confluence.
+- Senal principal: riesgo sin negocio.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 27
+- Contexto: reporte regulatorio.
+- Integracion recomendada: PowerBI.
+- Senal principal: evidencia no verificable.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 28
+- Contexto: heatmap ejecutivo.
+- Integracion recomendada: DefectDojo.
+- Senal principal: finding sin owner.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 29
+- Contexto: tracking 90 dias.
+- Integracion recomendada: Jira.
+- Senal principal: riesgo sin negocio.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 30
+- Contexto: reporte regulatorio.
+- Integracion recomendada: Confluence.
+- Senal principal: evidencia no verificable.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 31
+- Contexto: heatmap ejecutivo.
+- Integracion recomendada: PowerBI.
+- Senal principal: finding sin owner.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 32
+- Contexto: tracking 90 dias.
+- Integracion recomendada: DefectDojo.
+- Senal principal: riesgo sin negocio.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 33
+- Contexto: reporte regulatorio.
+- Integracion recomendada: Jira.
+- Senal principal: evidencia no verificable.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 34
+- Contexto: heatmap ejecutivo.
+- Integracion recomendada: Confluence.
+- Senal principal: finding sin owner.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 35
+- Contexto: tracking 90 dias.
+- Integracion recomendada: PowerBI.
+- Senal principal: riesgo sin negocio.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

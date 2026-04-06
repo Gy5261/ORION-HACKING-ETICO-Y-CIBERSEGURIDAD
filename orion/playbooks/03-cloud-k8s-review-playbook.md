@@ -374,3 +374,141 @@ Kubernetes CIS:
 | Terraform | IaC |
 | Helm | Kubernetes |
 
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Operativa 2026 - Cloud & Kubernetes Review Playbook (03)
+
+Este playbook se amplia para cubrir integraciones y casos de cloud y kubernetes.
+
+### Integraciones de ejecucion
+
+- Jira: usar para coordinacion, backlog, evidencia o telemetria.
+- ServiceNow: usar para coordinacion, backlog, evidencia o telemetria.
+- Slack/Teams: usar para coordinacion, backlog, evidencia o telemetria.
+- OpenSearch: usar para coordinacion, backlog, evidencia o telemetria.
+- GitHub Actions: usar para coordinacion, backlog, evidencia o telemetria.
+- Splunk: usar para coordinacion, backlog, evidencia o telemetria.
+
+### Casos operativos extendidos
+
+### Caso operativo 01
+- Situacion: engagement de cloud y kubernetes con ventana de tiempo corta y requerimiento alto de evidencia.
+- Integracion principal: Jira.
+- Entradas extra: inventario, owner tecnico, criterios de exito, backlog abierto y exclusiones.
+- Automatizacion: normalizacion de findings, enrichment de IOCs, manifiesto de evidencia y sincronizacion a tickets.
+- Verificacion final: owner confirmado, criterio de cierre, fecha objetivo y artefactos hashados.
+
+### Caso operativo 02
+- Situacion: engagement de cloud y kubernetes con ventana de tiempo corta y requerimiento alto de evidencia.
+- Integracion principal: ServiceNow.
+- Entradas extra: inventario, owner tecnico, criterios de exito, backlog abierto y exclusiones.
+- Automatizacion: normalizacion de findings, enrichment de IOCs, manifiesto de evidencia y sincronizacion a tickets.
+- Verificacion final: owner confirmado, criterio de cierre, fecha objetivo y artefactos hashados.
+
+### Caso operativo 03
+- Situacion: engagement de cloud y kubernetes con ventana de tiempo corta y requerimiento alto de evidencia.
+- Integracion principal: Slack/Teams.
+- Entradas extra: inventario, owner tecnico, criterios de exito, backlog abierto y exclusiones.
+- Automatizacion: normalizacion de findings, enrichment de IOCs, manifiesto de evidencia y sincronizacion a tickets.
+- Verificacion final: owner confirmado, criterio de cierre, fecha objetivo y artefactos hashados.
+
+### Caso operativo 04
+- Situacion: engagement de cloud y kubernetes con ventana de tiempo corta y requerimiento alto de evidencia.
+- Integracion principal: OpenSearch.
+- Entradas extra: inventario, owner tecnico, criterios de exito, backlog abierto y exclusiones.
+- Automatizacion: normalizacion de findings, enrichment de IOCs, manifiesto de evidencia y sincronizacion a tickets.
+- Verificacion final: owner confirmado, criterio de cierre, fecha objetivo y artefactos hashados.
+
+### Caso operativo 05
+- Situacion: engagement de cloud y kubernetes con ventana de tiempo corta y requerimiento alto de evidencia.
+- Integracion principal: GitHub Actions.
+- Entradas extra: inventario, owner tecnico, criterios de exito, backlog abierto y exclusiones.
+- Automatizacion: normalizacion de findings, enrichment de IOCs, manifiesto de evidencia y sincronizacion a tickets.
+- Verificacion final: owner confirmado, criterio de cierre, fecha objetivo y artefactos hashados.
+
+### Caso operativo 06
+- Situacion: engagement de cloud y kubernetes con ventana de tiempo corta y requerimiento alto de evidencia.
+- Integracion principal: Splunk.
+- Entradas extra: inventario, owner tecnico, criterios de exito, backlog abierto y exclusiones.
+- Automatizacion: normalizacion de findings, enrichment de IOCs, manifiesto de evidencia y sincronizacion a tickets.
+- Verificacion final: owner confirmado, criterio de cierre, fecha objetivo y artefactos hashados.
+
+### Caso operativo 07
+- Situacion: engagement de cloud y kubernetes con ventana de tiempo corta y requerimiento alto de evidencia.
+- Integracion principal: Jira.
+- Entradas extra: inventario, owner tecnico, criterios de exito, backlog abierto y exclusiones.
+- Automatizacion: normalizacion de findings, enrichment de IOCs, manifiesto de evidencia y sincronizacion a tickets.
+- Verificacion final: owner confirmado, criterio de cierre, fecha objetivo y artefactos hashados.
+
+### Caso operativo 08
+- Situacion: engagement de cloud y kubernetes con ventana de tiempo corta y requerimiento alto de evidencia.
+- Integracion principal: ServiceNow.
+- Entradas extra: inventario, owner tecnico, criterios de exito, backlog abierto y exclusiones.
+- Automatizacion: normalizacion de findings, enrichment de IOCs, manifiesto de evidencia y sincronizacion a tickets.
+- Verificacion final: owner confirmado, criterio de cierre, fecha objetivo y artefactos hashados.
+
+### Caso operativo 09
+- Situacion: engagement de cloud y kubernetes con ventana de tiempo corta y requerimiento alto de evidencia.
+- Integracion principal: Slack/Teams.
+- Entradas extra: inventario, owner tecnico, criterios de exito, backlog abierto y exclusiones.
+- Automatizacion: normalizacion de findings, enrichment de IOCs, manifiesto de evidencia y sincronizacion a tickets.
+- Verificacion final: owner confirmado, criterio de cierre, fecha objetivo y artefactos hashados.
+
+### Caso operativo 10
+- Situacion: engagement de cloud y kubernetes con ventana de tiempo corta y requerimiento alto de evidencia.
+- Integracion principal: OpenSearch.
+- Entradas extra: inventario, owner tecnico, criterios de exito, backlog abierto y exclusiones.
+- Automatizacion: normalizacion de findings, enrichment de IOCs, manifiesto de evidencia y sincronizacion a tickets.
+- Verificacion final: owner confirmado, criterio de cierre, fecha objetivo y artefactos hashados.
+
+### Caso operativo 11
+- Situacion: engagement de cloud y kubernetes con ventana de tiempo corta y requerimiento alto de evidencia.
+- Integracion principal: GitHub Actions.
+- Entradas extra: inventario, owner tecnico, criterios de exito, backlog abierto y exclusiones.
+- Automatizacion: normalizacion de findings, enrichment de IOCs, manifiesto de evidencia y sincronizacion a tickets.
+- Verificacion final: owner confirmado, criterio de cierre, fecha objetivo y artefactos hashados.
+
+### Caso operativo 12
+- Situacion: engagement de cloud y kubernetes con ventana de tiempo corta y requerimiento alto de evidencia.
+- Integracion principal: Splunk.
+- Entradas extra: inventario, owner tecnico, criterios de exito, backlog abierto y exclusiones.
+- Automatizacion: normalizacion de findings, enrichment de IOCs, manifiesto de evidencia y sincronizacion a tickets.
+- Verificacion final: owner confirmado, criterio de cierre, fecha objetivo y artefactos hashados.
+
+### Caso operativo 13
+- Situacion: engagement de cloud y kubernetes con ventana de tiempo corta y requerimiento alto de evidencia.
+- Integracion principal: Jira.
+- Entradas extra: inventario, owner tecnico, criterios de exito, backlog abierto y exclusiones.
+- Automatizacion: normalizacion de findings, enrichment de IOCs, manifiesto de evidencia y sincronizacion a tickets.
+- Verificacion final: owner confirmado, criterio de cierre, fecha objetivo y artefactos hashados.
+
+### Caso operativo 14
+- Situacion: engagement de cloud y kubernetes con ventana de tiempo corta y requerimiento alto de evidencia.
+- Integracion principal: ServiceNow.
+- Entradas extra: inventario, owner tecnico, criterios de exito, backlog abierto y exclusiones.
+- Automatizacion: normalizacion de findings, enrichment de IOCs, manifiesto de evidencia y sincronizacion a tickets.
+- Verificacion final: owner confirmado, criterio de cierre, fecha objetivo y artefactos hashados.
+
+### Caso operativo 15
+- Situacion: engagement de cloud y kubernetes con ventana de tiempo corta y requerimiento alto de evidencia.
+- Integracion principal: Slack/Teams.
+- Entradas extra: inventario, owner tecnico, criterios de exito, backlog abierto y exclusiones.
+- Automatizacion: normalizacion de findings, enrichment de IOCs, manifiesto de evidencia y sincronizacion a tickets.
+- Verificacion final: owner confirmado, criterio de cierre, fecha objetivo y artefactos hashados.
+
+### Caso operativo 16
+- Situacion: engagement de cloud y kubernetes con ventana de tiempo corta y requerimiento alto de evidencia.
+- Integracion principal: OpenSearch.
+- Entradas extra: inventario, owner tecnico, criterios de exito, backlog abierto y exclusiones.
+- Automatizacion: normalizacion de findings, enrichment de IOCs, manifiesto de evidencia y sincronizacion a tickets.
+- Verificacion final: owner confirmado, criterio de cierre, fecha objetivo y artefactos hashados.
+
+### Caso operativo 17
+- Situacion: engagement de cloud y kubernetes con ventana de tiempo corta y requerimiento alto de evidencia.
+- Integracion principal: GitHub Actions.
+- Entradas extra: inventario, owner tecnico, criterios de exito, backlog abierto y exclusiones.
+- Automatizacion: normalizacion de findings, enrichment de IOCs, manifiesto de evidencia y sincronizacion a tickets.
+- Verificacion final: owner confirmado, criterio de cierre, fecha objetivo y artefactos hashados.
+

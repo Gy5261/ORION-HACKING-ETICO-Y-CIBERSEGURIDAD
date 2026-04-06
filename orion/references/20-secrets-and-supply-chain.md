@@ -141,3 +141,58 @@ api_key = os.environ['API_KEY']  // Only in deployed system
 3. Run `npm audit` or `pip audit` (find vulnerable dependencies)
 4. Create update policy (critical = 1 week)
 5. Establish vendor risk documentation (sheet with all vendors)
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - Secrets & Supply Chain Security - API Keys, Credentials, Dependencies
+
+### Integraciones ampliadas
+
+- OpenAI: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Azure OpenAI: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Langfuse: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- OpenTelemetry: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: agente de triage.
+- Integracion recomendada: OpenAI.
+- Senal principal: prompt injection.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: guardrail de prompts.
+- Integracion recomendada: Azure OpenAI.
+- Senal principal: tool misuse.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: generacion de evidencia.
+- Integracion recomendada: Langfuse.
+- Senal principal: salto de alcance.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 04
+- Contexto: agente de triage.
+- Integracion recomendada: OpenTelemetry.
+- Senal principal: prompt injection.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 05
+- Contexto: guardrail de prompts.
+- Integracion recomendada: OpenAI.
+- Senal principal: tool misuse.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

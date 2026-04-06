@@ -238,3 +238,90 @@ Residual Risk:
 3. Add residual risk acknowledgment to next report (show realistic what's left)
 4. Document 1 remediation that took longer than hoped (lessons learned)
 5. Create 1-page "standard fixes" reference (quick URL to common remediation patterns)
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - Remediation Patterns - Translating Findings Into Actionable Fixes
+
+### Integraciones ampliadas
+
+- Jira: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Azure DevOps: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- GitHub: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- ServiceNow: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: plan 30-60-90.
+- Integracion recomendada: Jira.
+- Senal principal: fix sin validacion.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: owners por dominio.
+- Integracion recomendada: Azure DevOps.
+- Senal principal: riesgo aceptado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: retest automatizado.
+- Integracion recomendada: GitHub.
+- Senal principal: deuda fuera de backlog.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 04
+- Contexto: plan 30-60-90.
+- Integracion recomendada: ServiceNow.
+- Senal principal: fix sin validacion.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 05
+- Contexto: owners por dominio.
+- Integracion recomendada: Jira.
+- Senal principal: riesgo aceptado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 06
+- Contexto: retest automatizado.
+- Integracion recomendada: Azure DevOps.
+- Senal principal: deuda fuera de backlog.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 07
+- Contexto: plan 30-60-90.
+- Integracion recomendada: GitHub.
+- Senal principal: fix sin validacion.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 08
+- Contexto: owners por dominio.
+- Integracion recomendada: ServiceNow.
+- Senal principal: riesgo aceptado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 09
+- Contexto: retest automatizado.
+- Integracion recomendada: Jira.
+- Senal principal: deuda fuera de backlog.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

@@ -155,3 +155,66 @@ ONGOING LAB MANAGEMENT: ✅
 - [ ] Access reviewed quarterly
 - [ ] Unused accounts disabled
 ```
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - Labs & Safe Learning - Practical Security Training
+
+### Integraciones ampliadas
+
+- Docker: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Kind: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Vagrant: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Codespaces: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: lab SSRF.
+- Integracion recomendada: Docker.
+- Senal principal: dato real en lab.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: lab Sigma.
+- Integracion recomendada: Kind.
+- Senal principal: sin rollback.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: simulacion AD.
+- Integracion recomendada: Vagrant.
+- Senal principal: tooling sin version.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 04
+- Contexto: lab SSRF.
+- Integracion recomendada: Codespaces.
+- Senal principal: dato real en lab.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 05
+- Contexto: lab Sigma.
+- Integracion recomendada: Docker.
+- Senal principal: sin rollback.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 06
+- Contexto: simulacion AD.
+- Integracion recomendada: Kind.
+- Senal principal: tooling sin version.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

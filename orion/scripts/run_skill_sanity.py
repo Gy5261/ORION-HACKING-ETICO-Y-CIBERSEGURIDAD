@@ -1,13 +1,13 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 run_skill_sanity.py - Valida integridad y funcionamiento de componentes ORION.
 
 Ejecuta suite de pruebas de sanidad sobre los scripts y datos del proyecto:
-- Compilación de scripts Python
-- Validación de integridad de referencias
-- Esquemas y normalización
-- Análisis de logs y triaje
-- Compilación HTML estática
+- CompilaciÃ³n de scripts Python
+- ValidaciÃ³n de integridad de referencias
+- Esquemas y normalizaciÃ³n
+- AnÃ¡lisis de logs y triaje
+- CompilaciÃ³n HTML estÃ¡tica
 
 Genera reporte JSON con resultados detallados de cada componente.
 
@@ -92,7 +92,7 @@ def test_python_compilation() -> tuple[List[Dict[str, Any]], int]:
 
 
 def test_integrity() -> tuple[Dict[str, Any], int]:
-    """Valida integridad de referencias en documentación."""
+    """Valida integridad de referencias en documentaciÃ³n."""
     result = run([sys.executable, str(SCRIPTS / "check_integrity.py")])
     
     if result.returncode == 0:
@@ -119,7 +119,7 @@ def test_integrity() -> tuple[Dict[str, Any], int]:
 
 
 def test_normalize_findings() -> tuple[Dict[str, Any], int]:
-    """Valida normalización de hallazgos."""
+    """Valida normalizaciÃ³n de hallazgos."""
     if not SAMPLES.exists():
         return {
             "status": "skip",
@@ -199,7 +199,7 @@ def test_log_triage() -> tuple[Dict[str, Any], int]:
 
 
 def test_http_audit_syntax() -> tuple[Dict[str, Any], int]:
-    """Valida comportamiento básico de http_surface_audit."""
+    """Valida comportamiento bÃ¡sico de http_surface_audit."""
     audit_script = SCRIPTS / "http_surface_audit.py"
     if not audit_script.exists():
         return {"status": "skip", "reason": "Script not found"}, 0
@@ -218,7 +218,7 @@ def test_http_audit_syntax() -> tuple[Dict[str, Any], int]:
 
 
 def test_report_skeleton() -> tuple[Dict[str, Any], int]:
-    """Valida generación de plantilla de reporte."""
+    """Valida generaciÃ³n de plantilla de reporte."""
     test_file = ROOT / "test-report.md"
     
     try:
@@ -241,7 +241,7 @@ def test_report_skeleton() -> tuple[Dict[str, Any], int]:
 
 
 def calculate_health_score(results: Dict[str, Any]) -> float:
-    """Calcula puntuación de salud general (0-100)."""
+    """Calcula puntuaciÃ³n de salud general (0-100)."""
     scores = []
     
     # compilation
@@ -277,48 +277,50 @@ def main() -> int:
         "results": {}
     }
     
-    print("🔍 ORION-HACKING Sanity Check", file=sys.stderr)
+    print("ðŸ” ORION-HACKING Sanity Check", file=sys.stderr)
     print("=" * 50, file=sys.stderr)
     
     # Test compilation
-    print("📦 Compilación Python...", file=sys.stderr)
+    print("ðŸ“¦ CompilaciÃ³n Python...", file=sys.stderr)
     py_results, py_passed = test_python_compilation()
     report["results"]["py_compile"] = py_results
-    print(f"   ✓ {py_passed}/{len(py_results)} scripts", file=sys.stderr)
+    print(f"   âœ“ {py_passed}/{len(py_results)} scripts", file=sys.stderr)
+
     
     # Test integrity
-    print("🔗 Integridad de referencias...", file=sys.stderr)
+    print("ðŸ”— Integridad de referencias...", file=sys.stderr)
     integrity, integrity_passed = test_integrity()
     report["results"]["integrity"] = integrity
-    print(f"   {'✓' if integrity_passed else '✗'} {integrity.get('status')}", file=sys.stderr)
+    print(f"   {'âœ“' if integrity_passed else 'âœ—'} {integrity.get('status')}", file=sys.stderr)
     
     # Test normalize
-    print("⚙️ Normalización de hallazgos...", file=sys.stderr)
+    print("âš™ï¸ NormalizaciÃ³n de hallazgos...", file=sys.stderr)
     normalize, normalize_passed = test_normalize_findings()
     report["results"]["normalize"] = normalize
-    print(f"   {'✓' if normalize_passed else '✗'} {normalize.get('status')}", file=sys.stderr)
+    print(f"   {'âœ“' if normalize_passed else 'âœ—'} {normalize.get('status')}", file=sys.stderr)
     
     # Test triage
-    print("📋 Triaje de logs...", file=sys.stderr)
+    print("ðŸ“‹ Triaje de logs...", file=sys.stderr)
     triage, triage_passed = test_log_triage()
     report["results"]["triage"] = triage
-    print(f"   {'✓' if triage_passed else '✗'} {triage.get('status')}", file=sys.stderr)
+    print(f"   {'âœ“' if triage_passed else 'âœ—'} {triage.get('status')}", file=sys.stderr)
     
     # Test HTTP audit
-    print("🌐 Auditoría HTTP...", file=sys.stderr)
+    print("ðŸŒ AuditorÃ­a HTTP...", file=sys.stderr)
     http_audit, http_passed = test_http_audit_syntax()
     report["results"]["http_audit"] = http_audit
-    print(f"   {'✓' if http_passed else '✗'} {http_audit.get('status')}", file=sys.stderr)
+    print(f"   {'âœ“' if http_passed else 'âœ—'} {http_audit.get('status')}", file=sys.stderr)
     
     # Test report
-    print("📄 Generador de reportes...", file=sys.stderr)
+    print("ðŸ“„ Generador de reportes...", file=sys.stderr)
     report_test, report_passed = test_report_skeleton()
     report["results"]["report"] = report_test
-    print(f"   {'✓' if report_passed else '✗'} {report_test.get('status')}", file=sys.stderr)
+    print(f"   {'âœ“' if report_passed else 'âœ—'} {report_test.get('status')}", file=sys.stderr)
     
     # Calculate summary
     total_tests = 6
-    passed_tests = sum([py_passed, integrity_passed, normalize_passed, triage_passed, http_passed, report_passed])
+    compilation_passed = 1 if py_passed == len(py_results) else 0
+    passed_tests = sum([compilation_passed, integrity_passed, normalize_passed, triage_passed, http_passed, report_passed])
     health = calculate_health_score(report["results"])
     
     report["summary"] = {
@@ -329,8 +331,8 @@ def main() -> int:
     }
     
     print("=" * 50, file=sys.stderr)
-    print(f"✓ Pasados: {passed_tests}/{total_tests}", file=sys.stderr)
-    print(f"📊 Salud: {health:.1f}%", file=sys.stderr)
+    print(f"âœ“ Pasados: {passed_tests}/{total_tests}", file=sys.stderr)
+    print(f"ðŸ“Š Salud: {health:.1f}%", file=sys.stderr)
     
     # Salida JSON
     print(json.dumps(report, indent=2, ensure_ascii=False))

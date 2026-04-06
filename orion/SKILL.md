@@ -2161,3 +2161,1854 @@ ORION-HACKING es un **sistema operativo completo** para ciberseguridad autorizad
 **Last Updated**: 2024-02-15
 **Next Review**: 2024-05-15
 **Versión**: HYPER-EXPANDED v2.0
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## PARTE 7: EXPANSION ESTRATEGICA 2026 - ORION-HACKING: Sistema Operativo de Ciberseguridad Autorizada
+
+### Objetivo
+
+- Aumentar capacidad operativa, integraciones y contratos de automatizacion sin borrar el marco existente.
+- Ampliar cobertura multi-dominio para escenarios reales de ciberseguridad y hacking etico autorizado.
+- Fortalecer evidence, backlog, enrichment y modularidad del skill principal.
+
+### Integraciones de ecosistema
+
+#### Integracion: Jira
+- Proposito: backlog de remediacion y retest.
+- Modo seguro: lectura por defecto y escritura solo con aprobacion explicita.
+- Evidencia esperada: request, respuesta, decision, timestamp y owner.
+- Riesgo a vigilar: automatizacion no justificada o exceso de confianza en datos externos.
+
+#### Integracion: ServiceNow
+- Proposito: incidentes y cambios de seguridad.
+- Modo seguro: lectura por defecto y escritura solo con aprobacion explicita.
+- Evidencia esperada: request, respuesta, decision, timestamp y owner.
+- Riesgo a vigilar: automatizacion no justificada o exceso de confianza en datos externos.
+
+#### Integracion: Splunk
+- Proposito: correlacion y validacion en lectura.
+- Modo seguro: lectura por defecto y escritura solo con aprobacion explicita.
+- Evidencia esperada: request, respuesta, decision, timestamp y owner.
+- Riesgo a vigilar: automatizacion no justificada o exceso de confianza en datos externos.
+
+#### Integracion: OpenSearch
+- Proposito: indexacion de evidencia y findings.
+- Modo seguro: lectura por defecto y escritura solo con aprobacion explicita.
+- Evidencia esperada: request, respuesta, decision, timestamp y owner.
+- Riesgo a vigilar: automatizacion no justificada o exceso de confianza en datos externos.
+
+#### Integracion: MISP
+- Proposito: contexto de IOCs y campañas.
+- Modo seguro: lectura por defecto y escritura solo con aprobacion explicita.
+- Evidencia esperada: request, respuesta, decision, timestamp y owner.
+- Riesgo a vigilar: automatizacion no justificada o exceso de confianza en datos externos.
+
+#### Integracion: VirusTotal
+- Proposito: reputacion externa opcional.
+- Modo seguro: lectura por defecto y escritura solo con aprobacion explicita.
+- Evidencia esperada: request, respuesta, decision, timestamp y owner.
+- Riesgo a vigilar: automatizacion no justificada o exceso de confianza en datos externos.
+
+#### Integracion: AbuseIPDB
+- Proposito: calificacion de IPs.
+- Modo seguro: lectura por defecto y escritura solo con aprobacion explicita.
+- Evidencia esperada: request, respuesta, decision, timestamp y owner.
+- Riesgo a vigilar: automatizacion no justificada o exceso de confianza en datos externos.
+
+#### Integracion: AlienVault OTX
+- Proposito: pulsos de amenaza.
+- Modo seguro: lectura por defecto y escritura solo con aprobacion explicita.
+- Evidencia esperada: request, respuesta, decision, timestamp y owner.
+- Riesgo a vigilar: automatizacion no justificada o exceso de confianza en datos externos.
+
+#### Integracion: Shodan
+- Proposito: exposicion de servicios autorizados.
+- Modo seguro: lectura por defecto y escritura solo con aprobacion explicita.
+- Evidencia esperada: request, respuesta, decision, timestamp y owner.
+- Riesgo a vigilar: automatizacion no justificada o exceso de confianza en datos externos.
+
+#### Integracion: GitHub Actions
+- Proposito: chequeos y empaquetado reproducible.
+- Modo seguro: lectura por defecto y escritura solo con aprobacion explicita.
+- Evidencia esperada: request, respuesta, decision, timestamp y owner.
+- Riesgo a vigilar: automatizacion no justificada o exceso de confianza en datos externos.
+
+#### Integracion: DefectDojo
+- Proposito: consolidacion y deduplicacion.
+- Modo seguro: lectura por defecto y escritura solo con aprobacion explicita.
+- Evidencia esperada: request, respuesta, decision, timestamp y owner.
+- Riesgo a vigilar: automatizacion no justificada o exceso de confianza en datos externos.
+
+#### Integracion: Confluence
+- Proposito: decision logs y reporte ejecutivo.
+- Modo seguro: lectura por defecto y escritura solo con aprobacion explicita.
+- Evidencia esperada: request, respuesta, decision, timestamp y owner.
+- Riesgo a vigilar: automatizacion no justificada o exceso de confianza en datos externos.
+
+#### Integracion: Slack/Teams
+- Proposito: alertas y escalaciones.
+- Modo seguro: lectura por defecto y escritura solo con aprobacion explicita.
+- Evidencia esperada: request, respuesta, decision, timestamp y owner.
+- Riesgo a vigilar: automatizacion no justificada o exceso de confianza en datos externos.
+
+#### Integracion: AWS Security Hub
+- Proposito: hallazgos cloud en lectura.
+- Modo seguro: lectura por defecto y escritura solo con aprobacion explicita.
+- Evidencia esperada: request, respuesta, decision, timestamp y owner.
+- Riesgo a vigilar: automatizacion no justificada o exceso de confianza en datos externos.
+
+#### Integracion: Azure Defender
+- Proposito: telemetria de tenant.
+- Modo seguro: lectura por defecto y escritura solo con aprobacion explicita.
+- Evidencia esperada: request, respuesta, decision, timestamp y owner.
+- Riesgo a vigilar: automatizacion no justificada o exceso de confianza en datos externos.
+
+#### Integracion: Google SCC
+- Proposito: postura GCP.
+- Modo seguro: lectura por defecto y escritura solo con aprobacion explicita.
+- Evidencia esperada: request, respuesta, decision, timestamp y owner.
+- Riesgo a vigilar: automatizacion no justificada o exceso de confianza en datos externos.
+
+#### Integracion: Velociraptor
+- Proposito: evidencia DFIR estructurada.
+- Modo seguro: lectura por defecto y escritura solo con aprobacion explicita.
+- Evidencia esperada: request, respuesta, decision, timestamp y owner.
+- Riesgo a vigilar: automatizacion no justificada o exceso de confianza en datos externos.
+
+#### Integracion: Sigma
+- Proposito: reglas de hunting defendibles.
+- Modo seguro: lectura por defecto y escritura solo con aprobacion explicita.
+- Evidencia esperada: request, respuesta, decision, timestamp y owner.
+- Riesgo a vigilar: automatizacion no justificada o exceso de confianza en datos externos.
+
+#### Integracion: Semgrep
+- Proposito: hallazgos de codigo a backlog.
+- Modo seguro: lectura por defecto y escritura solo con aprobacion explicita.
+- Evidencia esperada: request, respuesta, decision, timestamp y owner.
+- Riesgo a vigilar: automatizacion no justificada o exceso de confianza en datos externos.
+
+#### Integracion: Trivy/Syft/Cosign
+- Proposito: SBOM, vulnerabilidades y firmas.
+- Modo seguro: lectura por defecto y escritura solo con aprobacion explicita.
+- Evidencia esperada: request, respuesta, decision, timestamp y owner.
+- Riesgo a vigilar: automatizacion no justificada o exceso de confianza en datos externos.
+
+### Contratos de automatizacion
+
+#### Contrato 01
+- Descripcion: enrichment de IOCs antes de priorizar incidentes.
+- Entrada minima: alcance, owner, artefacto origen y criterio de exito.
+- Salida obligatoria: JSON normalizado, decision, owner siguiente y riesgo residual.
+- Hard stop: falta de autorizacion, salida no repetible o impacto excesivo.
+
+#### Contrato 02
+- Descripcion: manifest de evidencia antes de mover artefactos.
+- Entrada minima: alcance, owner, artefacto origen y criterio de exito.
+- Salida obligatoria: JSON normalizado, decision, owner siguiente y riesgo residual.
+- Hard stop: falta de autorizacion, salida no repetible o impacto excesivo.
+
+#### Contrato 03
+- Descripcion: sincronizacion de findings a backlog con contexto tecnico.
+- Entrada minima: alcance, owner, artefacto origen y criterio de exito.
+- Salida obligatoria: JSON normalizado, decision, owner siguiente y riesgo residual.
+- Hard stop: falta de autorizacion, salida no repetible o impacto excesivo.
+
+#### Contrato 04
+- Descripcion: auditoria TLS basica previa a assessment web o API.
+- Entrada minima: alcance, owner, artefacto origen y criterio de exito.
+- Salida obligatoria: JSON normalizado, decision, owner siguiente y riesgo residual.
+- Hard stop: falta de autorizacion, salida no repetible o impacto excesivo.
+
+#### Contrato 05
+- Descripcion: normalizacion multi-fuente de findings en JSON canonico.
+- Entrada minima: alcance, owner, artefacto origen y criterio de exito.
+- Salida obligatoria: JSON normalizado, decision, owner siguiente y riesgo residual.
+- Hard stop: falta de autorizacion, salida no repetible o impacto excesivo.
+
+#### Contrato 06
+- Descripcion: deteccion de gaps de evidencia antes del reporte final.
+- Entrada minima: alcance, owner, artefacto origen y criterio de exito.
+- Salida obligatoria: JSON normalizado, decision, owner siguiente y riesgo residual.
+- Hard stop: falta de autorizacion, salida no repetible o impacto excesivo.
+
+#### Contrato 07
+- Descripcion: clasificacion por dominio primario y secundario.
+- Entrada minima: alcance, owner, artefacto origen y criterio de exito.
+- Salida obligatoria: JSON normalizado, decision, owner siguiente y riesgo residual.
+- Hard stop: falta de autorizacion, salida no repetible o impacto excesivo.
+
+#### Contrato 08
+- Descripcion: retest guiado posterior a remediacion.
+- Entrada minima: alcance, owner, artefacto origen y criterio de exito.
+- Salida obligatoria: JSON normalizado, decision, owner siguiente y riesgo residual.
+- Hard stop: falta de autorizacion, salida no repetible o impacto excesivo.
+
+#### Contrato 09
+- Descripcion: resumen ejecutivo basado en datos verificados.
+- Entrada minima: alcance, owner, artefacto origen y criterio de exito.
+- Salida obligatoria: JSON normalizado, decision, owner siguiente y riesgo residual.
+- Hard stop: falta de autorizacion, salida no repetible o impacto excesivo.
+
+#### Contrato 10
+- Descripcion: hand-off SOC a DFIR con enrichment estructurado.
+- Entrada minima: alcance, owner, artefacto origen y criterio de exito.
+- Salida obligatoria: JSON normalizado, decision, owner siguiente y riesgo residual.
+- Hard stop: falta de autorizacion, salida no repetible o impacto excesivo.
+
+#### Contrato 11
+- Descripcion: control de cambio para scripts con servicios externos.
+- Entrada minima: alcance, owner, artefacto origen y criterio de exito.
+- Salida obligatoria: JSON normalizado, decision, owner siguiente y riesgo residual.
+- Hard stop: falta de autorizacion, salida no repetible o impacto excesivo.
+
+#### Contrato 12
+- Descripcion: paquetes de evidencia para auditoria externa.
+- Entrada minima: alcance, owner, artefacto origen y criterio de exito.
+- Salida obligatoria: JSON normalizado, decision, owner siguiente y riesgo residual.
+- Hard stop: falta de autorizacion, salida no repetible o impacto excesivo.
+
+### Matriz multi-dominio
+
+#### Ruta combinada 01: web + identity
+- Ejemplo realista: portal con SSO y roles heredados.
+- Skill principal: decide alcance, restricciones, orden de carga y scripts auxiliares.
+- Resultado: salida defendible con hallazgos, integraciones y siguiente accion concreta.
+
+#### Ruta combinada 02: web + cloud
+- Ejemplo realista: API sobre ALB y workloads EKS.
+- Skill principal: decide alcance, restricciones, orden de carga y scripts auxiliares.
+- Resultado: salida defendible con hallazgos, integraciones y siguiente accion concreta.
+
+#### Ruta combinada 03: sdlc + supply-chain
+- Ejemplo realista: pipeline con SBOM y firma OCI.
+- Skill principal: decide alcance, restricciones, orden de carga y scripts auxiliares.
+- Resultado: salida defendible con hallazgos, integraciones y siguiente accion concreta.
+
+#### Ruta combinada 04: dfir + threat-intel
+- Ejemplo realista: IOC observado en endpoint privilegiado.
+- Skill principal: decide alcance, restricciones, orden de carga y scripts auxiliares.
+- Resultado: salida defendible con hallazgos, integraciones y siguiente accion concreta.
+
+#### Ruta combinada 05: network + cloud
+- Ejemplo realista: segmentacion hibrida VPC/sede.
+- Skill principal: decide alcance, restricciones, orden de carga y scripts auxiliares.
+- Resultado: salida defendible con hallazgos, integraciones y siguiente accion concreta.
+
+#### Ruta combinada 06: governance + reporting
+- Ejemplo realista: board exige ROI y riesgo residual.
+- Skill principal: decide alcance, restricciones, orden de carga y scripts auxiliares.
+- Resultado: salida defendible con hallazgos, integraciones y siguiente accion concreta.
+
+#### Ruta combinada 07: mobile + API
+- Ejemplo realista: cliente movil multi-tenant.
+- Skill principal: decide alcance, restricciones, orden de carga y scripts auxiliares.
+- Resultado: salida defendible con hallazgos, integraciones y siguiente accion concreta.
+
+#### Ruta combinada 08: crypto + data-security
+- Ejemplo realista: tokenizacion parcial de datos.
+- Skill principal: decide alcance, restricciones, orden de carga y scripts auxiliares.
+- Resultado: salida defendible con hallazgos, integraciones y siguiente accion concreta.
+
+#### Ruta combinada 09: soc + purple-team
+- Ejemplo realista: exercise de coverage real.
+- Skill principal: decide alcance, restricciones, orden de carga y scripts auxiliares.
+- Resultado: salida defendible con hallazgos, integraciones y siguiente accion concreta.
+
+#### Ruta combinada 10: wireless + identity
+- Ejemplo realista: WPA2-Enterprise ligado a AD.
+- Skill principal: decide alcance, restricciones, orden de carga y scripts auxiliares.
+- Resultado: salida defendible con hallazgos, integraciones y siguiente accion concreta.
+
+### Salidas estructuradas
+
+#### Salida 01
+- Tipo: json normalizado.
+- Debe ser consumible por humanos y automatizaciones posteriores.
+- Contenido minimo: fecha, owner, origen, evidencia, decision y riesgo residual.
+
+#### Salida 02
+- Tipo: markdown ejecutivo.
+- Debe ser consumible por humanos y automatizaciones posteriores.
+- Contenido minimo: fecha, owner, origen, evidencia, decision y riesgo residual.
+
+#### Salida 03
+- Tipo: html singlefile.
+- Debe ser consumible por humanos y automatizaciones posteriores.
+- Contenido minimo: fecha, owner, origen, evidencia, decision y riesgo residual.
+
+#### Salida 04
+- Tipo: manifest de evidencia.
+- Debe ser consumible por humanos y automatizaciones posteriores.
+- Contenido minimo: fecha, owner, origen, evidencia, decision y riesgo residual.
+
+#### Salida 05
+- Tipo: payload de tickets.
+- Debe ser consumible por humanos y automatizaciones posteriores.
+- Contenido minimo: fecha, owner, origen, evidencia, decision y riesgo residual.
+
+#### Salida 06
+- Tipo: matriz de cobertura.
+- Debe ser consumible por humanos y automatizaciones posteriores.
+- Contenido minimo: fecha, owner, origen, evidencia, decision y riesgo residual.
+
+#### Salida 07
+- Tipo: timeline de incidente.
+- Debe ser consumible por humanos y automatizaciones posteriores.
+- Contenido minimo: fecha, owner, origen, evidencia, decision y riesgo residual.
+
+#### Salida 08
+- Tipo: inventario de activos.
+- Debe ser consumible por humanos y automatizaciones posteriores.
+- Contenido minimo: fecha, owner, origen, evidencia, decision y riesgo residual.
+
+### Casos de uso reales ampliados
+
+### Caso extendido 001
+- Sector: fintech regional.
+- Escenario: API de pagos con JWT federado y backlog regulatorio.
+- Fase dominante: discovery.
+- Integracion clave: Jira.
+- Contrato sugerido: enrichment de IOCs antes de priorizar incidentes.
+- Salida prioritaria: json normalizado.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 002
+- Sector: retail omnicanal.
+- Escenario: checkout web con fraude promocional y SaaS terceros.
+- Fase dominante: validacion tecnica.
+- Integracion clave: ServiceNow.
+- Contrato sugerido: manifest de evidencia antes de mover artefactos.
+- Salida prioritaria: markdown ejecutivo.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 003
+- Sector: healthtech.
+- Escenario: PII y ventanas de cambio restringidas.
+- Fase dominante: priorizacion.
+- Integracion clave: Splunk.
+- Contrato sugerido: sincronizacion de findings a backlog con contexto tecnico.
+- Salida prioritaria: html singlefile.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 004
+- Sector: SaaS B2B.
+- Escenario: SSO SAML y pipeline de release.
+- Fase dominante: ticketing.
+- Integracion clave: OpenSearch.
+- Contrato sugerido: auditoria TLS basica previa a assessment web o API.
+- Salida prioritaria: manifest de evidencia.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 005
+- Sector: manufactura.
+- Escenario: OT parcialmente conectada y exposicion remota.
+- Fase dominante: retest.
+- Integracion clave: MISP.
+- Contrato sugerido: normalizacion multi-fuente de findings en JSON canonico.
+- Salida prioritaria: payload de tickets.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 006
+- Sector: sector publico.
+- Escenario: retencion normativa y aprobaciones formales.
+- Fase dominante: cierre.
+- Integracion clave: VirusTotal.
+- Contrato sugerido: deteccion de gaps de evidencia antes del reporte final.
+- Salida prioritaria: matriz de cobertura.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 007
+- Sector: fintech regional.
+- Escenario: API de pagos con JWT federado y backlog regulatorio.
+- Fase dominante: discovery.
+- Integracion clave: AbuseIPDB.
+- Contrato sugerido: clasificacion por dominio primario y secundario.
+- Salida prioritaria: timeline de incidente.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 008
+- Sector: retail omnicanal.
+- Escenario: checkout web con fraude promocional y SaaS terceros.
+- Fase dominante: validacion tecnica.
+- Integracion clave: AlienVault OTX.
+- Contrato sugerido: retest guiado posterior a remediacion.
+- Salida prioritaria: inventario de activos.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 009
+- Sector: healthtech.
+- Escenario: PII y ventanas de cambio restringidas.
+- Fase dominante: priorizacion.
+- Integracion clave: Shodan.
+- Contrato sugerido: resumen ejecutivo basado en datos verificados.
+- Salida prioritaria: json normalizado.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 010
+- Sector: SaaS B2B.
+- Escenario: SSO SAML y pipeline de release.
+- Fase dominante: ticketing.
+- Integracion clave: GitHub Actions.
+- Contrato sugerido: hand-off SOC a DFIR con enrichment estructurado.
+- Salida prioritaria: markdown ejecutivo.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 011
+- Sector: manufactura.
+- Escenario: OT parcialmente conectada y exposicion remota.
+- Fase dominante: retest.
+- Integracion clave: DefectDojo.
+- Contrato sugerido: control de cambio para scripts con servicios externos.
+- Salida prioritaria: html singlefile.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 012
+- Sector: sector publico.
+- Escenario: retencion normativa y aprobaciones formales.
+- Fase dominante: cierre.
+- Integracion clave: Confluence.
+- Contrato sugerido: paquetes de evidencia para auditoria externa.
+- Salida prioritaria: manifest de evidencia.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 013
+- Sector: fintech regional.
+- Escenario: API de pagos con JWT federado y backlog regulatorio.
+- Fase dominante: discovery.
+- Integracion clave: Slack/Teams.
+- Contrato sugerido: enrichment de IOCs antes de priorizar incidentes.
+- Salida prioritaria: payload de tickets.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 014
+- Sector: retail omnicanal.
+- Escenario: checkout web con fraude promocional y SaaS terceros.
+- Fase dominante: validacion tecnica.
+- Integracion clave: AWS Security Hub.
+- Contrato sugerido: manifest de evidencia antes de mover artefactos.
+- Salida prioritaria: matriz de cobertura.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 015
+- Sector: healthtech.
+- Escenario: PII y ventanas de cambio restringidas.
+- Fase dominante: priorizacion.
+- Integracion clave: Azure Defender.
+- Contrato sugerido: sincronizacion de findings a backlog con contexto tecnico.
+- Salida prioritaria: timeline de incidente.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 016
+- Sector: SaaS B2B.
+- Escenario: SSO SAML y pipeline de release.
+- Fase dominante: ticketing.
+- Integracion clave: Google SCC.
+- Contrato sugerido: auditoria TLS basica previa a assessment web o API.
+- Salida prioritaria: inventario de activos.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 017
+- Sector: manufactura.
+- Escenario: OT parcialmente conectada y exposicion remota.
+- Fase dominante: retest.
+- Integracion clave: Velociraptor.
+- Contrato sugerido: normalizacion multi-fuente de findings en JSON canonico.
+- Salida prioritaria: json normalizado.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 018
+- Sector: sector publico.
+- Escenario: retencion normativa y aprobaciones formales.
+- Fase dominante: cierre.
+- Integracion clave: Sigma.
+- Contrato sugerido: deteccion de gaps de evidencia antes del reporte final.
+- Salida prioritaria: markdown ejecutivo.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 019
+- Sector: fintech regional.
+- Escenario: API de pagos con JWT federado y backlog regulatorio.
+- Fase dominante: discovery.
+- Integracion clave: Semgrep.
+- Contrato sugerido: clasificacion por dominio primario y secundario.
+- Salida prioritaria: html singlefile.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 020
+- Sector: retail omnicanal.
+- Escenario: checkout web con fraude promocional y SaaS terceros.
+- Fase dominante: validacion tecnica.
+- Integracion clave: Trivy/Syft/Cosign.
+- Contrato sugerido: retest guiado posterior a remediacion.
+- Salida prioritaria: manifest de evidencia.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 021
+- Sector: healthtech.
+- Escenario: PII y ventanas de cambio restringidas.
+- Fase dominante: priorizacion.
+- Integracion clave: Jira.
+- Contrato sugerido: resumen ejecutivo basado en datos verificados.
+- Salida prioritaria: payload de tickets.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 022
+- Sector: SaaS B2B.
+- Escenario: SSO SAML y pipeline de release.
+- Fase dominante: ticketing.
+- Integracion clave: ServiceNow.
+- Contrato sugerido: hand-off SOC a DFIR con enrichment estructurado.
+- Salida prioritaria: matriz de cobertura.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 023
+- Sector: manufactura.
+- Escenario: OT parcialmente conectada y exposicion remota.
+- Fase dominante: retest.
+- Integracion clave: Splunk.
+- Contrato sugerido: control de cambio para scripts con servicios externos.
+- Salida prioritaria: timeline de incidente.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 024
+- Sector: sector publico.
+- Escenario: retencion normativa y aprobaciones formales.
+- Fase dominante: cierre.
+- Integracion clave: OpenSearch.
+- Contrato sugerido: paquetes de evidencia para auditoria externa.
+- Salida prioritaria: inventario de activos.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 025
+- Sector: fintech regional.
+- Escenario: API de pagos con JWT federado y backlog regulatorio.
+- Fase dominante: discovery.
+- Integracion clave: MISP.
+- Contrato sugerido: enrichment de IOCs antes de priorizar incidentes.
+- Salida prioritaria: json normalizado.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 026
+- Sector: retail omnicanal.
+- Escenario: checkout web con fraude promocional y SaaS terceros.
+- Fase dominante: validacion tecnica.
+- Integracion clave: VirusTotal.
+- Contrato sugerido: manifest de evidencia antes de mover artefactos.
+- Salida prioritaria: markdown ejecutivo.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 027
+- Sector: healthtech.
+- Escenario: PII y ventanas de cambio restringidas.
+- Fase dominante: priorizacion.
+- Integracion clave: AbuseIPDB.
+- Contrato sugerido: sincronizacion de findings a backlog con contexto tecnico.
+- Salida prioritaria: html singlefile.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 028
+- Sector: SaaS B2B.
+- Escenario: SSO SAML y pipeline de release.
+- Fase dominante: ticketing.
+- Integracion clave: AlienVault OTX.
+- Contrato sugerido: auditoria TLS basica previa a assessment web o API.
+- Salida prioritaria: manifest de evidencia.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 029
+- Sector: manufactura.
+- Escenario: OT parcialmente conectada y exposicion remota.
+- Fase dominante: retest.
+- Integracion clave: Shodan.
+- Contrato sugerido: normalizacion multi-fuente de findings en JSON canonico.
+- Salida prioritaria: payload de tickets.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 030
+- Sector: sector publico.
+- Escenario: retencion normativa y aprobaciones formales.
+- Fase dominante: cierre.
+- Integracion clave: GitHub Actions.
+- Contrato sugerido: deteccion de gaps de evidencia antes del reporte final.
+- Salida prioritaria: matriz de cobertura.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 031
+- Sector: fintech regional.
+- Escenario: API de pagos con JWT federado y backlog regulatorio.
+- Fase dominante: discovery.
+- Integracion clave: DefectDojo.
+- Contrato sugerido: clasificacion por dominio primario y secundario.
+- Salida prioritaria: timeline de incidente.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 032
+- Sector: retail omnicanal.
+- Escenario: checkout web con fraude promocional y SaaS terceros.
+- Fase dominante: validacion tecnica.
+- Integracion clave: Confluence.
+- Contrato sugerido: retest guiado posterior a remediacion.
+- Salida prioritaria: inventario de activos.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 033
+- Sector: healthtech.
+- Escenario: PII y ventanas de cambio restringidas.
+- Fase dominante: priorizacion.
+- Integracion clave: Slack/Teams.
+- Contrato sugerido: resumen ejecutivo basado en datos verificados.
+- Salida prioritaria: json normalizado.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 034
+- Sector: SaaS B2B.
+- Escenario: SSO SAML y pipeline de release.
+- Fase dominante: ticketing.
+- Integracion clave: AWS Security Hub.
+- Contrato sugerido: hand-off SOC a DFIR con enrichment estructurado.
+- Salida prioritaria: markdown ejecutivo.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 035
+- Sector: manufactura.
+- Escenario: OT parcialmente conectada y exposicion remota.
+- Fase dominante: retest.
+- Integracion clave: Azure Defender.
+- Contrato sugerido: control de cambio para scripts con servicios externos.
+- Salida prioritaria: html singlefile.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 036
+- Sector: sector publico.
+- Escenario: retencion normativa y aprobaciones formales.
+- Fase dominante: cierre.
+- Integracion clave: Google SCC.
+- Contrato sugerido: paquetes de evidencia para auditoria externa.
+- Salida prioritaria: manifest de evidencia.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 037
+- Sector: fintech regional.
+- Escenario: API de pagos con JWT federado y backlog regulatorio.
+- Fase dominante: discovery.
+- Integracion clave: Velociraptor.
+- Contrato sugerido: enrichment de IOCs antes de priorizar incidentes.
+- Salida prioritaria: payload de tickets.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 038
+- Sector: retail omnicanal.
+- Escenario: checkout web con fraude promocional y SaaS terceros.
+- Fase dominante: validacion tecnica.
+- Integracion clave: Sigma.
+- Contrato sugerido: manifest de evidencia antes de mover artefactos.
+- Salida prioritaria: matriz de cobertura.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 039
+- Sector: healthtech.
+- Escenario: PII y ventanas de cambio restringidas.
+- Fase dominante: priorizacion.
+- Integracion clave: Semgrep.
+- Contrato sugerido: sincronizacion de findings a backlog con contexto tecnico.
+- Salida prioritaria: timeline de incidente.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 040
+- Sector: SaaS B2B.
+- Escenario: SSO SAML y pipeline de release.
+- Fase dominante: ticketing.
+- Integracion clave: Trivy/Syft/Cosign.
+- Contrato sugerido: auditoria TLS basica previa a assessment web o API.
+- Salida prioritaria: inventario de activos.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 041
+- Sector: manufactura.
+- Escenario: OT parcialmente conectada y exposicion remota.
+- Fase dominante: retest.
+- Integracion clave: Jira.
+- Contrato sugerido: normalizacion multi-fuente de findings en JSON canonico.
+- Salida prioritaria: json normalizado.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 042
+- Sector: sector publico.
+- Escenario: retencion normativa y aprobaciones formales.
+- Fase dominante: cierre.
+- Integracion clave: ServiceNow.
+- Contrato sugerido: deteccion de gaps de evidencia antes del reporte final.
+- Salida prioritaria: markdown ejecutivo.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 043
+- Sector: fintech regional.
+- Escenario: API de pagos con JWT federado y backlog regulatorio.
+- Fase dominante: discovery.
+- Integracion clave: Splunk.
+- Contrato sugerido: clasificacion por dominio primario y secundario.
+- Salida prioritaria: html singlefile.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 044
+- Sector: retail omnicanal.
+- Escenario: checkout web con fraude promocional y SaaS terceros.
+- Fase dominante: validacion tecnica.
+- Integracion clave: OpenSearch.
+- Contrato sugerido: retest guiado posterior a remediacion.
+- Salida prioritaria: manifest de evidencia.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 045
+- Sector: healthtech.
+- Escenario: PII y ventanas de cambio restringidas.
+- Fase dominante: priorizacion.
+- Integracion clave: MISP.
+- Contrato sugerido: resumen ejecutivo basado en datos verificados.
+- Salida prioritaria: payload de tickets.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 046
+- Sector: SaaS B2B.
+- Escenario: SSO SAML y pipeline de release.
+- Fase dominante: ticketing.
+- Integracion clave: VirusTotal.
+- Contrato sugerido: hand-off SOC a DFIR con enrichment estructurado.
+- Salida prioritaria: matriz de cobertura.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 047
+- Sector: manufactura.
+- Escenario: OT parcialmente conectada y exposicion remota.
+- Fase dominante: retest.
+- Integracion clave: AbuseIPDB.
+- Contrato sugerido: control de cambio para scripts con servicios externos.
+- Salida prioritaria: timeline de incidente.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 048
+- Sector: sector publico.
+- Escenario: retencion normativa y aprobaciones formales.
+- Fase dominante: cierre.
+- Integracion clave: AlienVault OTX.
+- Contrato sugerido: paquetes de evidencia para auditoria externa.
+- Salida prioritaria: inventario de activos.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 049
+- Sector: fintech regional.
+- Escenario: API de pagos con JWT federado y backlog regulatorio.
+- Fase dominante: discovery.
+- Integracion clave: Shodan.
+- Contrato sugerido: enrichment de IOCs antes de priorizar incidentes.
+- Salida prioritaria: json normalizado.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 050
+- Sector: retail omnicanal.
+- Escenario: checkout web con fraude promocional y SaaS terceros.
+- Fase dominante: validacion tecnica.
+- Integracion clave: GitHub Actions.
+- Contrato sugerido: manifest de evidencia antes de mover artefactos.
+- Salida prioritaria: markdown ejecutivo.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 051
+- Sector: healthtech.
+- Escenario: PII y ventanas de cambio restringidas.
+- Fase dominante: priorizacion.
+- Integracion clave: DefectDojo.
+- Contrato sugerido: sincronizacion de findings a backlog con contexto tecnico.
+- Salida prioritaria: html singlefile.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 052
+- Sector: SaaS B2B.
+- Escenario: SSO SAML y pipeline de release.
+- Fase dominante: ticketing.
+- Integracion clave: Confluence.
+- Contrato sugerido: auditoria TLS basica previa a assessment web o API.
+- Salida prioritaria: manifest de evidencia.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 053
+- Sector: manufactura.
+- Escenario: OT parcialmente conectada y exposicion remota.
+- Fase dominante: retest.
+- Integracion clave: Slack/Teams.
+- Contrato sugerido: normalizacion multi-fuente de findings en JSON canonico.
+- Salida prioritaria: payload de tickets.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 054
+- Sector: sector publico.
+- Escenario: retencion normativa y aprobaciones formales.
+- Fase dominante: cierre.
+- Integracion clave: AWS Security Hub.
+- Contrato sugerido: deteccion de gaps de evidencia antes del reporte final.
+- Salida prioritaria: matriz de cobertura.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 055
+- Sector: fintech regional.
+- Escenario: API de pagos con JWT federado y backlog regulatorio.
+- Fase dominante: discovery.
+- Integracion clave: Azure Defender.
+- Contrato sugerido: clasificacion por dominio primario y secundario.
+- Salida prioritaria: timeline de incidente.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 056
+- Sector: retail omnicanal.
+- Escenario: checkout web con fraude promocional y SaaS terceros.
+- Fase dominante: validacion tecnica.
+- Integracion clave: Google SCC.
+- Contrato sugerido: retest guiado posterior a remediacion.
+- Salida prioritaria: inventario de activos.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 057
+- Sector: healthtech.
+- Escenario: PII y ventanas de cambio restringidas.
+- Fase dominante: priorizacion.
+- Integracion clave: Velociraptor.
+- Contrato sugerido: resumen ejecutivo basado en datos verificados.
+- Salida prioritaria: json normalizado.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 058
+- Sector: SaaS B2B.
+- Escenario: SSO SAML y pipeline de release.
+- Fase dominante: ticketing.
+- Integracion clave: Sigma.
+- Contrato sugerido: hand-off SOC a DFIR con enrichment estructurado.
+- Salida prioritaria: markdown ejecutivo.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 059
+- Sector: manufactura.
+- Escenario: OT parcialmente conectada y exposicion remota.
+- Fase dominante: retest.
+- Integracion clave: Semgrep.
+- Contrato sugerido: control de cambio para scripts con servicios externos.
+- Salida prioritaria: html singlefile.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 060
+- Sector: sector publico.
+- Escenario: retencion normativa y aprobaciones formales.
+- Fase dominante: cierre.
+- Integracion clave: Trivy/Syft/Cosign.
+- Contrato sugerido: paquetes de evidencia para auditoria externa.
+- Salida prioritaria: manifest de evidencia.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 061
+- Sector: fintech regional.
+- Escenario: API de pagos con JWT federado y backlog regulatorio.
+- Fase dominante: discovery.
+- Integracion clave: Jira.
+- Contrato sugerido: enrichment de IOCs antes de priorizar incidentes.
+- Salida prioritaria: payload de tickets.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 062
+- Sector: retail omnicanal.
+- Escenario: checkout web con fraude promocional y SaaS terceros.
+- Fase dominante: validacion tecnica.
+- Integracion clave: ServiceNow.
+- Contrato sugerido: manifest de evidencia antes de mover artefactos.
+- Salida prioritaria: matriz de cobertura.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 063
+- Sector: healthtech.
+- Escenario: PII y ventanas de cambio restringidas.
+- Fase dominante: priorizacion.
+- Integracion clave: Splunk.
+- Contrato sugerido: sincronizacion de findings a backlog con contexto tecnico.
+- Salida prioritaria: timeline de incidente.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 064
+- Sector: SaaS B2B.
+- Escenario: SSO SAML y pipeline de release.
+- Fase dominante: ticketing.
+- Integracion clave: OpenSearch.
+- Contrato sugerido: auditoria TLS basica previa a assessment web o API.
+- Salida prioritaria: inventario de activos.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 065
+- Sector: manufactura.
+- Escenario: OT parcialmente conectada y exposicion remota.
+- Fase dominante: retest.
+- Integracion clave: MISP.
+- Contrato sugerido: normalizacion multi-fuente de findings en JSON canonico.
+- Salida prioritaria: json normalizado.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 066
+- Sector: sector publico.
+- Escenario: retencion normativa y aprobaciones formales.
+- Fase dominante: cierre.
+- Integracion clave: VirusTotal.
+- Contrato sugerido: deteccion de gaps de evidencia antes del reporte final.
+- Salida prioritaria: markdown ejecutivo.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 067
+- Sector: fintech regional.
+- Escenario: API de pagos con JWT federado y backlog regulatorio.
+- Fase dominante: discovery.
+- Integracion clave: AbuseIPDB.
+- Contrato sugerido: clasificacion por dominio primario y secundario.
+- Salida prioritaria: html singlefile.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 068
+- Sector: retail omnicanal.
+- Escenario: checkout web con fraude promocional y SaaS terceros.
+- Fase dominante: validacion tecnica.
+- Integracion clave: AlienVault OTX.
+- Contrato sugerido: retest guiado posterior a remediacion.
+- Salida prioritaria: manifest de evidencia.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 069
+- Sector: healthtech.
+- Escenario: PII y ventanas de cambio restringidas.
+- Fase dominante: priorizacion.
+- Integracion clave: Shodan.
+- Contrato sugerido: resumen ejecutivo basado en datos verificados.
+- Salida prioritaria: payload de tickets.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 070
+- Sector: SaaS B2B.
+- Escenario: SSO SAML y pipeline de release.
+- Fase dominante: ticketing.
+- Integracion clave: GitHub Actions.
+- Contrato sugerido: hand-off SOC a DFIR con enrichment estructurado.
+- Salida prioritaria: matriz de cobertura.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 071
+- Sector: manufactura.
+- Escenario: OT parcialmente conectada y exposicion remota.
+- Fase dominante: retest.
+- Integracion clave: DefectDojo.
+- Contrato sugerido: control de cambio para scripts con servicios externos.
+- Salida prioritaria: timeline de incidente.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 072
+- Sector: sector publico.
+- Escenario: retencion normativa y aprobaciones formales.
+- Fase dominante: cierre.
+- Integracion clave: Confluence.
+- Contrato sugerido: paquetes de evidencia para auditoria externa.
+- Salida prioritaria: inventario de activos.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 073
+- Sector: fintech regional.
+- Escenario: API de pagos con JWT federado y backlog regulatorio.
+- Fase dominante: discovery.
+- Integracion clave: Slack/Teams.
+- Contrato sugerido: enrichment de IOCs antes de priorizar incidentes.
+- Salida prioritaria: json normalizado.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 074
+- Sector: retail omnicanal.
+- Escenario: checkout web con fraude promocional y SaaS terceros.
+- Fase dominante: validacion tecnica.
+- Integracion clave: AWS Security Hub.
+- Contrato sugerido: manifest de evidencia antes de mover artefactos.
+- Salida prioritaria: markdown ejecutivo.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 075
+- Sector: healthtech.
+- Escenario: PII y ventanas de cambio restringidas.
+- Fase dominante: priorizacion.
+- Integracion clave: Azure Defender.
+- Contrato sugerido: sincronizacion de findings a backlog con contexto tecnico.
+- Salida prioritaria: html singlefile.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 076
+- Sector: SaaS B2B.
+- Escenario: SSO SAML y pipeline de release.
+- Fase dominante: ticketing.
+- Integracion clave: Google SCC.
+- Contrato sugerido: auditoria TLS basica previa a assessment web o API.
+- Salida prioritaria: manifest de evidencia.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 077
+- Sector: manufactura.
+- Escenario: OT parcialmente conectada y exposicion remota.
+- Fase dominante: retest.
+- Integracion clave: Velociraptor.
+- Contrato sugerido: normalizacion multi-fuente de findings en JSON canonico.
+- Salida prioritaria: payload de tickets.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 078
+- Sector: sector publico.
+- Escenario: retencion normativa y aprobaciones formales.
+- Fase dominante: cierre.
+- Integracion clave: Sigma.
+- Contrato sugerido: deteccion de gaps de evidencia antes del reporte final.
+- Salida prioritaria: matriz de cobertura.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 079
+- Sector: fintech regional.
+- Escenario: API de pagos con JWT federado y backlog regulatorio.
+- Fase dominante: discovery.
+- Integracion clave: Semgrep.
+- Contrato sugerido: clasificacion por dominio primario y secundario.
+- Salida prioritaria: timeline de incidente.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 080
+- Sector: retail omnicanal.
+- Escenario: checkout web con fraude promocional y SaaS terceros.
+- Fase dominante: validacion tecnica.
+- Integracion clave: Trivy/Syft/Cosign.
+- Contrato sugerido: retest guiado posterior a remediacion.
+- Salida prioritaria: inventario de activos.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 081
+- Sector: healthtech.
+- Escenario: PII y ventanas de cambio restringidas.
+- Fase dominante: priorizacion.
+- Integracion clave: Jira.
+- Contrato sugerido: resumen ejecutivo basado en datos verificados.
+- Salida prioritaria: json normalizado.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 082
+- Sector: SaaS B2B.
+- Escenario: SSO SAML y pipeline de release.
+- Fase dominante: ticketing.
+- Integracion clave: ServiceNow.
+- Contrato sugerido: hand-off SOC a DFIR con enrichment estructurado.
+- Salida prioritaria: markdown ejecutivo.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 083
+- Sector: manufactura.
+- Escenario: OT parcialmente conectada y exposicion remota.
+- Fase dominante: retest.
+- Integracion clave: Splunk.
+- Contrato sugerido: control de cambio para scripts con servicios externos.
+- Salida prioritaria: html singlefile.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 084
+- Sector: sector publico.
+- Escenario: retencion normativa y aprobaciones formales.
+- Fase dominante: cierre.
+- Integracion clave: OpenSearch.
+- Contrato sugerido: paquetes de evidencia para auditoria externa.
+- Salida prioritaria: manifest de evidencia.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 085
+- Sector: fintech regional.
+- Escenario: API de pagos con JWT federado y backlog regulatorio.
+- Fase dominante: discovery.
+- Integracion clave: MISP.
+- Contrato sugerido: enrichment de IOCs antes de priorizar incidentes.
+- Salida prioritaria: payload de tickets.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 086
+- Sector: retail omnicanal.
+- Escenario: checkout web con fraude promocional y SaaS terceros.
+- Fase dominante: validacion tecnica.
+- Integracion clave: VirusTotal.
+- Contrato sugerido: manifest de evidencia antes de mover artefactos.
+- Salida prioritaria: matriz de cobertura.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 087
+- Sector: healthtech.
+- Escenario: PII y ventanas de cambio restringidas.
+- Fase dominante: priorizacion.
+- Integracion clave: AbuseIPDB.
+- Contrato sugerido: sincronizacion de findings a backlog con contexto tecnico.
+- Salida prioritaria: timeline de incidente.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 088
+- Sector: SaaS B2B.
+- Escenario: SSO SAML y pipeline de release.
+- Fase dominante: ticketing.
+- Integracion clave: AlienVault OTX.
+- Contrato sugerido: auditoria TLS basica previa a assessment web o API.
+- Salida prioritaria: inventario de activos.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 089
+- Sector: manufactura.
+- Escenario: OT parcialmente conectada y exposicion remota.
+- Fase dominante: retest.
+- Integracion clave: Shodan.
+- Contrato sugerido: normalizacion multi-fuente de findings en JSON canonico.
+- Salida prioritaria: json normalizado.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 090
+- Sector: sector publico.
+- Escenario: retencion normativa y aprobaciones formales.
+- Fase dominante: cierre.
+- Integracion clave: GitHub Actions.
+- Contrato sugerido: deteccion de gaps de evidencia antes del reporte final.
+- Salida prioritaria: markdown ejecutivo.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 091
+- Sector: fintech regional.
+- Escenario: API de pagos con JWT federado y backlog regulatorio.
+- Fase dominante: discovery.
+- Integracion clave: DefectDojo.
+- Contrato sugerido: clasificacion por dominio primario y secundario.
+- Salida prioritaria: html singlefile.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 092
+- Sector: retail omnicanal.
+- Escenario: checkout web con fraude promocional y SaaS terceros.
+- Fase dominante: validacion tecnica.
+- Integracion clave: Confluence.
+- Contrato sugerido: retest guiado posterior a remediacion.
+- Salida prioritaria: manifest de evidencia.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 093
+- Sector: healthtech.
+- Escenario: PII y ventanas de cambio restringidas.
+- Fase dominante: priorizacion.
+- Integracion clave: Slack/Teams.
+- Contrato sugerido: resumen ejecutivo basado en datos verificados.
+- Salida prioritaria: payload de tickets.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 094
+- Sector: SaaS B2B.
+- Escenario: SSO SAML y pipeline de release.
+- Fase dominante: ticketing.
+- Integracion clave: AWS Security Hub.
+- Contrato sugerido: hand-off SOC a DFIR con enrichment estructurado.
+- Salida prioritaria: matriz de cobertura.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 095
+- Sector: manufactura.
+- Escenario: OT parcialmente conectada y exposicion remota.
+- Fase dominante: retest.
+- Integracion clave: Azure Defender.
+- Contrato sugerido: control de cambio para scripts con servicios externos.
+- Salida prioritaria: timeline de incidente.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 096
+- Sector: sector publico.
+- Escenario: retencion normativa y aprobaciones formales.
+- Fase dominante: cierre.
+- Integracion clave: Google SCC.
+- Contrato sugerido: paquetes de evidencia para auditoria externa.
+- Salida prioritaria: inventario de activos.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 097
+- Sector: fintech regional.
+- Escenario: API de pagos con JWT federado y backlog regulatorio.
+- Fase dominante: discovery.
+- Integracion clave: Velociraptor.
+- Contrato sugerido: enrichment de IOCs antes de priorizar incidentes.
+- Salida prioritaria: json normalizado.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 098
+- Sector: retail omnicanal.
+- Escenario: checkout web con fraude promocional y SaaS terceros.
+- Fase dominante: validacion tecnica.
+- Integracion clave: Sigma.
+- Contrato sugerido: manifest de evidencia antes de mover artefactos.
+- Salida prioritaria: markdown ejecutivo.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 099
+- Sector: healthtech.
+- Escenario: PII y ventanas de cambio restringidas.
+- Fase dominante: priorizacion.
+- Integracion clave: Semgrep.
+- Contrato sugerido: sincronizacion de findings a backlog con contexto tecnico.
+- Salida prioritaria: html singlefile.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 100
+- Sector: SaaS B2B.
+- Escenario: SSO SAML y pipeline de release.
+- Fase dominante: ticketing.
+- Integracion clave: Trivy/Syft/Cosign.
+- Contrato sugerido: auditoria TLS basica previa a assessment web o API.
+- Salida prioritaria: manifest de evidencia.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 101
+- Sector: manufactura.
+- Escenario: OT parcialmente conectada y exposicion remota.
+- Fase dominante: retest.
+- Integracion clave: Jira.
+- Contrato sugerido: normalizacion multi-fuente de findings en JSON canonico.
+- Salida prioritaria: payload de tickets.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 102
+- Sector: sector publico.
+- Escenario: retencion normativa y aprobaciones formales.
+- Fase dominante: cierre.
+- Integracion clave: ServiceNow.
+- Contrato sugerido: deteccion de gaps de evidencia antes del reporte final.
+- Salida prioritaria: matriz de cobertura.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 103
+- Sector: fintech regional.
+- Escenario: API de pagos con JWT federado y backlog regulatorio.
+- Fase dominante: discovery.
+- Integracion clave: Splunk.
+- Contrato sugerido: clasificacion por dominio primario y secundario.
+- Salida prioritaria: timeline de incidente.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 104
+- Sector: retail omnicanal.
+- Escenario: checkout web con fraude promocional y SaaS terceros.
+- Fase dominante: validacion tecnica.
+- Integracion clave: OpenSearch.
+- Contrato sugerido: retest guiado posterior a remediacion.
+- Salida prioritaria: inventario de activos.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 105
+- Sector: healthtech.
+- Escenario: PII y ventanas de cambio restringidas.
+- Fase dominante: priorizacion.
+- Integracion clave: MISP.
+- Contrato sugerido: resumen ejecutivo basado en datos verificados.
+- Salida prioritaria: json normalizado.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 106
+- Sector: SaaS B2B.
+- Escenario: SSO SAML y pipeline de release.
+- Fase dominante: ticketing.
+- Integracion clave: VirusTotal.
+- Contrato sugerido: hand-off SOC a DFIR con enrichment estructurado.
+- Salida prioritaria: markdown ejecutivo.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 107
+- Sector: manufactura.
+- Escenario: OT parcialmente conectada y exposicion remota.
+- Fase dominante: retest.
+- Integracion clave: AbuseIPDB.
+- Contrato sugerido: control de cambio para scripts con servicios externos.
+- Salida prioritaria: html singlefile.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 108
+- Sector: sector publico.
+- Escenario: retencion normativa y aprobaciones formales.
+- Fase dominante: cierre.
+- Integracion clave: AlienVault OTX.
+- Contrato sugerido: paquetes de evidencia para auditoria externa.
+- Salida prioritaria: manifest de evidencia.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 109
+- Sector: fintech regional.
+- Escenario: API de pagos con JWT federado y backlog regulatorio.
+- Fase dominante: discovery.
+- Integracion clave: Shodan.
+- Contrato sugerido: enrichment de IOCs antes de priorizar incidentes.
+- Salida prioritaria: payload de tickets.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 110
+- Sector: retail omnicanal.
+- Escenario: checkout web con fraude promocional y SaaS terceros.
+- Fase dominante: validacion tecnica.
+- Integracion clave: GitHub Actions.
+- Contrato sugerido: manifest de evidencia antes de mover artefactos.
+- Salida prioritaria: matriz de cobertura.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 111
+- Sector: healthtech.
+- Escenario: PII y ventanas de cambio restringidas.
+- Fase dominante: priorizacion.
+- Integracion clave: DefectDojo.
+- Contrato sugerido: sincronizacion de findings a backlog con contexto tecnico.
+- Salida prioritaria: timeline de incidente.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 112
+- Sector: SaaS B2B.
+- Escenario: SSO SAML y pipeline de release.
+- Fase dominante: ticketing.
+- Integracion clave: Confluence.
+- Contrato sugerido: auditoria TLS basica previa a assessment web o API.
+- Salida prioritaria: inventario de activos.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 113
+- Sector: manufactura.
+- Escenario: OT parcialmente conectada y exposicion remota.
+- Fase dominante: retest.
+- Integracion clave: Slack/Teams.
+- Contrato sugerido: normalizacion multi-fuente de findings en JSON canonico.
+- Salida prioritaria: json normalizado.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 114
+- Sector: sector publico.
+- Escenario: retencion normativa y aprobaciones formales.
+- Fase dominante: cierre.
+- Integracion clave: AWS Security Hub.
+- Contrato sugerido: deteccion de gaps de evidencia antes del reporte final.
+- Salida prioritaria: markdown ejecutivo.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 115
+- Sector: fintech regional.
+- Escenario: API de pagos con JWT federado y backlog regulatorio.
+- Fase dominante: discovery.
+- Integracion clave: Azure Defender.
+- Contrato sugerido: clasificacion por dominio primario y secundario.
+- Salida prioritaria: html singlefile.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 116
+- Sector: retail omnicanal.
+- Escenario: checkout web con fraude promocional y SaaS terceros.
+- Fase dominante: validacion tecnica.
+- Integracion clave: Google SCC.
+- Contrato sugerido: retest guiado posterior a remediacion.
+- Salida prioritaria: manifest de evidencia.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 117
+- Sector: healthtech.
+- Escenario: PII y ventanas de cambio restringidas.
+- Fase dominante: priorizacion.
+- Integracion clave: Velociraptor.
+- Contrato sugerido: resumen ejecutivo basado en datos verificados.
+- Salida prioritaria: payload de tickets.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 118
+- Sector: SaaS B2B.
+- Escenario: SSO SAML y pipeline de release.
+- Fase dominante: ticketing.
+- Integracion clave: Sigma.
+- Contrato sugerido: hand-off SOC a DFIR con enrichment estructurado.
+- Salida prioritaria: matriz de cobertura.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+
+### Caso extendido 119
+- Sector: manufactura.
+- Escenario: OT parcialmente conectada y exposicion remota.
+- Fase dominante: retest.
+- Integracion clave: Semgrep.
+- Contrato sugerido: control de cambio para scripts con servicios externos.
+- Salida prioritaria: timeline de incidente.
+- Skill principal: evaluar alcance, restricciones, autorizacion y riesgo de exceso.
+- Modulos a cargar: referencias primarias, secundarias y playbook especifico.
+- Evidencia requerida: artefactos origen, enrichment opcional, decision y hash de salida.
+- Condicion de stop: datos insuficientes, owner ausente o actividad fuera de alcance.
+- Resultado esperado: accion inmediata, backlog claro y control de seguimiento.
+

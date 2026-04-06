@@ -1,52 +1,52 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
-report_skeleton.py - Genera plantilla de reporte de evaluación de seguridad.
+report_skeleton.py - Genera plantilla de reporte de evaluaciÃ³n de seguridad.
 
-Crea esqueleto automatizado de reporte Markdown con secciones estándar
-para evaluaciones de seguridad autorizadas, pentesting ético y auditorías.
+Crea esqueleto automatizado de reporte Markdown con secciones estÃ¡ndar
+para evaluaciones de seguridad autorizadas, pentesting Ã©tico y auditorÃ­as.
 
 Uso:
     python3 report_skeleton.py <salida.md>
     python3 report_skeleton.py reporte-cliente-2024.md
 
 Secciones generadas:
-- Información ejecutiva
+- InformaciÃ³n ejecutiva
 - Alcance y limitaciones
-- Metodología
+- MetodologÃ­a
 - Hallazgos clasificados por severidad
 - Riesggo agregado
 - Recomendaciones priorizadas
-- Plan de revalidación
+- Plan de revalidaciÃ³n
 - Evidencia y anexos
 
-La plantilla está formateada para Markdown y lista para editar.
+La plantilla estÃ¡ formateada para Markdown y lista para editar.
 """
 
 import sys
 from datetime import datetime
 
 
-TEMPLATE = """# Reporte de Evaluación de Seguridad - ORION-HACKING
+TEMPLATE = """# Reporte de EvaluaciÃ³n de Seguridad - ORION-HACKING
 
-**Información Confidencial**
+**InformaciÃ³n Confidencial**
 
 ---
 
 ## Resumen Ejecutivo
 
-### Propósito
-Evaluación estructurada de seguridad enfocada en riesgos identificables y remediación práctica.
+### PropÃ³sito
+EvaluaciÃ³n estructurada de seguridad enfocada en riesgos identificables y remediaciÃ³n prÃ¡ctica.
 
 ### Alcance
-- **Objetivos**: [Describir qué se evaluó]
+- **Objetivos**: [Describir quÃ© se evaluÃ³]
 - **Sistemas**: [Listar sistemas/dominios particulares]
 - **Fechas**: {date_generated}
 - **Evaluador**: ORION-HACKING Security Team
-- **Autorización**: [Documento/referencia de autorización]
+- **AutorizaciÃ³n**: [Documento/referencia de autorizaciÃ³n]
 
-### Ubicación Ejecutiva
+### UbicaciÃ³n Ejecutiva
 - **Total Hallazgos**: [#]
-  - Críticos: [#]
+  - CrÃ­ticos: [#]
   - Altos: [#]
   - Medios: [#]
   - Bajos: [#]
@@ -57,146 +57,146 @@ Evaluación estructurada de seguridad enfocada en riesgos identificables y remed
 
 ## 1. Alcance y Limitaciones
 
-### 1.1 Alcance de la Evaluación
+### 1.1 Alcance de la EvaluaciÃ³n
 
 #### Incluido
 - [Sistema o componente 1]
 - [Sistema o componente 2]
-- [Dominios de evaluación específicos]
+- [Dominios de evaluaciÃ³n especÃ­ficos]
 
 #### Excluido
 - [Sistemas/componentes fuera de alcance]
-- [Razones técnicas o de negocio]
+- [Razones tÃ©cnicas o de negocio]
 
 ### 1.2 Limitaciones
 
-- **Técnicas**: [Restricciones de herramientas, acceso]
-- **Temporales**: [Período de evaluación]
-- **Documentales**: [Información disponible]
+- **TÃ©cnicas**: [Restricciones de herramientas, acceso]
+- **Temporales**: [PerÃ­odo de evaluaciÃ³n]
+- **Documentales**: [InformaciÃ³n disponible]
 - **Operacionales**: [Restricciones de downtime, ventanas]
 
 ### 1.3 Disclaimers
 
-Esta evaluación representa el estado de seguridad en la fecha de evaluación.
+Esta evaluaciÃ³n representa el estado de seguridad en la fecha de evaluaciÃ³n.
 Cambios posteriores o configuraciones no revisadas pueden afectar los hallazgos.
 
 ---
 
-## 2. Metodología
+## 2. MetodologÃ­a
 
 ### 2.1 Enfoque
-Se utilizó metodología basada en:
+Se utilizÃ³ metodologÃ­a basada en:
 - OWASP Testing Guide (para aplicaciones web)
 - NIST Cybersecurity Framework (para gobernanza)
 - CIS Controls v8 (para baselines)
-- Análisis de amenazas específicas del negocio
+- AnÃ¡lisis de amenazas especÃ­ficas del negocio
 
 ### 2.2 Fases
 
-#### Fase 1: Reconocimiento y Planificación
-- Recopilación de requisitos
+#### Fase 1: Reconocimiento y PlanificaciÃ³n
+- RecopilaciÃ³n de requisitos
 - Asset discovery
 - Mapeo de arquitectura
-- Definición de escenarios de riesgo
+- DefiniciÃ³n de escenarios de riesgo
 
-#### Fase 2: Enumeración y Análisis
-- Identificación de servicios y versiones
-- Análisis de configuración
-- Evaluación de controles
-- Detección de patrones inseguros
+#### Fase 2: EnumeraciÃ³n y AnÃ¡lisis
+- IdentificaciÃ³n de servicios y versiones
+- AnÃ¡lisis de configuraciÃ³n
+- EvaluaciÃ³n de controles
+- DetecciÃ³n de patrones inseguros
 
-#### Fase 3: Validación de Hallazgos
+#### Fase 3: ValidaciÃ³n de Hallazgos
 - Pruebas de explotabilidad (donde aplicable)
-- Confirmación de riesgos
-- Evaluación de impacto
-- Valoración de severidad
+- ConfirmaciÃ³n de riesgos
+- EvaluaciÃ³n de impacto
+- ValoraciÃ³n de severidad
 
-#### Fase 4: Documentación y Recomendación
-- Clasificación según CVSS v3.1
-- Elaboración de recomendaciones prácticas
-- Estimación de esfuerzo de remediación
-- Priorización
+#### Fase 4: DocumentaciÃ³n y RecomendaciÃ³n
+- ClasificaciÃ³n segÃºn CVSS v3.1
+- ElaboraciÃ³n de recomendaciones prÃ¡cticas
+- EstimaciÃ³n de esfuerzo de remediaciÃ³n
+- PriorizaciÃ³n
 
 ### 2.3 Herramientas Utilizadas
-- Auditoría HTTP (http_surface_audit.py)
-- Análisis documental (check_integrity.py)
-- Normalización de hallazgos (normalize_findings.py)
-- Herramientas manuales y custom per evaluación
+- AuditorÃ­a HTTP (http_surface_audit.py)
+- AnÃ¡lisis documental (check_integrity.py)
+- NormalizaciÃ³n de hallazgos (normalize_findings.py)
+- Herramientas manuales y custom per evaluaciÃ³n
 
 ---
 
 ## 3. Hallazgos
 
-### 3.1 Hallazgos Críticos
+### 3.1 Hallazgos CrÃ­ticos
 
 > Afectan directamente la confidencialidad, integridad o disponibilidad de sistemas.
-> Requieren remediación inmediata.
+> Requieren remediaciÃ³n inmediata.
 
-#### HALL-XXX-001: [Título del hallazgo crítico]
+#### HALL-XXX-001: [TÃ­tulo del hallazgo crÃ­tico]
 
-**Severidad**: CRÍTICA  
-**Componente**: [Sistema/Aplicación]  
-**CVSS**: 9.0 | Esfuerzo Remediación: 7/10  
+**Severidad**: CRÃTICA  
+**Componente**: [Sistema/AplicaciÃ³n]  
+**CVSS**: 9.0 | Esfuerzo RemediaciÃ³n: 7/10  
 **CWE**: CWE-XXX
 
-**Descripción**:
-Descripción técnica detallada del problema identificado.
+**DescripciÃ³n**:
+DescripciÃ³n tÃ©cnica detallada del problema identificado.
 
 **Evidencia**:
-- Prueba 1: [Captura/salida específica]
-- Prueba 2: [Pasos de reproducción]
-- Impacto Demostrado: [Qué se puede lograr]
+- Prueba 1: [Captura/salida especÃ­fica]
+- Prueba 2: [Pasos de reproducciÃ³n]
+- Impacto Demostrado: [QuÃ© se puede lograr]
 
-**Recomendación**:
-Acciones específicas para remediar:
+**RecomendaciÃ³n**:
+Acciones especÃ­ficas para remediar:
 1. Paso 1
 2. Paso 2
-3. Validación de remediación
+3. ValidaciÃ³n de remediaciÃ³n
 
 **Referencias**:
 - https://owasp.org/...
-- CWE-XXX: [Descripción]
+- CWE-XXX: [DescripciÃ³n]
 
 ---
 
 ### 3.2 Hallazgos Altos
 
-#### HALL-XXX-002: [Título]
+#### HALL-XXX-002: [TÃ­tulo]
 
 **Severidad**: ALTA  
 **Componente**: [Sistema]  
-**Esfuerzo Remediación**: 5/10  
+**Esfuerzo RemediaciÃ³n**: 5/10  
 
-**Descripción**: [Descripción técnica]
+**DescripciÃ³n**: [DescripciÃ³n tÃ©cnica]
 
-**Evidencia**: [Pruebas específicas]
+**Evidencia**: [Pruebas especÃ­ficas]
 
-**Recomendación**: [Pasos concretos]
+**RecomendaciÃ³n**: [Pasos concretos]
 
 ---
 
 ### 3.3 Hallazgos Medios
 
-#### HALL-XXX-003: [Título]
+#### HALL-XXX-003: [TÃ­tulo]
 
 **Severidad**: MEDIA  
 **Componente**: [Sistema]  
-**Esfuerzo Remediación**: 3/10  
+**Esfuerzo RemediaciÃ³n**: 3/10  
 
-**Descripción**: [Descripción técnica]
+**DescripciÃ³n**: [DescripciÃ³n tÃ©cnica]
 
-**Recomendación**: [Acciones sugeridas]
+**RecomendaciÃ³n**: [Acciones sugeridas]
 
 ---
 
 ### 3.4 Hallazgos Bajos e Informativos
 
-#### HALL-XXX-004: [Título]
-- **BAJA**: [Descripción breve]
-- **Recomendación**: [Mejora sugerida]
+#### HALL-XXX-004: [TÃ­tulo]
+- **BAJA**: [DescripciÃ³n breve]
+- **RecomendaciÃ³n**: [Mejora sugerida]
 
-#### HALL-XXX-005: [Título]
-- **INFORMATIVO**: [Observación no urgente]
+#### HALL-XXX-005: [TÃ­tulo]
+- **INFORMATIVO**: [ObservaciÃ³n no urgente]
 
 ---
 
@@ -206,41 +206,41 @@ Acciones específicas para remediar:
 
 | Severidad | # | Esfuerzo Promedio | Riesgo Residual |
 |-----------|---|-------------------|-----------------|
-| Críticos  | X | X/10              | Alto            |
+| CrÃ­ticos  | X | X/10              | Alto            |
 | Altos     | X | X/10              | Medio-Alto      |
 | Medios    | X | X/10              | Medio           |
 | Bajos     | X | X/10              | Bajo            |
 
-### 4.2 Timeline de Remediación Sugerida
+### 4.2 Timeline de RemediaciÃ³n Sugerida
 
 ```
-Trimestre 1: Críticos + Altos (reducir riesgo máximo)
+Trimestre 1: CrÃ­ticos + Altos (reducir riesgo mÃ¡ximo)
 Trimestre 2: Medios + inicio de preventivos
-Trimestre 3: Validación y pruebas de seguridad
-Trimestre 4: Revisión y planificación para año siguiente
+Trimestre 3: ValidaciÃ³n y pruebas de seguridad
+Trimestre 4: RevisiÃ³n y planificaciÃ³n para aÃ±o siguiente
 ```
 
 ### 4.3 Factores de Riesgo
 
 - **Madurez de controles**: [Estado actual]
-- **Velocidad de evolución**: [Cambios frecuentes = mayor riesgo]
-- **Dependencias críticas**: [Servicios/proveedores]
-- **Amenazas históricas**: [Incidentes previos]
+- **Velocidad de evoluciÃ³n**: [Cambios frecuentes = mayor riesgo]
+- **Dependencias crÃ­ticas**: [Servicios/proveedores]
+- **Amenazas histÃ³ricas**: [Incidentes previos]
 
 ---
 
 ## 5. Recomendaciones Priorizadas
 
-### 5.1 Corto Plazo (0-30 días)
+### 5.1 Corto Plazo (0-30 dÃ­as)
 
-1. **[Acción 1]** - Remedia HALL-XXX-001
+1. **[AcciÃ³n 1]** - Remedia HALL-XXX-001
    - Responsable: [Equipo]
-   - Validación: [Prueba específica]
+   - ValidaciÃ³n: [Prueba especÃ­fica]
    - Riesgo residual: Bajo
 
-2. **[Acción 2]** - Remedia HALL-XXX-002
+2. **[AcciÃ³n 2]** - Remedia HALL-XXX-002
    - Responsable: [Equipo]
-   - Validación: [Cómo verificar]
+   - ValidaciÃ³n: [CÃ³mo verificar]
 
 ### 5.2 Mediano Plazo (1-3 meses)
 
@@ -250,27 +250,27 @@ Trimestre 4: Revisión y planificación para año siguiente
 
 ### 5.3 Largo Plazo (3-12 meses)
 
-- [Transformación de arquitectura si aplica]
+- [TransformaciÃ³n de arquitectura si aplica]
 - [Programa de seguridad proactiva]
 - [Mejora continua]
 
 ---
 
-## 6. Plan de Revalidación
+## 6. Plan de RevalidaciÃ³n
 
 ### 6.1 Cronograma
 
-- **Evaluación de Corte**: {date_generated}
-- **Primera Revalidación**: [Fecha + 90 días]
-- **Segunda Revalidación**: [Fecha + 180 días]
-- **Evaluación Completa**: [Fecha + 365 días]
+- **EvaluaciÃ³n de Corte**: {date_generated}
+- **Primera RevalidaciÃ³n**: [Fecha + 90 dÃ­as]
+- **Segunda RevalidaciÃ³n**: [Fecha + 180 dÃ­as]
+- **EvaluaciÃ³n Completa**: [Fecha + 365 dÃ­as]
 
-### 6.2 Criterios de Éxito
+### 6.2 Criterios de Ã‰xito
 
-✓ Todos los hallazgos críticos remediados y validados  
-✓ 80%+ de hallazgos altos remediados  
-✓ Pruebas de penetración complementarias (si aplica)  
-✓ Revisión de cambios de arquitectura  
+âœ“ Todos los hallazgos crÃ­ticos remediados y validados  
+âœ“ 80%+ de hallazgos altos remediados  
+âœ“ Pruebas de penetraciÃ³n complementarias (si aplica)  
+âœ“ RevisiÃ³n de cambios de arquitectura  
 
 ### 6.3 Punto de Contacto
 
@@ -280,9 +280,9 @@ Trimestre 4: Revisión y planificación para año siguiente
 
 ---
 
-## 7. Evidencia Técnica y Anexos
+## 7. Evidencia TÃ©cnica y Anexos
 
-### 7.1 Logs de Evaluación
+### 7.1 Logs de EvaluaciÃ³n
 
 ```
 [Salidas de herramientas, timestamps, comandos ejecutados]
@@ -290,31 +290,31 @@ Trimestre 4: Revisión y planificación para año siguiente
 
 ### 7.2 Capturas y Datos
 
-[Agregar evidencia visual/datos específicos]
+[Agregar evidencia visual/datos especÃ­ficos]
 
 ### 7.3 Referencias de Inteligencia
 
 - Amenazas conocidas en sector
 - Cambios recientes en OWASP Top 10
-- Vulnerabilidades de día cero que aplican
+- Vulnerabilidades de dÃ­a cero que aplican
 
 ---
 
-## Conclusión
+## ConclusiÃ³n
 
-La evaluación fue completada de acuerdo a los términos acordados.
+La evaluaciÃ³n fue completada de acuerdo a los tÃ©rminos acordados.
 Los hallazgos reflejan el estado de seguridad actual del sistema.
 
-**Recomendación Ejecutiva**: 
-Proceder con remediación de hallazgos críticos y altos según cronograma establecido.
-Implementar programa de revisiones periódicas basado en Risk-Based Security Testing.
+**RecomendaciÃ³n Ejecutiva**: 
+Proceder con remediaciÃ³n de hallazgos crÃ­ticos y altos segÃºn cronograma establecido.
+Implementar programa de revisiones periÃ³dicas basado en Risk-Based Security Testing.
 
 ---
 
 **Documento**: Reporte ORION-HACKING  
-**Clasificación**: Confidencial  
+**ClasificaciÃ³n**: Confidencial  
 **Fecha**: {date_generated}  
-**Versión**: 1.0  
+**VersiÃ³n**: 1.0  
 
 """
 
@@ -335,11 +335,11 @@ def main() -> int:
     try:
         with open(output_file, "w", encoding="utf-8") as fh:
             fh.write(template_content)
-        print(f"✓ Plantilla creada: {output_file}")
-        print(f"✓ Abierta para edición. Reemplaza placeholders [así].")
+        print(f"[OK] Plantilla creada: {output_file}")
+        print("[OK] Abierta para edicion. Reemplaza placeholders [asi].")
         return 0
     except IOError as e:
-        print(f"✗ Error al escribir archivo: {e}", file=sys.stderr)
+        print(f"[ERROR] Error al escribir archivo: {e}", file=sys.stderr)
         return 1
 
 

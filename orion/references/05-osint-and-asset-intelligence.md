@@ -1008,3 +1008,362 @@ Próximate fase (port scan, vuln assessment, testing)
 ```
 
 OSINT es el foundation de todo assessment. Si no sabes QUÉ está públicamente accesible, no puedes defenderte tampoco.
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - OSINT and Asset Intelligence - External Surface Mapping & Threat Intelligence
+
+### Integraciones ampliadas
+
+- Shodan: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Censys: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- VirusTotal: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- SecurityTrails: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: subdominios sombra.
+- Integracion recomendada: Shodan.
+- Senal principal: repo publico.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: secretos filtrados.
+- Integracion recomendada: Censys.
+- Senal principal: activo olvidado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: activos legacy.
+- Integracion recomendada: VirusTotal.
+- Senal principal: proveedor no inventariado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 04
+- Contexto: subdominios sombra.
+- Integracion recomendada: SecurityTrails.
+- Senal principal: repo publico.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 05
+- Contexto: secretos filtrados.
+- Integracion recomendada: Shodan.
+- Senal principal: activo olvidado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 06
+- Contexto: activos legacy.
+- Integracion recomendada: Censys.
+- Senal principal: proveedor no inventariado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 07
+- Contexto: subdominios sombra.
+- Integracion recomendada: VirusTotal.
+- Senal principal: repo publico.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 08
+- Contexto: secretos filtrados.
+- Integracion recomendada: SecurityTrails.
+- Senal principal: activo olvidado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 09
+- Contexto: activos legacy.
+- Integracion recomendada: Shodan.
+- Senal principal: proveedor no inventariado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 10
+- Contexto: subdominios sombra.
+- Integracion recomendada: Censys.
+- Senal principal: repo publico.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 11
+- Contexto: secretos filtrados.
+- Integracion recomendada: VirusTotal.
+- Senal principal: activo olvidado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 12
+- Contexto: activos legacy.
+- Integracion recomendada: SecurityTrails.
+- Senal principal: proveedor no inventariado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 13
+- Contexto: subdominios sombra.
+- Integracion recomendada: Shodan.
+- Senal principal: repo publico.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 14
+- Contexto: secretos filtrados.
+- Integracion recomendada: Censys.
+- Senal principal: activo olvidado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 15
+- Contexto: activos legacy.
+- Integracion recomendada: VirusTotal.
+- Senal principal: proveedor no inventariado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 16
+- Contexto: subdominios sombra.
+- Integracion recomendada: SecurityTrails.
+- Senal principal: repo publico.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 17
+- Contexto: secretos filtrados.
+- Integracion recomendada: Shodan.
+- Senal principal: activo olvidado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 18
+- Contexto: activos legacy.
+- Integracion recomendada: Censys.
+- Senal principal: proveedor no inventariado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 19
+- Contexto: subdominios sombra.
+- Integracion recomendada: VirusTotal.
+- Senal principal: repo publico.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 20
+- Contexto: secretos filtrados.
+- Integracion recomendada: SecurityTrails.
+- Senal principal: activo olvidado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 21
+- Contexto: activos legacy.
+- Integracion recomendada: Shodan.
+- Senal principal: proveedor no inventariado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 22
+- Contexto: subdominios sombra.
+- Integracion recomendada: Censys.
+- Senal principal: repo publico.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 23
+- Contexto: secretos filtrados.
+- Integracion recomendada: VirusTotal.
+- Senal principal: activo olvidado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 24
+- Contexto: activos legacy.
+- Integracion recomendada: SecurityTrails.
+- Senal principal: proveedor no inventariado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 25
+- Contexto: subdominios sombra.
+- Integracion recomendada: Shodan.
+- Senal principal: repo publico.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 26
+- Contexto: secretos filtrados.
+- Integracion recomendada: Censys.
+- Senal principal: activo olvidado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 27
+- Contexto: activos legacy.
+- Integracion recomendada: VirusTotal.
+- Senal principal: proveedor no inventariado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 28
+- Contexto: subdominios sombra.
+- Integracion recomendada: SecurityTrails.
+- Senal principal: repo publico.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 29
+- Contexto: secretos filtrados.
+- Integracion recomendada: Shodan.
+- Senal principal: activo olvidado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 30
+- Contexto: activos legacy.
+- Integracion recomendada: Censys.
+- Senal principal: proveedor no inventariado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 31
+- Contexto: subdominios sombra.
+- Integracion recomendada: VirusTotal.
+- Senal principal: repo publico.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 32
+- Contexto: secretos filtrados.
+- Integracion recomendada: SecurityTrails.
+- Senal principal: activo olvidado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 33
+- Contexto: activos legacy.
+- Integracion recomendada: Shodan.
+- Senal principal: proveedor no inventariado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 34
+- Contexto: subdominios sombra.
+- Integracion recomendada: Censys.
+- Senal principal: repo publico.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 35
+- Contexto: secretos filtrados.
+- Integracion recomendada: VirusTotal.
+- Senal principal: activo olvidado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 36
+- Contexto: activos legacy.
+- Integracion recomendada: SecurityTrails.
+- Senal principal: proveedor no inventariado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 37
+- Contexto: subdominios sombra.
+- Integracion recomendada: Shodan.
+- Senal principal: repo publico.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 38
+- Contexto: secretos filtrados.
+- Integracion recomendada: Censys.
+- Senal principal: activo olvidado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 39
+- Contexto: activos legacy.
+- Integracion recomendada: VirusTotal.
+- Senal principal: proveedor no inventariado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 40
+- Contexto: subdominios sombra.
+- Integracion recomendada: SecurityTrails.
+- Senal principal: repo publico.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 41
+- Contexto: secretos filtrados.
+- Integracion recomendada: Shodan.
+- Senal principal: activo olvidado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 42
+- Contexto: activos legacy.
+- Integracion recomendada: Censys.
+- Senal principal: proveedor no inventariado.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 43
+- Contexto: subdominios sombra.
+- Integracion recomendada: VirusTotal.
+- Senal principal: repo publico.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

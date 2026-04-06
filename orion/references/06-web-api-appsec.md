@@ -613,3 +613,226 @@ Duration: [start] to [end]
 **TOTAL: 1,700+ líneas**
 **Status**: Production ready
 **Última actualización**: 2024-02-15
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - 06: Web API AppSec - Auditoría de Seguridad de APIs REST/GraphQL
+
+### Integraciones ampliadas
+
+- Burp Suite: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- OWASP ZAP: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Postman: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- OpenAPI: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: checkout con authz debil.
+- Integracion recomendada: Burp Suite.
+- Senal principal: errores verbose.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: JWT mal validado.
+- Integracion recomendada: OWASP ZAP.
+- Senal principal: control de acceso roto.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: portal con SSRF.
+- Integracion recomendada: Postman.
+- Senal principal: flujo multi-step inseguro.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 04
+- Contexto: checkout con authz debil.
+- Integracion recomendada: OpenAPI.
+- Senal principal: errores verbose.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 05
+- Contexto: JWT mal validado.
+- Integracion recomendada: Burp Suite.
+- Senal principal: control de acceso roto.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 06
+- Contexto: portal con SSRF.
+- Integracion recomendada: OWASP ZAP.
+- Senal principal: flujo multi-step inseguro.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 07
+- Contexto: checkout con authz debil.
+- Integracion recomendada: Postman.
+- Senal principal: errores verbose.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 08
+- Contexto: JWT mal validado.
+- Integracion recomendada: OpenAPI.
+- Senal principal: control de acceso roto.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 09
+- Contexto: portal con SSRF.
+- Integracion recomendada: Burp Suite.
+- Senal principal: flujo multi-step inseguro.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 10
+- Contexto: checkout con authz debil.
+- Integracion recomendada: OWASP ZAP.
+- Senal principal: errores verbose.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 11
+- Contexto: JWT mal validado.
+- Integracion recomendada: Postman.
+- Senal principal: control de acceso roto.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 12
+- Contexto: portal con SSRF.
+- Integracion recomendada: OpenAPI.
+- Senal principal: flujo multi-step inseguro.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 13
+- Contexto: checkout con authz debil.
+- Integracion recomendada: Burp Suite.
+- Senal principal: errores verbose.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 14
+- Contexto: JWT mal validado.
+- Integracion recomendada: OWASP ZAP.
+- Senal principal: control de acceso roto.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 15
+- Contexto: portal con SSRF.
+- Integracion recomendada: Postman.
+- Senal principal: flujo multi-step inseguro.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 16
+- Contexto: checkout con authz debil.
+- Integracion recomendada: OpenAPI.
+- Senal principal: errores verbose.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 17
+- Contexto: JWT mal validado.
+- Integracion recomendada: Burp Suite.
+- Senal principal: control de acceso roto.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 18
+- Contexto: portal con SSRF.
+- Integracion recomendada: OWASP ZAP.
+- Senal principal: flujo multi-step inseguro.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 19
+- Contexto: checkout con authz debil.
+- Integracion recomendada: Postman.
+- Senal principal: errores verbose.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 20
+- Contexto: JWT mal validado.
+- Integracion recomendada: OpenAPI.
+- Senal principal: control de acceso roto.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 21
+- Contexto: portal con SSRF.
+- Integracion recomendada: Burp Suite.
+- Senal principal: flujo multi-step inseguro.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 22
+- Contexto: checkout con authz debil.
+- Integracion recomendada: OWASP ZAP.
+- Senal principal: errores verbose.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 23
+- Contexto: JWT mal validado.
+- Integracion recomendada: Postman.
+- Senal principal: control de acceso roto.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 24
+- Contexto: portal con SSRF.
+- Integracion recomendada: OpenAPI.
+- Senal principal: flujo multi-step inseguro.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 25
+- Contexto: checkout con authz debil.
+- Integracion recomendada: Burp Suite.
+- Senal principal: errores verbose.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 26
+- Contexto: JWT mal validado.
+- Integracion recomendada: OWASP ZAP.
+- Senal principal: control de acceso roto.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

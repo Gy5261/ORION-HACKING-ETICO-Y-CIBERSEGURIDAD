@@ -118,3 +118,50 @@ Evidencia: registros de clientes reales
 Impacto real: aumenta superficie de privacidad y cumplimiento
 Recomendacion: usar datasets anonimizados y revisar politicas de replicacion
 ```
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - Data Security & Privacy - Classification, Protection, Minimization
+
+### Integraciones ampliadas
+
+- BigQuery: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Snowflake: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- S3: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- DLP: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: PII mezclada con telemetria.
+- Integracion recomendada: BigQuery.
+- Senal principal: clasificacion ausente.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: backup expuesto.
+- Integracion recomendada: Snowflake.
+- Senal principal: retencion infinita.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: export con datos productivos.
+- Integracion recomendada: S3.
+- Senal principal: ACL heredada.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 04
+- Contexto: PII mezclada con telemetria.
+- Integracion recomendada: DLP.
+- Senal principal: clasificacion ausente.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

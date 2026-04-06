@@ -301,3 +301,113 @@ Contiene:
 **Si una solicitud toca >3 dominios primarios, usa Playbook 01 (Authorized Assessment) como base y complementa selectivamente.**
 
 No cargues 32 referencias a la vez. Eso causa ruido, no claridad.
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion de taxonomia 2026
+
+### Reglas adicionales
+
+### Regla ampliada 01
+- Entrada ejemplo: API con backlog regulatorio.
+- Dominio primario: el que gobierna el riesgo inmediato.
+- Dominios secundarios: governance, reporting, evidence o automation cuando aumenten accionabilidad.
+- Salida: skill/playbook sugerido, evidencia minima y owner siguiente.
+
+### Regla ampliada 02
+- Entrada ejemplo: cluster cloud con IAM heredado.
+- Dominio primario: el que gobierna el riesgo inmediato.
+- Dominios secundarios: governance, reporting, evidence o automation cuando aumenten accionabilidad.
+- Salida: skill/playbook sugerido, evidencia minima y owner siguiente.
+
+### Regla ampliada 03
+- Entrada ejemplo: alerta DFIR con IOC externo.
+- Dominio primario: el que gobierna el riesgo inmediato.
+- Dominios secundarios: governance, reporting, evidence o automation cuando aumenten accionabilidad.
+- Salida: skill/playbook sugerido, evidencia minima y owner siguiente.
+
+### Regla ampliada 04
+- Entrada ejemplo: pipeline supply chain sin firma OCI.
+- Dominio primario: el que gobierna el riesgo inmediato.
+- Dominios secundarios: governance, reporting, evidence o automation cuando aumenten accionabilidad.
+- Salida: skill/playbook sugerido, evidencia minima y owner siguiente.
+
+### Regla ampliada 05
+- Entrada ejemplo: API con backlog regulatorio.
+- Dominio primario: el que gobierna el riesgo inmediato.
+- Dominios secundarios: governance, reporting, evidence o automation cuando aumenten accionabilidad.
+- Salida: skill/playbook sugerido, evidencia minima y owner siguiente.
+
+### Regla ampliada 06
+- Entrada ejemplo: cluster cloud con IAM heredado.
+- Dominio primario: el que gobierna el riesgo inmediato.
+- Dominios secundarios: governance, reporting, evidence o automation cuando aumenten accionabilidad.
+- Salida: skill/playbook sugerido, evidencia minima y owner siguiente.
+
+### Regla ampliada 07
+- Entrada ejemplo: alerta DFIR con IOC externo.
+- Dominio primario: el que gobierna el riesgo inmediato.
+- Dominios secundarios: governance, reporting, evidence o automation cuando aumenten accionabilidad.
+- Salida: skill/playbook sugerido, evidencia minima y owner siguiente.
+
+### Regla ampliada 08
+- Entrada ejemplo: pipeline supply chain sin firma OCI.
+- Dominio primario: el que gobierna el riesgo inmediato.
+- Dominios secundarios: governance, reporting, evidence o automation cuando aumenten accionabilidad.
+- Salida: skill/playbook sugerido, evidencia minima y owner siguiente.
+
+### Regla ampliada 09
+- Entrada ejemplo: API con backlog regulatorio.
+- Dominio primario: el que gobierna el riesgo inmediato.
+- Dominios secundarios: governance, reporting, evidence o automation cuando aumenten accionabilidad.
+- Salida: skill/playbook sugerido, evidencia minima y owner siguiente.
+
+### Regla ampliada 10
+- Entrada ejemplo: cluster cloud con IAM heredado.
+- Dominio primario: el que gobierna el riesgo inmediato.
+- Dominios secundarios: governance, reporting, evidence o automation cuando aumenten accionabilidad.
+- Salida: skill/playbook sugerido, evidencia minima y owner siguiente.
+
+### Regla ampliada 11
+- Entrada ejemplo: alerta DFIR con IOC externo.
+- Dominio primario: el que gobierna el riesgo inmediato.
+- Dominios secundarios: governance, reporting, evidence o automation cuando aumenten accionabilidad.
+- Salida: skill/playbook sugerido, evidencia minima y owner siguiente.
+
+### Regla ampliada 12
+- Entrada ejemplo: pipeline supply chain sin firma OCI.
+- Dominio primario: el que gobierna el riesgo inmediato.
+- Dominios secundarios: governance, reporting, evidence o automation cuando aumenten accionabilidad.
+- Salida: skill/playbook sugerido, evidencia minima y owner siguiente.
+
+### Regla ampliada 13
+- Entrada ejemplo: API con backlog regulatorio.
+- Dominio primario: el que gobierna el riesgo inmediato.
+- Dominios secundarios: governance, reporting, evidence o automation cuando aumenten accionabilidad.
+- Salida: skill/playbook sugerido, evidencia minima y owner siguiente.
+
+### Regla ampliada 14
+- Entrada ejemplo: cluster cloud con IAM heredado.
+- Dominio primario: el que gobierna el riesgo inmediato.
+- Dominios secundarios: governance, reporting, evidence o automation cuando aumenten accionabilidad.
+- Salida: skill/playbook sugerido, evidencia minima y owner siguiente.
+
+### Regla ampliada 15
+- Entrada ejemplo: alerta DFIR con IOC externo.
+- Dominio primario: el que gobierna el riesgo inmediato.
+- Dominios secundarios: governance, reporting, evidence o automation cuando aumenten accionabilidad.
+- Salida: skill/playbook sugerido, evidencia minima y owner siguiente.
+
+### Regla ampliada 16
+- Entrada ejemplo: pipeline supply chain sin firma OCI.
+- Dominio primario: el que gobierna el riesgo inmediato.
+- Dominios secundarios: governance, reporting, evidence o automation cuando aumenten accionabilidad.
+- Salida: skill/playbook sugerido, evidencia minima y owner siguiente.
+
+### Regla ampliada 17
+- Entrada ejemplo: API con backlog regulatorio.
+- Dominio primario: el que gobierna el riesgo inmediato.
+- Dominios secundarios: governance, reporting, evidence o automation cuando aumenten accionabilidad.
+- Salida: skill/playbook sugerido, evidencia minima y owner siguiente.
+

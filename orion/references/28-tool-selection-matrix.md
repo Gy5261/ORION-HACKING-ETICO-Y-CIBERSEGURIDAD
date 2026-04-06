@@ -180,3 +180,74 @@ Tool Option B: Mature open-source (100+ contributors, community maintained)
 3. Replace 1 custom script with open-source equivalent (maintain fewer tools)
 4. Add "tool selection" question to assessment planning checklist
 5. Document 1 tool risk (something you've seen go wrong)
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - Tool Selection Matrix - Choosing Right Tool for Right Job
+
+### Integraciones ampliadas
+
+- Burp Suite: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Nmap: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Trivy: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Semgrep: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: seleccion de stack.
+- Integracion recomendada: Burp Suite.
+- Senal principal: tool sin tuning.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: comparativa de scanners.
+- Integracion recomendada: Nmap.
+- Senal principal: formato incompatible.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: normalizacion heterogenea.
+- Integracion recomendada: Trivy.
+- Senal principal: sesgo de herramienta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 04
+- Contexto: seleccion de stack.
+- Integracion recomendada: Semgrep.
+- Senal principal: tool sin tuning.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 05
+- Contexto: comparativa de scanners.
+- Integracion recomendada: Burp Suite.
+- Senal principal: formato incompatible.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 06
+- Contexto: normalizacion heterogenea.
+- Integracion recomendada: Nmap.
+- Senal principal: sesgo de herramienta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 07
+- Contexto: seleccion de stack.
+- Integracion recomendada: Trivy.
+- Senal principal: tool sin tuning.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

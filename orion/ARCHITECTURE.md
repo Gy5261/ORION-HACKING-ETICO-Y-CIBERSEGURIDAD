@@ -568,3 +568,209 @@ Less is better si es **verified, documented, actionable**.
 3. **Auditabilidad extrema**: Cada decisión se loga, se explica, se justifica. No hay "magia".
 
 **Siguiente**: Lee SKILL.md para entender políticas, o MODULE_MAP.md para navegar módulos.
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion de arquitectura 2026
+
+### Patrones nuevos
+
+### Patron adicional 01
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 02
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 03
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 04
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 05
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 06
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 07
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 08
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 09
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 10
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 11
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 12
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 13
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 14
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 15
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 16
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 17
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 18
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 19
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 20
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 21
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 22
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 23
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 24
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 25
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 26
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 27
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 28
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 29
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 30
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 31
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 32
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+
+### Patron adicional 33
+- Flujo: ingesta -> enrichment -> priorizacion -> ticketing -> retest.
+- Objetivo: desacoplar conocimiento, metodologia, evidencia e integracion externa.
+- Integraciones: Jira, ServiceNow, OpenSearch, threat intel y pipelines CI.
+- Restriccion: sin cambios fuera de alcance y con rollback definido.
+

@@ -45,3 +45,27 @@ Abre `orion/SKILL.md` como skill principal y luego carga solo los modulos de `or
 
 Si la tarea es recurrente o muy concreta, entra por `orion/PLAYBOOK_INDEX.md` y desde ahi baja
 al skill operativo correspondiente.
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Oficial 2026
+
+- Nombre del repositorio en GitHub: `ORION-HACKING-ETICO-Y-CIBERSEGURIDAD`.
+- Nuevas utilidades agregadas: `ioc_enricher.py`, `findings_ticket_sync.py`, `tls_posture_audit.py`, `evidence_manifest.py`.
+- Integraciones avanzadas: Jira, ServiceNow, Splunk, OpenSearch, VirusTotal, Shodan y GitHub Actions.
+
+### Casos de uso reales agregados
+
+- API de pagos con hallazgos priorizados y ticketing automatizado.
+- Cluster Kubernetes con hardening incremental y evidencia reproducible.
+- Incidente de phishing con enrichment de IOCs y handoff a DFIR.
+- Repositorio CI/CD con SBOM, findings normalizados y backlog accionable.
+
+### Modulos y automatizacion agregada
+
+- Enrichment de IOCs con servicios externos opcionales y salida JSON reutilizable.
+- Sincronizacion segura de hallazgos hacia Jira o ServiceNow con prioridad consistente.
+- Auditoria de postura TLS para endpoints web antes de assessment o retest.
+- Manifiestos de evidencia con SHA-256 para reforzar cadena de custodia.
+- Expansiones documentales con escenarios reales por dominio, integraciones y backlog accionable.

@@ -248,3 +248,98 @@ Actual: "Baseline → test → tune → validate → monitor → update quarterl
 - ✅ Map to MITRE ATT&CK (structured)
 - ✅ Manage false positives (tune aggressively)
 - ✅ Maintain quarterly (rules need updates)
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - Detection Engineering - SIEM Rules, Alerting & Behavioral Correlation
+
+### Integraciones ampliadas
+
+- Splunk: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Elastic: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Sentinel: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Sigma: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: abuso de OAuth.
+- Integracion recomendada: Splunk.
+- Senal principal: false positive alto.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: staging PowerShell.
+- Integracion recomendada: Elastic.
+- Senal principal: lag de ingesta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: hunting IAM.
+- Integracion recomendada: Sentinel.
+- Senal principal: coverage ATT&CK pobre.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 04
+- Contexto: abuso de OAuth.
+- Integracion recomendada: Sigma.
+- Senal principal: false positive alto.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 05
+- Contexto: staging PowerShell.
+- Integracion recomendada: Splunk.
+- Senal principal: lag de ingesta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 06
+- Contexto: hunting IAM.
+- Integracion recomendada: Elastic.
+- Senal principal: coverage ATT&CK pobre.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 07
+- Contexto: abuso de OAuth.
+- Integracion recomendada: Sentinel.
+- Senal principal: false positive alto.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 08
+- Contexto: staging PowerShell.
+- Integracion recomendada: Sigma.
+- Senal principal: lag de ingesta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 09
+- Contexto: hunting IAM.
+- Integracion recomendada: Splunk.
+- Senal principal: coverage ATT&CK pobre.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 10
+- Contexto: abuso de OAuth.
+- Integracion recomendada: Elastic.
+- Senal principal: false positive alto.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

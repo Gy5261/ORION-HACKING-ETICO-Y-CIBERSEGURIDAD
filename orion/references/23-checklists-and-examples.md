@@ -242,3 +242,98 @@ Se observaron 3 quick wins y 1 riesgo sistemico.
 No hubo evidencia de explotacion activa.
 La prioridad inmediata es cerrar administracion expuesta.
 ```
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - Checklists & Examples - Reusable Templates for Rapid Assessment
+
+### Integraciones ampliadas
+
+- Jira: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- OpenSearch: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- ServiceNow: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- GitHub Actions: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: assessment con evidencia.
+- Integracion recomendada: Jira.
+- Senal principal: owner difuso.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: priorizacion de backlog.
+- Integracion recomendada: OpenSearch.
+- Senal principal: salida no repetible.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: validacion controlada.
+- Integracion recomendada: ServiceNow.
+- Senal principal: riesgo sin contexto.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 04
+- Contexto: assessment con evidencia.
+- Integracion recomendada: GitHub Actions.
+- Senal principal: owner difuso.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 05
+- Contexto: priorizacion de backlog.
+- Integracion recomendada: Jira.
+- Senal principal: salida no repetible.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 06
+- Contexto: validacion controlada.
+- Integracion recomendada: OpenSearch.
+- Senal principal: riesgo sin contexto.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 07
+- Contexto: assessment con evidencia.
+- Integracion recomendada: ServiceNow.
+- Senal principal: owner difuso.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 08
+- Contexto: priorizacion de backlog.
+- Integracion recomendada: GitHub Actions.
+- Senal principal: salida no repetible.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 09
+- Contexto: validacion controlada.
+- Integracion recomendada: Jira.
+- Senal principal: riesgo sin contexto.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 10
+- Contexto: assessment con evidencia.
+- Integracion recomendada: OpenSearch.
+- Senal principal: owner difuso.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

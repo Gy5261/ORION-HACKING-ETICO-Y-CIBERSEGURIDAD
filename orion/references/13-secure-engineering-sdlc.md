@@ -411,3 +411,154 @@ Actual: "Developers build security in from start; security team enables + valida
 - ✅ Automation (SAST/SCA in every PR)
 - ✅ Feedback (developers know same day if issue)
 - ✅ Balance (not so strict it slows shipping)
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - Secure Engineering & SDLC - Shifting Security Left in Development
+
+### Integraciones ampliadas
+
+- GitHub Actions: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- GitLab CI: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Semgrep: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Trivy: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: monorepo con secretos.
+- Integracion recomendada: GitHub Actions.
+- Senal principal: branch protection debil.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: SBOM faltante.
+- Integracion recomendada: GitLab CI.
+- Senal principal: dep obsoleta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: release sin firmas.
+- Integracion recomendada: Semgrep.
+- Senal principal: provenance incompleta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 04
+- Contexto: monorepo con secretos.
+- Integracion recomendada: Trivy.
+- Senal principal: branch protection debil.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 05
+- Contexto: SBOM faltante.
+- Integracion recomendada: GitHub Actions.
+- Senal principal: dep obsoleta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 06
+- Contexto: release sin firmas.
+- Integracion recomendada: GitLab CI.
+- Senal principal: provenance incompleta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 07
+- Contexto: monorepo con secretos.
+- Integracion recomendada: Semgrep.
+- Senal principal: branch protection debil.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 08
+- Contexto: SBOM faltante.
+- Integracion recomendada: Trivy.
+- Senal principal: dep obsoleta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 09
+- Contexto: release sin firmas.
+- Integracion recomendada: GitHub Actions.
+- Senal principal: provenance incompleta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 10
+- Contexto: monorepo con secretos.
+- Integracion recomendada: GitLab CI.
+- Senal principal: branch protection debil.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 11
+- Contexto: SBOM faltante.
+- Integracion recomendada: Semgrep.
+- Senal principal: dep obsoleta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 12
+- Contexto: release sin firmas.
+- Integracion recomendada: Trivy.
+- Senal principal: provenance incompleta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 13
+- Contexto: monorepo con secretos.
+- Integracion recomendada: GitHub Actions.
+- Senal principal: branch protection debil.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 14
+- Contexto: SBOM faltante.
+- Integracion recomendada: GitLab CI.
+- Senal principal: dep obsoleta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 15
+- Contexto: release sin firmas.
+- Integracion recomendada: Semgrep.
+- Senal principal: provenance incompleta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 16
+- Contexto: monorepo con secretos.
+- Integracion recomendada: Trivy.
+- Senal principal: branch protection debil.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 17
+- Contexto: SBOM faltante.
+- Integracion recomendada: GitHub Actions.
+- Senal principal: dep obsoleta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+

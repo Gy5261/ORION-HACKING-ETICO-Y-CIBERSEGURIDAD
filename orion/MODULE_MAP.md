@@ -637,3 +637,233 @@ REPORTE + FOLLOWUP
 No necesitas cargar todo. Este map es para **orientación**, no para que lo uses entero.
 
 **Regla de oro**: Si no sabes dónde ir, empieza con SKILL.md + DOMAIN_TAXONOMY.md.
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion del mapa modular 2026
+
+### Nuevas rutas
+
+### Ruta extendida 01
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 02
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 03
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 04
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 05
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 06
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 07
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 08
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 09
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 10
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 11
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 12
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 13
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 14
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 15
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 16
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 17
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 18
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 19
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 20
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 21
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 22
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 23
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 24
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 25
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 26
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 27
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 28
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 29
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 30
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 31
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 32
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 33
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 34
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 35
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 36
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+
+### Ruta extendida 37
+- Entrada: solicitud ambigua, finding puntual o incidente en curso.
+- Modulos sugeridos: skill principal + referencias + playbook + script auxiliar.
+- Integracion sugerida: backlog, threat intel, evidence o dashboard ejecutivo.
+- Salida objetivo: decision defendible y siguiente accion concreta.
+

@@ -195,3 +195,74 @@ When dealing with sensitive data/findings:
 3. Version your logging scripts (timestamp every execution)
 4. Establish 1 secure evidence store (encrypted folder + access logs)
 5. Create 1 example "well-written" finding using template above
+
+
+<!-- ORION-EXPANSION-2026-04-05 -->
+
+## Expansion Avanzada 2026 - Evidence & Logging Spec - Forensic Data Collection & Reporting
+
+### Integraciones ampliadas
+
+- S3: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Azure Blob: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- OpenSearch: integracion recomendada para aumentar profundidad, evidencia y backlog.
+- Velociraptor: integracion recomendada para aumentar profundidad, evidencia y backlog.
+
+### Escenarios realistas adicionales
+
+### Escenario avanzado 01
+- Contexto: cadena de custodia.
+- Integracion recomendada: S3.
+- Senal principal: hash ausente.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 02
+- Contexto: hashing previo.
+- Integracion recomendada: Azure Blob.
+- Senal principal: metadata incompleta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 03
+- Contexto: manifest para auditoria.
+- Integracion recomendada: OpenSearch.
+- Senal principal: movimiento sin registro.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 04
+- Contexto: cadena de custodia.
+- Integracion recomendada: Velociraptor.
+- Senal principal: hash ausente.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 05
+- Contexto: hashing previo.
+- Integracion recomendada: S3.
+- Senal principal: metadata incompleta.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 06
+- Contexto: manifest para auditoria.
+- Integracion recomendada: Azure Blob.
+- Senal principal: movimiento sin registro.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
+### Escenario avanzado 07
+- Contexto: cadena de custodia.
+- Integracion recomendada: OpenSearch.
+- Senal principal: hash ausente.
+- Evidencia minima: artefactos originales, salida normalizada, owner y hash.
+- Resultado esperado: decision accionable, remediacion propuesta y siguiente validacion.
+- Control: operar solo con alcance autorizado y con trazabilidad completa.
+
