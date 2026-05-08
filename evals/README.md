@@ -1,34 +1,31 @@
-# ORION-HACKING Evals
+# evals/
 
-Este directorio contiene prompts de prueba para evaluar el skill.
+## Propósito
 
-## Objetivo
+Esta carpeta contiene el conjunto de **evaluaciones (prompts de prueba)** diseñadas para validar el comportamiento del skill ORION bajo diferentes escenarios de ciberseguridad ética.
 
-- comprobar cobertura de dominios
-- comprobar que el skill enruta bien por modulos
-- comprobar rechazo de solicitudes no autorizadas
-- comprobar que la automatizacion por IA se mantiene en un carril seguro
+## Objetivos de las Evals
+
+- Verificar cobertura de dominios (web, cloud, network, secure engineering, etc.)
+- Validar enrutamiento correcto entre módulos y playbooks
+- Comprobar que el skill mantenga límites éticos estrictos (rechazo de solicitudes maliciosas)
+- Evaluar calidad, claridad y utilidad de las respuestas generadas
+- Probar compatibilidad con agentes IA/MCP
 
 ## Archivos
 
-- `evals.json`: set inicial de prompts realistas
+- **`evals.json`** — Catálogo principal de prompts de prueba con expected_output.
+- **`README.md`** — Esta documentación.
 
-## Uso sugerido
+## Uso Recomendado
 
-1. revisar `evals.json`
-2. ejecutar `orion/scripts/run_skill_sanity.py`
-3. revisar `eval-results/`
-4. iterar sobre `SKILL.md`, `references/` y `playbooks/`
+1. Revisar o extender `evals.json`
+2. Ejecutar `orion/scripts/run_skill_sanity.py`
+3. Analizar resultados en `eval-results/`
+4. Iterar mejoras en `orion/references/`, `orion/playbooks/` y `SKILL.md`
 
+Todo el contenido está diseñado exclusivamente para **hacking ético, auditoría autorizada y mejora continua de capacidades defensivas**.
 
-<!-- ORION-EXPANSION-2026-04-05 -->
+---
 
-## Expansion de evaluacion 2026
-
-### Nuevas suites
-
-### Suite adicional 01
-- Prompt de prueba: engagement con alcance autorizado, dependencia cloud e integracion externa.
-- Exito: ruta clara, evidencia verificable y backlog priorizado.
-- Falla: sin owner, sin control de alcance o sin salida accionable.
-
+*Parte del sistema de evaluación continua de ORION - Powered by ORION IA*
