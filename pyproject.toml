@@ -1,0 +1,17 @@
+[project]
+name = "orion-hacking-etico"
+description = "Base de conocimientos y herramientas para Hacking Ético y Ciberseguridad responsable."
+version = "0.1.0"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "B", "I"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.black]
+line-length = 100
