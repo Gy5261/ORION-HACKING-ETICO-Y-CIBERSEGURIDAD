@@ -1,0 +1,20 @@
+{
+  "repository": "ORION-HACKING-ETICO-Y-CIBERSEGURIDAD",
+  "version": "1.0",
+  "description": "Manifiesto de skills para agentes IA en ciberseguridad ética",
+  "skills": [
+    {
+      "id": "01",
+      "name": "Authorization and Governance",
+      "category": "governance",
+      "file": "orion/references/01-authorization-and-governance.md",
+      "risk_level": "low",
+      "focus": "ethical"
+    }
+    // Más skills se pueden agregar basados en references/01-32
+  ],
+  "entrypoints": {
+    "ai": "skills/ai-entrypoint.md",
+    "instructions": "skills/agent-instructions.md"
+  }
+}
