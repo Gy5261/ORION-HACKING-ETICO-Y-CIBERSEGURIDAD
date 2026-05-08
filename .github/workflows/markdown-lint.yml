@@ -7,13 +7,13 @@ on:
     branches: [ main ]
 
 jobs:
-  markdown-lint:
+  markdown:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Lint Markdown files
+
+      - name: Lint Markdown
         uses: DavidAnson/markdownlint-cli2-action@v19
         with:
-          config: '.markdownlint.json'
+          config: .markdownlint.json
           globs: '**/*.md'

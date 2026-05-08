@@ -1,3 +1,7 @@
-# ORION-HACKING-ETICO-Y-CIBERSEGURIDAD
-# No external runtime dependencies (pure stdlib)
-# Development tools can be installed separately
+# Dependencias Python confirmadas por revisión de código
+# Todos los scripts en orion/scripts/ usan únicamente stdlib (argparse, json, os, socket, urllib, ssl, etc.)
+# No se requieren paquetes externos runtime.
+# Para desarrollo/linting (instalar manualmente si se desea):
+# ruff>=0.4.0
+# markdownlint-cli2
+# (ver pyproject.toml para configuración completa)

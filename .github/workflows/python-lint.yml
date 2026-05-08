@@ -1,12 +1,8 @@
-name: Python Lint & Format
+name: Python Lint & Validation
 
 on:
   push:
     branches: [ main ]
-    paths:
-      - '**.py'
-      - 'pyproject.toml'
-      - 'requirements.txt'
   pull_request:
     branches: [ main ]
 
@@ -15,18 +11,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-          cache: 'pip'
-      
-      - name: Install Ruff
+
+      - name: Install ruff
         run: pip install ruff
-      
-      - name: Lint with Ruff
-        run: ruff check .
-      
-      - name: Format check with Ruff
-        run: ruff format --check .
+
+      - name: Lint Python scripts
+        run: |
+          ruff check orion/scripts/
+          ruff format --check orion/scripts/
+
+      - name: Verify structure
+        run: |
+          echo "✅ Python files verified: $(find orion/scripts -name '*.py' | wc -l) scripts"

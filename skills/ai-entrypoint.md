@@ -1,16 +1,16 @@
-# AI Entry Point - ORION-HACKING
+# 🚀 AI Entry Point - ORION Hacking Ético
 
-## Cómo usar este repositorio como agente de IA / MCP
+**Cómo usar este repositorio como agente IA / MCP / LLM**
 
-Este repositorio está diseñado para ser leído y utilizado por agentes de inteligencia artificial de forma segura y estructurada.
+1. Clona o accede vía API: `https://github.com/Gy5261/ORION-HACKING-ETICO-Y-CIBERSEGURIDAD`
+2. Lee `skills/skills.json` primero (manifiesto estandarizado).
+3. Consulta `orion/SKILL.md` como skill principal.
+4. Usa solo playbooks y references de `orion/` para tareas autorizadas.
+5. Respeta estrictamente `skills/agent-instructions.md` y disclaimers éticos.
 
-### Pasos recomendados para un agente:
-1. Lee este archivo (ai-entrypoint.md)
-2. Lee `skills/agent-instructions.md` para reglas de seguridad
-3. Carga `skills/skills.json` para el manifiesto de skills
-4. Explora `orion/` para contenido detallado (references/, playbooks/, scripts/)
-5. Usa solo para fines éticos y autorizados
+**Integración MCP/IA**:
+- Skills son modulares, legibles por LLM.
+- Outputs JSON estandarizados en scripts.
+- Todo es defensive, audit-ready y ético.
 
-**URL del repositorio:** https://github.com/Gy5261/ORION-HACKING-ETICO-Y-CIBERSEGURIDAD
-
-**Propósito:** Proporcionar conocimiento estructurado, checklists, playbooks y scripts para ciberseguridad ética, auditorías y defensa.
+Ver `skills/skills.md` para lista completa.
