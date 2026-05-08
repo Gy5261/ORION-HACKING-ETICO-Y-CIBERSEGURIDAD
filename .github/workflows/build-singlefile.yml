@@ -7,9 +7,13 @@ on:
       - 'orion/**'
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -17,8 +21,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: 'pip'
 
-      - name: Run singlefile build
+      - name: Install dependencies
+        run: pip install -r requirements.txt || echo "No external dependencies required"
+
+      - name: Build singlefile HTML
         run: python orion/scripts/build_singlefile_site.py
 
       - name: Upload artifact
@@ -26,3 +34,14 @@ jobs:
         with:
           name: orion-singlefile-html
           path: orion/ORION-HACKING-singlefile.html
+          if-no-files-found: error
+
+      - name: Verify build
+        run: |
+          if [ -f "orion/ORION-HACKING-singlefile.html" ]; then
+            echo "✅ Singlefile HTML built successfully"
+            ls -lh orion/ORION-HACKING-singlefile.html
+          else
+            echo "❌ Build failed"
+            exit 1
+          fi
