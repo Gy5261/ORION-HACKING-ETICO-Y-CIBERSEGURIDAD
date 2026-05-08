@@ -1,0 +1,12 @@
+# ORION Hacking Ético y Ciberseguridad
+# ========================================
+# Este proyecto usa únicamente la biblioteca estándar de Python (stdlib).
+# No se requieren paquetes externos para el funcionamiento principal.
+
+# Variables de entorno usadas por los scripts:
+# - VT_API_KEY, ABUSEIPDB_API_KEY, SHODAN_API_KEY, OTX_API_KEY (opcionales)
+
+# Dependencias de desarrollo recomendadas (opcional):
+# pip install ruff black mypy pre-commit
+
+python>=3.10
