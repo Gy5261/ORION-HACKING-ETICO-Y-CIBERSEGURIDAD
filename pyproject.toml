@@ -1,7 +1,7 @@
 [project]
 name = "orion-hacking-etico"
 version = "0.1.0"
-description = "Framework profesional de skills para ciberseguridad ética y automatización con IA - ORION"
+description = "Framework profesional de skills para ciberseguridad ética, hacking ético y automatización con agentes IA - Proyecto ORION"
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.8"
@@ -9,14 +9,28 @@ dependencies = []
 
 [project.urls]
 Homepage = "https://github.com/Gy5261/ORION-HACKING-ETICO-Y-CIBERSEGURIDAD"
+Repository = "https://github.com/Gy5261/ORION-HACKING-ETICO-Y-CIBERSEGURIDAD"
+Documentation = "https://github.com/Gy5261/ORION-HACKING-ETICO-Y-CIBERSEGURIDAD/blob/main/README.md"
 
 [tool.ruff]
 line-length = 120
-select = ["E", "F", "I", "W", "B", "C4", "UP"]
-ignore = []
+target-version = "py38"
 
 [tool.ruff.lint]
-select = ["E", "F", "I", "W", "B", "C4", "UP"]
+select = ["E", "F", "I", "W", "B", "C4", "UP", "RUF", "SIM", "PLC", "PLE"]
+ignore = ["E501"]  # Line too long - managed by formatter
 
 [tool.ruff.format]
 quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+
+[tool.ruff.lint.isort]
+known-first-party = ["orion"]
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_config = true
+disallow_untyped_defs = true
+check_untyped_defs = true
