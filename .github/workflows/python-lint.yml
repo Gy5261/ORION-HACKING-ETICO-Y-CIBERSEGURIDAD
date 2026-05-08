@@ -6,9 +6,13 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: read
+
 jobs:
   lint:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -16,15 +20,18 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+          cache: 'pip'
 
-      - name: Install ruff
+      - name: Install Ruff
         run: pip install ruff
 
-      - name: Lint Python scripts
-        run: |
-          ruff check orion/scripts/
-          ruff format --check orion/scripts/
+      - name: Run Ruff lint
+        run: ruff check --output-format=github orion/scripts/
 
-      - name: Verify structure
+      - name: Run Ruff format check
+        run: ruff format --check orion/scripts/
+
+      - name: Verify Python files
         run: |
-          echo "✅ Python files verified: $(find orion/scripts -name '*.py' | wc -l) scripts"
+          echo "✅ Found $(find orion/scripts -name '*.py' | wc -l) Python scripts"
+          echo "✅ Python linting completed successfully"
