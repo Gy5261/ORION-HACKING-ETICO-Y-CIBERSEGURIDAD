@@ -5,15 +5,22 @@ on:
     branches: [ main ]
     paths:
       - 'orion/**'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'orion/**'
   workflow_dispatch:
 
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
@@ -23,10 +30,7 @@ jobs:
           python-version: '3.12'
           cache: 'pip'
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt || echo "No external dependencies required"
-
-      - name: Build singlefile HTML
+      - name: Run singlefile build
         run: python orion/scripts/build_singlefile_site.py
 
       - name: Upload artifact
@@ -34,14 +38,4 @@ jobs:
         with:
           name: orion-singlefile-html
           path: orion/ORION-HACKING-singlefile.html
-          if-no-files-found: error
-
-      - name: Verify build
-        run: |
-          if [ -f "orion/ORION-HACKING-singlefile.html" ]; then
-            echo "✅ Singlefile HTML built successfully"
-            ls -lh orion/ORION-HACKING-singlefile.html
-          else
-            echo "❌ Build failed"
-            exit 1
-          fi
+          retention-days: 7

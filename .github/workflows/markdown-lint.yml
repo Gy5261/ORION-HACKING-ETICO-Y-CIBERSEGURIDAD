@@ -9,10 +9,13 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   markdown:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
@@ -21,8 +24,4 @@ jobs:
         with:
           config: .markdownlint.json
           globs: '**/*.md'
-
-      - name: Verify Markdown files
-        run: |
-          echo "✅ Markdown linting completed successfully"
-          echo "📊 Files checked: $(find . -name '*.md' | wc -l)"
+          fix: false

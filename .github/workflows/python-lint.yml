@@ -9,10 +9,13 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   lint:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
@@ -25,13 +28,11 @@ jobs:
       - name: Install Ruff
         run: pip install ruff
 
-      - name: Run Ruff lint
-        run: ruff check --output-format=github orion/scripts/
-
-      - name: Run Ruff format check
-        run: ruff format --check orion/scripts/
-
-      - name: Verify Python files
+      - name: Lint Python scripts
         run: |
-          echo "✅ Found $(find orion/scripts -name '*.py' | wc -l) Python scripts"
-          echo "✅ Python linting completed successfully"
+          ruff check orion/scripts/ --output-format=github
+          ruff format --check orion/scripts/
+
+      - name: Verify structure
+        run: |
+          echo "✅ Python files verified: $(find orion/scripts -name '*.py' | wc -l) scripts found"
