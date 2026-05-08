@@ -6,14 +6,23 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: read
+
 jobs:
   markdown:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
-      - name: Lint Markdown
+      - name: Lint Markdown files
         uses: DavidAnson/markdownlint-cli2-action@v19
         with:
           config: .markdownlint.json
           globs: '**/*.md'
+
+      - name: Verify Markdown files
+        run: |
+          echo "✅ Markdown linting completed successfully"
+          echo "📊 Files checked: $(find . -name '*.md' | wc -l)"
