@@ -17,7 +17,6 @@ Diseñado desde cero para ser consumido tanto por **humanos** como por **agentes
 - [Sistema de Skills para IA](#-sistema-avanzado-de-skills-para-ia)
 - [GitHub Workflows](#-github-workflows-activos)
 - [Cómo Usar](#-c%C3%B3mo-usar-este-repositorio)
-- [Convención de Commits](#-convenci%C3%B3n-de-commits)
 - [Licencia](#-licencia-y-contribuciones)
 
 ## 🎯 Objetivo Principal
@@ -78,14 +77,6 @@ Incluye:
 1. Leer `skills/ai-entrypoint.md`
 2. Cargar y parsear `skills/skills.json`
 3. Seguir estrictamente `skills/agent-instructions.md`
-
-## 🔐 Convención de Commits
-
-Todos los commits siguen el formato:
-
-`Descripción breve y clara del cambio - Powered by ORION IA`
-
-Esto facilita el seguimiento y mantiene el historial profesional.
 
 ## 📄 Licencia y Contribuciones
 
