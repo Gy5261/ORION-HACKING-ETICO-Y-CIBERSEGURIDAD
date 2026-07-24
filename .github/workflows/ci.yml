@@ -18,7 +18,7 @@ jobs:
   verify:
     name: Verify
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
 
     steps:
       - name: Checkout exact revision
@@ -33,11 +33,11 @@ jobs:
           python-version: "3.12"
           cache: pip
 
-      - name: Install package
+      - name: Install package and MCP SDK
         run: |
           set -euo pipefail
           python -m pip install --upgrade pip
-          python -m pip install .
+          python -m pip install ".[dev,mcp]"
           python -m pip check
 
       - name: Compile source
@@ -45,26 +45,46 @@ jobs:
           set -euo pipefail
           python -m compileall -q orion tools tests
 
+      - name: Lint MCP surface
+        run: |
+          set -euo pipefail
+          python -m ruff check \
+            orion/mcp \
+            orion/resources.py \
+            tests/test_mcp_compat.py \
+            tests/test_mcp_transports.py
+
       - name: Validate repository contracts
         run: |
           set -euo pipefail
           python tools/validate_repository.py
+
+      - name: Test MCP interoperability
+        run: |
+          set -euo pipefail
+          python -m pytest \
+            tests/test_mcp_compat.py \
+            tests/test_mcp_transports.py
 
       - name: Validate runtime
         run: |
           set -euo pipefail
           python -m orion plugins doctor > /tmp/orion-doctor.json
           python -m orion plugins list --json > /tmp/orion-manifest.json
+          python -m orion.mcp.server --transport streamable-http --print-config > /tmp/orion-mcp-config.json
           python - <<'PY'
           import json
           from pathlib import Path
 
           doctor = json.loads(Path("/tmp/orion-doctor.json").read_text(encoding="utf-8"))
           manifest = json.loads(Path("/tmp/orion-manifest.json").read_text(encoding="utf-8"))
+          mcp_config = json.loads(Path("/tmp/orion-mcp-config.json").read_text(encoding="utf-8"))
 
           assert doctor["ok"] is True, doctor
           assert doctor["plugin_count"] == 9, doctor
           assert manifest["manifest_version"] == "2.0", manifest
           assert len(manifest["plugins"]) == 9, manifest
-          print("ORION verification passed")
+          assert mcp_config["transport"] == "streamable-http", mcp_config
+          assert mcp_config["endpoint"].endswith("/mcp"), mcp_config
+          print("ORION 2.1 verification passed")
           PY
