@@ -35,13 +35,13 @@ jobs:
           python -m pip install -e ".[dev]"
 
       - name: Lint plugin runtime
-        run: ruff check orion/plugins orion/cli.py tests/test_plugins.py
+        run: ruff check orion/plugins orion/cli.py orion/__main__.py tests/test_plugins.py tests/test_cli.py
 
       - name: Verify formatting
-        run: ruff format --check orion/plugins orion/cli.py tests/test_plugins.py
+        run: ruff format --check orion/plugins orion/cli.py orion/__main__.py tests/test_plugins.py tests/test_cli.py
 
       - name: Type check
-        run: mypy orion/plugins orion/cli.py
+        run: mypy orion/plugins orion/cli.py orion/__main__.py
 
       - name: Unit tests
         run: pytest
@@ -67,4 +67,4 @@ jobs:
       - run: python -m build
       - run: python -m pip install dist/*.whl
       - run: orion plugins list --json
-      - run: orion plugins doctor
+      - run: python -m orion plugins doctor
