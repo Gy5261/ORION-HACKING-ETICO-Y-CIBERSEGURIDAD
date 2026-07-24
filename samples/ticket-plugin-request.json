@@ -1,0 +1,13 @@
+{
+  "mode": "plan",
+  "apply": false,
+  "findings": [
+    {
+      "title": "Certificado próximo a vencer",
+      "severity": "medium",
+      "asset": "portal.example.org",
+      "evidence": "El certificado vence en menos de 30 días.",
+      "remediation": "Renovar y desplegar el certificado antes del vencimiento."
+    }
+  ]
+}
