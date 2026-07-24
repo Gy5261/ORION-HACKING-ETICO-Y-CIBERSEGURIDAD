@@ -1,40 +1,111 @@
-# ORION-HACKING Architecture
+# Arquitectura ORION-HACKING 1.0
 
-## Visión General
+## Visión general
 
-ORION-HACKING es una plataforma documental y operativa de alta calidad para **ciberseguridad ética y hacking autorizado** mediante agentes de IA. Su arquitectura se basa en un fuerte desacoplamiento de capas para lograr máxima claridad, mantenibilidad, auditabilidad y seguridad.
+ORION-HACKING es una plataforma documental y operativa para ciberseguridad ética, defensiva y expresamente autorizada. La versión 1.0 incorpora un runtime de plugins que conecta conocimiento, metodología y automatización mediante contratos ejecutables y auditables.
 
----
+## Principios arquitectónicos
 
-## Principios Arquitectónicos Clave
+1. Separación estricta de responsabilidades.
+2. Autorización y mínimo privilegio por defecto.
+3. Desacoplamiento entre conocimiento, metodología y motores.
+4. Plugins pequeños, componibles y reemplazables.
+5. Interfaces JSON estables para CLI, agentes y MCP.
+6. Validación de entrada y salida mediante contratos.
+7. Trazabilidad completa de actor, solicitud, versión y resultado.
+8. Reversibilidad de acciones externas.
+9. Portabilidad sin dependencia obligatoria de proveedores.
+10. Fallos explícitos y diagnosticables.
 
-1. Separación estricta de responsabilidades
-2. Desacoplamiento vertical completo
-3. Alta composabilidad entre módulos
-4. Portabilidad y agnosticismo tecnológico
-5. Auditabilidad y trazabilidad extrema
-6. Reversibilidad de todas las acciones automatizadas
+## Capas principales
 
----
+### Nivel 1: Gobernanza y orquestación
 
-## Las 5 Capas Principales
+`SKILL.md`, `skills/agent-instructions.md` y los playbooks definen autorización, alcance, restricciones, evidencia y criterios de decisión.
 
-**Nivel 1: Orquestación** → `SKILL.md` (guardrails éticos y decisión de activación)
-**Nivel 2: Conocimiento Técnico** → `references/` (32 módulos por dominio)
-**Nivel 3: Metodología** → `playbooks/` (6 playbooks operativos)
-**Nivel 4: Automatización Ligera** → `scripts/` (scripts Python seguros y auditables)
-**Nivel 5: Navegación y Metadocumentación** → ARCHITECTURE.md, MODULE_MAP.md, PLAYBOOK_INDEX.md, etc.
+### Nivel 2: Conocimiento técnico
 
----
+`references/` contiene módulos por dominio para AppSec, red, nube, identidad, contenedores, DFIR, detección y hardening.
 
-## Flujo End-to-End Típico
+### Nivel 3: Metodología
 
-SKILL.md → DOMAIN_TAXONOMY.md → REFERENCES → PLAYBOOKS → SCRIPTS → Evidencia + Reporte
+`playbooks/` organiza procedimientos reproducibles, criterios de entrada y salida, validaciones y reporte.
 
-La arquitectura está diseñada para que cualquier agente IA pueda navegar, entender y ejecutar de forma segura y estructurada.
+### Nivel 4: Motores de automatización
 
----
+`orion/scripts/` conserva scripts JSON-first reutilizables. Estos motores no son reemplazados por el runtime: los plugins los encapsulan y controlan.
 
-**Importante**: Todo el contenido está orientado exclusivamente a usos éticos, autorizados y defensivos. Cualquier uso fuera de estos límites está estrictamente prohibido.
+### Nivel 5: Runtime de plugins
 
-Documentación mantenida y mejorada para estándares profesionales.
+`orion/plugins/core.py` implementa:
+
+- `PluginMetadata`;
+- `PluginContext`;
+- `PluginResult`;
+- `ExecutionPolicy`;
+- `PluginRegistry`;
+- `OrionRuntime`;
+- validación JSON Schema;
+- descubrimiento mediante entry points.
+
+`orion/plugins/builtin.py` adapta los motores oficiales al contrato común.
+
+### Nivel 6: Interfaces
+
+`orion/cli.py` expone una CLI unificada. La misma API puede ser consumida por Python, contenedores, pipelines y adaptadores MCP.
+
+### Nivel 7: Metadatos y navegación
+
+`skills/skills.json`, `skills/plugin.schema.json`, `docs/PLUGIN_SYSTEM.md`, `MODULE_MAP.md` y `PLAYBOOK_INDEX.md` permiten descubrimiento humano y automático.
+
+## Flujo end-to-end
+
+```text
+AUTORIZACIÓN / ALCANCE
+        ↓
+SELECCIÓN DE PLAYBOOK Y PLUGIN
+        ↓
+VALIDACIÓN DE INPUT_SCHEMA
+        ↓
+POLÍTICA DE RED Y EFECTOS EXTERNOS
+        ↓
+EJECUCIÓN DEL MOTOR EXISTENTE
+        ↓
+VALIDACIÓN DE OUTPUT_SCHEMA
+        ↓
+PLUGIN_RESULT AUDITABLE
+        ↓
+EVIDENCIA, REPORTE Y REMEDIACIÓN
+```
+
+## Extensibilidad
+
+Los plugins externos se registran mediante el grupo de entry points `orion.plugins`. El registro mantiene identificadores únicos, conserva los plugins oficiales y reporta extensiones defectuosas mediante `orion plugins doctor`.
+
+## Modelo de seguridad
+
+- Los plugins oficiales requieren una referencia de autorización.
+- La red está deshabilitada salvo habilitación explícita.
+- Los efectos externos requieren consentimiento independiente.
+- Ticketing opera en `plan` por defecto.
+- Las entradas tienen límites de tamaño y concurrencia.
+- Los errores se normalizan sin ocultar fallos.
+- Los secretos permanecen fuera de código, manifiestos y resultados.
+
+## Flujo para agentes
+
+```text
+agent-instructions.md
+        ↓
+skills.json + plugin.schema.json
+        ↓
+orion plugins describe
+        ↓
+construcción y validación del payload
+        ↓
+orion plugins run / OrionRuntime
+        ↓
+archivo del resultado y evidencia
+```
+
+Todo el sistema está orientado exclusivamente a defensa, aprendizaje, laboratorios controlados y auditorías con permiso explícito. ORION no convierte una solicitud en autorización legal ni incorpora capacidades diseñadas para malware, persistencia, evasión o acceso no autorizado.
