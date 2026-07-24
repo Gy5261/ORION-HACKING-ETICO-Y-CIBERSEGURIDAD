@@ -3,10 +3,20 @@
 from __future__ import annotations
 
 import argparse
+from collections.abc import Callable
 from typing import Any, Sequence
 
-from orion.plugins.core import OrionRuntime, PluginContext, PluginRegistry
+from orion.plugins.core import OrionRuntime, PluginContext, PluginRegistry, dumps_json
 from orion.resources import ResourceCatalog
+
+
+def _resource_reader(catalog: ResourceCatalog, path: str) -> Callable[[], str]:
+    """Create a zero-argument reader for one exact repository resource."""
+
+    def read_resource() -> str:
+        return catalog.read(path)
+
+    return read_resource
 
 
 def build_server() -> Any:
@@ -84,6 +94,12 @@ def build_server() -> Any:
 
         return catalog.search(query, limit)
 
+    @server.tool()
+    def orion_read_resource(path: str) -> str:
+        """Read one bounded repository resource by its relative path."""
+
+        return catalog.read(path)
+
     @server.resource("orion://manifest")
     def manifest_resource() -> str:
         """Current plugin manifest generated from executable code."""
@@ -94,8 +110,6 @@ def build_server() -> Any:
     def repository_index_resource() -> str:
         """Index of all MCP-readable ORION repository resources."""
 
-        from orion.plugins.core import dumps_json
-
         return dumps_json(catalog.index())
 
     @server.resource("orion://plugins/{plugin_id}")
@@ -104,11 +118,11 @@ def build_server() -> Any:
 
         return catalog.plugin_json(plugin_id)
 
-    @server.resource("orion://repository/{path}")
-    def repository_resource(path: str) -> str:
-        """Read one bounded text resource from the repository."""
-
-        return catalog.read(path)
+    for index, descriptor in enumerate(catalog.list()):
+        reader = _resource_reader(catalog, descriptor.path)
+        reader.__name__ = f"repository_resource_{index}"
+        reader.__doc__ = f"Read the ORION repository resource {descriptor.path}."
+        server.resource(descriptor.uri)(reader)
 
     @server.prompt()
     def authorized_security_workflow(task: str, authorization: str) -> str:
