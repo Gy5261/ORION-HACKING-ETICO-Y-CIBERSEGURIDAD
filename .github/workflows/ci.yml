@@ -18,32 +18,53 @@ jobs:
   verify:
     name: Verify
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
+
     steps:
       - name: Checkout exact revision
-        shell: bash
-        env:
-          REPOSITORY_URL: ${{ github.server_url }}/${{ github.repository }}.git
-          TARGET_REF: ${{ github.ref }}
-          TARGET_SHA: ${{ github.sha }}
-        run: |
-          set -euo pipefail
-          git init .
-          git remote add origin "$REPOSITORY_URL"
-          git fetch --no-tags --depth=1 origin "$TARGET_REF"
-          git checkout --detach FETCH_HEAD
-          ACTUAL_SHA="$(git rev-parse HEAD)"
-          test "$ACTUAL_SHA" = "$TARGET_SHA"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: false
 
-      - name: Verify repository
-        shell: bash
-        env:
-          PYTHONPATH: ${{ github.workspace }}
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install package
         run: |
           set -euo pipefail
-          python3 --version
-          python3 -m compileall -q orion tools tests
-          python3 tools/validate_repository.py
-          python3 -m orion plugins doctor > /tmp/orion-doctor.json
-          python3 -m orion plugins list --json > /tmp/orion-manifest.json
-          python3 -c 'import json; from pathlib import Path; doctor=json.loads(Path("/tmp/orion-doctor.json").read_text()); manifest=json.loads(Path("/tmp/orion-manifest.json").read_text()); assert doctor["ok"] is True, doctor; assert doctor["plugin_count"] == 9, doctor; assert manifest["manifest_version"] == "2.0", manifest; assert len(manifest["plugins"]) == 9, manifest; print("ORION verification passed")'
+          python -m pip install --upgrade pip
+          python -m pip install .
+          python -m pip check
+
+      - name: Compile source
+        run: |
+          set -euo pipefail
+          python -m compileall -q orion tools tests
+
+      - name: Validate repository contracts
+        run: |
+          set -euo pipefail
+          python tools/validate_repository.py
+
+      - name: Validate runtime
+        run: |
+          set -euo pipefail
+          python -m orion plugins doctor > /tmp/orion-doctor.json
+          python -m orion plugins list --json > /tmp/orion-manifest.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          doctor = json.loads(Path("/tmp/orion-doctor.json").read_text(encoding="utf-8"))
+          manifest = json.loads(Path("/tmp/orion-manifest.json").read_text(encoding="utf-8"))
+
+          assert doctor["ok"] is True, doctor
+          assert doctor["plugin_count"] == 9, doctor
+          assert manifest["manifest_version"] == "2.0", manifest
+          assert len(manifest["plugins"]) == 9, manifest
+          print("ORION verification passed")
+          PY
