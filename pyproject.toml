@@ -1,24 +1,58 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "orion-hacking-etico"
-version = "0.1.0"
-description = "Framework profesional de skills para ciberseguridad ética, hacking ético y automatización con agentes IA - Proyecto ORION"
+version = "1.0.0"
+description = "Runtime profesional de plugins para ciberseguridad ética, defensiva y autorizada"
 readme = "README.md"
 license = {text = "MIT"}
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 dependencies = []
+keywords = ["cybersecurity", "ethical-hacking", "plugins", "defensive-security", "orion"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Information Technology",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Security",
+]
+
+[project.scripts]
+orion = "orion.cli:main"
+
+[project.entry-points."orion.plugins"]
+ioc_enricher = "orion.plugins.builtin:IocEnricherPlugin"
+tls_posture_audit = "orion.plugins.builtin:TlsPostureAuditPlugin"
+findings_ticket_sync = "orion.plugins.builtin:FindingsTicketSyncPlugin"
+
+[project.optional-dependencies]
+dev = ["build>=1.2", "mypy>=1.10", "pytest>=8", "ruff>=0.6"]
 
 [project.urls]
 Homepage = "https://github.com/Gy5261/ORION-HACKING-ETICO-Y-CIBERSEGURIDAD"
 Repository = "https://github.com/Gy5261/ORION-HACKING-ETICO-Y-CIBERSEGURIDAD"
-Documentation = "https://github.com/Gy5261/ORION-HACKING-ETICO-Y-CIBERSEGURIDAD/blob/main/README.md"
+Documentation = "https://github.com/Gy5261/ORION-HACKING-ETICO-Y-CIBERSEGURIDAD/blob/main/docs/PLUGIN_SYSTEM.md"
+
+[tool.setuptools.packages.find]
+include = ["orion*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers --disable-warnings"
 
 [tool.ruff]
 line-length = 120
-target-version = "py38"
+target-version = "py310"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "W", "B", "C4", "UP", "RUF", "SIM", "PLC", "PLE"]
-ignore = ["E501"]  # Line too long - managed by formatter
+ignore = ["E501"]
 
 [tool.ruff.format]
 quote-style = "double"
@@ -29,8 +63,12 @@ skip-magic-trailing-comma = false
 known-first-party = ["orion"]
 
 [tool.mypy]
-python_version = "3.8"
+python_version = "3.10"
 warn_return_any = true
 warn_unused_config = true
 disallow_untyped_defs = true
 check_untyped_defs = true
+
+[[tool.mypy.overrides]]
+module = "orion.scripts.*"
+ignore_errors = true
