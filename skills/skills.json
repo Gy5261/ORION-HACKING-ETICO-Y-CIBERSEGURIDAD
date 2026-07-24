@@ -1,43 +1,149 @@
 {
-  "project": "ORION-HACKING-ETICO-Y-CIBERSEGURIDAD",
-  "version": "0.1.0",
-  "description": "Sistema de skills profesional para ciberseguridad ética y automatización segura con IA",
-  "skills_manifest": [
+  "manifest_version": "1.0",
+  "plugins": [
     {
-      "name": "ioc_enricher",
-      "category": "OSINT-Intelligence",
-      "description": "Enriquecimiento seguro de IOCs usando stdlib y APIs opcionales",
-      "file": "orion/scripts/ioc_enricher.py",
-      "inputs": ["--ioc", "--input"],
-      "outputs": "JSON normalizado",
-      "risk_level": "low",
-      "security_restrictions": "Solo uso autorizado, keys vía env"
+      "capabilities": [
+        "finding-normalization",
+        "ticket-planning",
+        "ticket-creation"
+      ],
+      "category": "automation-reporting",
+      "default_timeout_seconds": 60,
+      "description": "Convierte hallazgos normalizados en planes o tickets Jira/ServiceNow.",
+      "input_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "apply": {"type": "boolean"},
+          "findings": {
+            "items": {"type": "object"},
+            "maxItems": 1000,
+            "minItems": 1,
+            "type": "array"
+          },
+          "mode": {
+            "enum": ["plan", "jira", "servicenow"],
+            "type": "string"
+          }
+        },
+        "required": ["findings"],
+        "type": "object"
+      },
+      "max_timeout_seconds": 600,
+      "name": "Findings Ticket Sync",
+      "network_access": false,
+      "output_schema": {
+        "properties": {
+          "count": {"minimum": 0, "type": "integer"},
+          "created": {"type": "array"},
+          "items": {"type": "array"},
+          "mode": {"type": "string"},
+          "tool": {"enum": ["findings_ticket_sync"], "type": "string"}
+        },
+        "required": ["tool", "mode", "count", "items"],
+        "type": "object"
+      },
+      "plugin_id": "findings_ticket_sync",
+      "requires_authorization": true,
+      "risk_level": "medium",
+      "side_effects": true,
+      "tags": ["jira", "servicenow", "reporting", "dry-run-default"],
+      "version": "1.0.0"
     },
     {
-      "name": "findings_ticket_sync",
-      "category": "Automation-Reporting",
-      "description": "Sincroniza findings normalizados a Jira/ServiceNow (plan o apply)",
-      "file": "orion/scripts/findings_ticket_sync.py",
-      "inputs": ["input JSON"],
-      "outputs": "Tickets o plan JSON",
+      "capabilities": [
+        "ioc-classification",
+        "dns-resolution",
+        "threat-intelligence"
+      ],
+      "category": "osint-intelligence",
+      "default_timeout_seconds": 30,
+      "description": "Clasifica, resuelve y enriquece indicadores de compromiso con fuentes opcionales.",
+      "input_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "external_sources": {"type": "boolean"},
+          "iocs": {
+            "items": {"maxLength": 2048, "minLength": 1, "type": "string"},
+            "maxItems": 500,
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
+          },
+          "timeout": {"maximum": 30, "minimum": 0.1, "type": "number"},
+          "workers": {"maximum": 32, "minimum": 1, "type": "integer"}
+        },
+        "required": ["iocs"],
+        "type": "object"
+      },
+      "max_timeout_seconds": 300,
+      "name": "IOC Enricher",
+      "network_access": true,
+      "output_schema": {
+        "properties": {
+          "count": {"minimum": 0, "type": "integer"},
+          "items": {"type": "array"},
+          "tool": {"enum": ["ioc_enricher"], "type": "string"}
+        },
+        "required": ["tool", "count", "items"],
+        "type": "object"
+      },
+      "plugin_id": "ioc_enricher",
+      "requires_authorization": true,
       "risk_level": "low",
-      "security_restrictions": "Requiere env vars de ticketing, solo con permiso"
+      "side_effects": false,
+      "tags": ["ioc", "osint", "defensive", "json-first"],
+      "version": "1.0.0"
     },
     {
-      "name": "tls_posture_audit",
-      "category": "Web-Network",
-      "description": "Auditoría TLS segura de endpoints",
-      "file": "orion/scripts/tls_posture_audit.py",
-      "inputs": ["--host"],
-      "outputs": "JSON con cert details",
+      "capabilities": [
+        "tls-inspection",
+        "certificate-inventory",
+        "expiry-monitoring"
+      ],
+      "category": "web-network",
+      "default_timeout_seconds": 30,
+      "description": "Inspecciona negociación TLS y certificados de endpoints autorizados.",
+      "input_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "targets": {
+            "items": {"maxLength": 255, "minLength": 1, "type": "string"},
+            "maxItems": 500,
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
+          },
+          "timeout": {"maximum": 30, "minimum": 0.1, "type": "number"},
+          "workers": {"maximum": 32, "minimum": 1, "type": "integer"}
+        },
+        "required": ["targets"],
+        "type": "object"
+      },
+      "max_timeout_seconds": 300,
+      "name": "TLS Posture Audit",
+      "network_access": true,
+      "output_schema": {
+        "properties": {
+          "count": {"minimum": 0, "type": "integer"},
+          "items": {"type": "array"},
+          "tool": {"enum": ["tls_posture_audit"], "type": "string"}
+        },
+        "required": ["tool", "count", "items"],
+        "type": "object"
+      },
+      "plugin_id": "tls_posture_audit",
+      "requires_authorization": true,
       "risk_level": "low",
-      "security_restrictions": "Solo hosts autorizados"
+      "side_effects": false,
+      "tags": ["tls", "certificate", "defensive", "read-only"],
+      "version": "1.0.0"
     }
   ],
-  "core_paths": {
-    "playbooks": "orion/playbooks/",
-    "references": "orion/references/",
-    "scripts": "orion/scripts/"
-  },
-  "usage_rules": "Ver agent-instructions.md - solo ethical hacking autorizado"
+  "runtime": {
+    "entry_point_group": "orion.plugins",
+    "minimum_python": "3.10",
+    "name": "orion-hacking-etico",
+    "python_runtime": "3.13.5",
+    "version": "1.0.0"
+  }
 }
