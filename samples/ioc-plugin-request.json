@@ -1,0 +1,10 @@
+{
+  "iocs": [
+    "8.8.8.8",
+    "example.org",
+    "d41d8cd98f00b204e9800998ecf8427e"
+  ],
+  "external_sources": false,
+  "timeout": 5,
+  "workers": 4
+}
