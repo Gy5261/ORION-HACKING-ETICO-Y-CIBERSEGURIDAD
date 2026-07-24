@@ -1,0 +1,8 @@
+{
+  "targets": [
+    "example.org:443",
+    "www.python.org:443"
+  ],
+  "timeout": 5,
+  "workers": 4
+}
