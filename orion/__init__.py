@@ -1,7 +1,7 @@
-"""ORION: runtime extensible para ciberseguridad ética y autorizada."""
+"""ORION: extensible runtime for authorized defensive security."""
 
 from __future__ import annotations
 
-__version__ = "1.0.0"
+__version__ = "2.0.0"
 
 __all__ = ["__version__"]
