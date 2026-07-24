@@ -1,0 +1,7 @@
+{
+  "url": "https://example.org",
+  "depth": 2,
+  "threads": 4,
+  "delay": 0,
+  "request_timeout": 6
+}
