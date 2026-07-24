@@ -1,16 +1,16 @@
 [build-system]
-requires = ["setuptools>=68", "wheel"]
+requires = ["setuptools>=68,<81", "wheel>=0.43,<1"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "orion-hacking-etico"
-version = "1.0.0"
-description = "Runtime profesional de plugins para ciberseguridad ética, defensiva y autorizada"
+version = "2.0.0"
+description = "Plugin and MCP runtime for authorized defensive security and OSINT"
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.10"
 dependencies = []
-keywords = ["cybersecurity", "ethical-hacking", "plugins", "defensive-security", "orion"]
+keywords = ["cybersecurity", "ethical-hacking", "plugins", "mcp", "osint", "defensive-security"]
 classifiers = [
   "Development Status :: 4 - Beta",
   "Intended Audience :: Information Technology",
@@ -25,19 +25,33 @@ classifiers = [
 
 [project.scripts]
 orion = "orion.cli:main"
+orion-mcp = "orion.mcp.server:main"
 
 [project.entry-points."orion.plugins"]
 ioc_enricher = "orion.plugins.builtin:IocEnricherPlugin"
 tls_posture_audit = "orion.plugins.builtin:TlsPostureAuditPlugin"
 findings_ticket_sync = "orion.plugins.builtin:FindingsTicketSyncPlugin"
+spiderfoot = "orion.plugins.osint:SpiderFootPlugin"
+theharvester = "orion.plugins.osint:TheHarvesterPlugin"
+sherlock = "orion.plugins.osint:SherlockPlugin"
+osint_spy = "orion.plugins.osint:OsintSpyPlugin"
+phoneinfoga = "orion.plugins.osint:PhoneInfogaPlugin"
+photon = "orion.plugins.osint:PhotonPlugin"
 
 [project.optional-dependencies]
-dev = ["build>=1.2", "mypy>=1.10", "pytest>=8", "ruff>=0.6"]
+mcp = ["mcp>=1.27,<2"]
+dev = [
+  "build>=1.2,<2",
+  "mypy>=1.14,<2",
+  "pytest>=8,<10",
+  "ruff>=0.9,<1",
+]
+all = ["mcp>=1.27,<2"]
 
 [project.urls]
 Homepage = "https://github.com/Gy5261/ORION-HACKING-ETICO-Y-CIBERSEGURIDAD"
 Repository = "https://github.com/Gy5261/ORION-HACKING-ETICO-Y-CIBERSEGURIDAD"
-Documentation = "https://github.com/Gy5261/ORION-HACKING-ETICO-Y-CIBERSEGURIDAD/blob/main/docs/PLUGIN_SYSTEM.md"
+Documentation = "https://github.com/Gy5261/ORION-HACKING-ETICO-Y-CIBERSEGURIDAD/blob/main/docs/MCP_SERVER.md"
 
 [tool.setuptools.packages.find]
 include = ["orion*"]
@@ -49,6 +63,7 @@ addopts = "-q --strict-markers --disable-warnings"
 [tool.ruff]
 line-length = 120
 target-version = "py310"
+exclude = ["orion/scripts"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "W", "B", "C4", "UP", "RUF", "SIM", "PLC", "PLE"]
@@ -65,10 +80,11 @@ known-first-party = ["orion"]
 [tool.mypy]
 python_version = "3.10"
 warn_return_any = true
-warn_unused_config = true
+warn_unused_configs = true
 disallow_untyped_defs = true
 check_untyped_defs = true
+no_implicit_optional = true
 
 [[tool.mypy.overrides]]
-module = "orion.scripts.*"
+module = ["orion.scripts.*", "mcp.*"]
 ignore_errors = true
