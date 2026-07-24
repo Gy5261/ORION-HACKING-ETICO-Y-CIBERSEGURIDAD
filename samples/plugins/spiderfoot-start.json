@@ -1,0 +1,7 @@
+{
+  "operation": "start",
+  "server_url": "http://127.0.0.1:5001",
+  "target": "example.org",
+  "name": "ORION authorized example.org",
+  "use_case": "footprint"
+}
