@@ -4,23 +4,31 @@ import json
 
 from orion.cli import main
 
+EXPECTED_PLUGINS = {
+    "findings_ticket_sync",
+    "ioc_enricher",
+    "tls_posture_audit",
+    "spiderfoot",
+    "theharvester",
+    "sherlock",
+    "osint_spy",
+    "phoneinfoga",
+    "photon",
+}
+
 
 def test_cli_lists_plugins_as_json(capsys) -> None:
     assert main(["plugins", "list", "--json"]) == 0
     payload = json.loads(capsys.readouterr().out)
-    assert payload["manifest_version"] == "1.0"
-    assert [plugin["plugin_id"] for plugin in payload["plugins"]] == [
-        "findings_ticket_sync",
-        "ioc_enricher",
-        "tls_posture_audit",
-    ]
+    assert payload["manifest_version"] == "2.0"
+    assert {plugin["plugin_id"] for plugin in payload["plugins"]} == EXPECTED_PLUGINS
 
 
-def test_cli_doctor_reports_healthy_runtime(capsys) -> None:
+def test_cli_doctor_tolerates_missing_optional_tools(capsys) -> None:
     assert main(["plugins", "doctor"]) == 0
     payload = json.loads(capsys.readouterr().out)
     assert payload["ok"] is True
-    assert payload["plugin_count"] == 3
+    assert payload["plugin_count"] == 9
     assert payload["discovery_errors"] == []
 
 
