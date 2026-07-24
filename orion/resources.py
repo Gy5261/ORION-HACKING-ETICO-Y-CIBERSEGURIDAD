@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Iterable
@@ -40,7 +41,20 @@ class ResourceCatalog:
     """Bounded, path-safe catalog of repository knowledge resources."""
 
     def __init__(self, root: str | Path | None = None) -> None:
-        self.root = Path(root).resolve() if root else Path(__file__).resolve().parents[1]
+        self.root = Path(root).resolve() if root else self._default_root()
+
+    @staticmethod
+    def _default_root() -> Path:
+        override = os.getenv("ORION_RESOURCE_ROOT")
+        if override:
+            return Path(override).expanduser().resolve()
+        source_root = Path(__file__).resolve().parents[1]
+        if (source_root / "pyproject.toml").is_file():
+            return source_root
+        working_root = Path.cwd().resolve()
+        if (working_root / "orion").is_dir() and (working_root / "README.md").is_file():
+            return working_root
+        return Path(__file__).resolve().parent
 
     def list(self) -> tuple[ResourceDescriptor, ...]:
         descriptors: list[ResourceDescriptor] = []
