@@ -1,90 +1,230 @@
-# ORION - Hacking Ético y Ciberseguridad Profesional
+# ORION — Hacking Ético y Ciberseguridad Profesional
 
-![ORION](https://img.shields.io/badge/ORION-HACKING%20%C3%89TICO-blue?style=for-the-badge)
-![Python](https://img.shields.io/badge/Python-3.8%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
-![Ruff](https://img.shields.io/badge/Linting-Ruff-orange?style=for-the-badge)
+[![ORION](https://img.shields.io/badge/ORION-PLUGIN%20RUNTIME-111827?style=for-the-badge)](docs/PLUGIN_SYSTEM.md)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](pyproject.toml)
+[![Security](https://img.shields.io/badge/SECURITY-AUTHORIZED%20ONLY-B91C1C?style=for-the-badge)](#uso-ético-y-autorizado)
 
-**ORION** es un framework profesional, ético y altamente escalable para **hacking ético, ciberseguridad defensiva y automatización avanzada con agentes IA/MCP**.
+**ORION** es un framework extensible para ciberseguridad defensiva, auditoría autorizada, gestión de hallazgos y automatización segura con agentes de IA.
 
-Diseñado desde cero para ser consumido tanto por **humanos** como por **agentes de inteligencia artificial** de forma estructurada, segura y estandarizada.
+La versión 1.0 transforma las antiguas *skills* descriptivas en **plugins funcionales completos**: instalables, descubribles, tipados, validados, ejecutables desde CLI y preparados para integraciones con agentes o servidores MCP.
 
-## 📋 Tabla de Contenidos
+## Qué cambia en ORION 1.0
 
-- [Objetivo Principal](#-objetivo-principal)
-- [Disclaimer Ético](#-disclaimer-%C3%A9tico-importante-leer)
-- [Estructura del Proyecto](#-estructura-profesional-del-proyecto)
-- [Sistema de Skills para IA](#-sistema-avanzado-de-skills-para-ia)
-- [GitHub Workflows](#-github-workflows-activos)
-- [Cómo Usar](#-c%C3%B3mo-usar-este-repositorio)
-- [Licencia](#-licencia-y-contribuciones)
+Antes, `skills/skills.json` describía scripts de manera manual. Ahora el repositorio incorpora:
 
-## 🎯 Objetivo Principal
+- runtime real de plugins;
+- contratos de entrada y salida mediante JSON Schema;
+- autorización obligatoria antes de ejecutar;
+- permisos separados para red y efectos externos;
+- descubrimiento automático de plugins de terceros;
+- CLI unificada `orion plugins`;
+- resultados JSON auditables con `request_id`, actor, versión y duración;
+- procesamiento concurrente con límites seguros;
+- pruebas unitarias, type checking, lint y build de paquete en CI;
+- manifiesto generado desde el código ejecutable para evitar desincronización.
 
-Crear un repositorio de referencia de **alta calidad de producción** que sirva como:
-- Base de conocimiento para ethical hacking y ciberseguridad defensiva
-- Conjunto de skills estandarizados para agentes IA/MCP
-- Framework de automatización seguro y mantenible
-- Ejemplo de buenas prácticas de arquitectura y documentación
+## Uso ético y autorizado
 
-## ⚠️ Disclaimer Ético (IMPORTANTE LEER)
+Este proyecto se proporciona exclusivamente para:
 
-**Este repositorio es exclusivamente para fines educativos, de auditoría autorizada y defensa.**
+- defensa, hardening y validación de controles;
+- auditorías con permiso explícito y por escrito;
+- laboratorios controlados;
+- OSINT ético y análisis de indicadores;
+- AppSec, DFIR, detección y gestión responsable de vulnerabilidades;
+- automatización de reportes y remediación aprobada.
 
-- Solo utilizar en sistemas y entornos donde se tenga **permiso explícito y por escrito**.
-- Cualquier uso malicioso, no autorizado o ilegal está **estrictamente prohibido**.
-- Enfoque 100% en **defensa, hardening, análisis responsable y aprendizaje ético**.
-- El propietario y los contribuyentes no se hacen responsables por mal uso.
+No debe utilizarse para acceso no autorizado, malware, phishing real, persistencia, evasión, robo de credenciales, interrupción de servicios ni acciones fuera del alcance aprobado.
 
-## 📁 Estructura Profesional del Proyecto
+Una referencia introducida con `--authorization` mejora la trazabilidad, pero **no sustituye** un permiso legal válido, un Rules of Engagement o unos Terms of Reference.
 
-| Carpeta                  | Propósito                                      | Destacado para IA                  |
-|--------------------------|------------------------------------------------|------------------------------------|
-| `.github/workflows/`     | CI/CD y calidad automática                    | Automatización profesional        |
-| `orion/`                 | Núcleo del framework (playbooks + referencias)| Contenido principal y skills      |
-| `orion/scripts/`         | Scripts Python de alta calidad                 | Automatizaciones reutilizables    |
-| `skills/`                | **Sistema de Skills para Agentes IA**          | **Manifiesto JSON + instrucciones**| 
-| `samples/`               | Datos de ejemplo para testing                  | Integración y validación          |
-| `pyproject.toml`         | Configuración moderna de Python                | Estándares y tooling              |
+## Arquitectura
 
-## 🤖 Sistema Avanzado de Skills para IA (Carpeta `/skills/`)
+```text
+ORION
+├── orion/
+│   ├── SKILL.md                  # Sistema de conocimiento y guardrails
+│   ├── playbooks/                # Metodologías operativas
+│   ├── references/               # Referencias técnicas por dominio
+│   ├── scripts/                  # Motores de automatización existentes
+│   ├── plugins/
+│   │   ├── core.py               # Contratos, policy, registry y runtime
+│   │   └── builtin.py            # Plugins oficiales
+│   └── cli.py                    # CLI unificada
+├── skills/
+│   ├── skills.json               # Manifiesto generado desde el runtime
+│   └── plugin.schema.json        # Schema del manifiesto
+├── samples/                      # Entradas reproducibles
+├── tests/                        # Pruebas del runtime y guardrails
+└── .github/workflows/plugin-ci.yml
+```
 
-Una de las características clave del repositorio.
+El flujo general es:
 
-La carpeta [`/skills/`](https://github.com/Gy5261/ORION-HACKING-ETICO-Y-CIBERSEGURIDAD/tree/main/skills) permite que **cualquier agente IA** entienda, interprete y utilice los skills del proyecto de forma segura y estandarizada.
+```text
+AUTORIZACIÓN
+    ↓
+SELECCIÓN DEL PLUGIN
+    ↓
+VALIDACIÓN JSON SCHEMA
+    ↓
+POLÍTICA DE RED / SIDE EFFECTS
+    ↓
+EJECUCIÓN DEL MOTOR
+    ↓
+VALIDACIÓN DE SALIDA
+    ↓
+RESULTADO JSON AUDITABLE
+```
 
-Incluye:
-- `skills.json` - Manifiesto principal legible por máquinas
-- `ai-entrypoint.md` - Punto de entrada para agentes
-- `agent-instructions.md` - Reglas estrictas de seguridad y límites éticos
-- `skills.md` - Documentación humana detallada
+## Instalación
 
-## 🛠️ GitHub Workflows Activos
+```bash
+python -m pip install -e ".[dev]"
+```
 
-- **Python Lint** con Ruff
-- **Markdown Lint** con configuración profesional
-- **Secret Scanning**
-- **Build del Singlefile HTML**
+El paquete requiere Python 3.10 o superior porque el proyecto utiliza sintaxis moderna de tipos y entry points estándar.
 
-## 🚀 Cómo Usar este Repositorio
+## CLI
 
-### Para Humanos
-1. Clonar el repositorio
-2. Leer `orion/ARCHITECTURE.md` y `orion/SKILL.md`
-3. Explorar scripts en `orion/scripts/`
+### Listar plugins
 
-### Para Agentes IA / MCP / LLMs
-1. Leer `skills/ai-entrypoint.md`
-2. Cargar y parsear `skills/skills.json`
-3. Seguir estrictamente `skills/agent-instructions.md`
+```bash
+orion plugins list
+orion plugins list --json
+```
 
-## 📄 Licencia y Contribuciones
+### Inspeccionar un contrato
 
-- **Licencia**: MIT
-- Contribuciones son bienvenidas siempre que respeten el disclaimer ético y las buenas prácticas de calidad.
+```bash
+orion plugins describe ioc_enricher
+```
 
----
+### Diagnosticar el runtime
 
-*Proyecto mantenido con estándares profesionales de arquitectura, seguridad, mantenibilidad y documentación.*
+```bash
+orion plugins doctor
+```
+
+### Regenerar el manifiesto
+
+```bash
+orion plugins export-manifest --output skills/skills.json
+```
+
+## Plugins oficiales
+
+### IOC Enricher
+
+Clasifica IOCs, ejecuta resolución DNS y permite enriquecimiento externo opcional mediante las integraciones ya soportadas.
+
+```bash
+orion plugins run ioc_enricher \
+  --input samples/ioc-plugin-request.json \
+  --authorization "TOR-2026-ORION-001" \
+  --actor "security-team" \
+  --allow-network
+```
+
+Características:
+
+- IPv4, IPv6, dominios, URL y hashes comunes;
+- deduplicación estable;
+- límites de hasta 500 indicadores;
+- concurrencia configurable y limitada;
+- fuentes externas desactivadas por defecto;
+- salida JSON normalizada.
+
+### TLS Posture Audit
+
+Inspecciona endpoints TLS autorizados y aísla errores por objetivo.
+
+```bash
+orion plugins run tls_posture_audit \
+  --input samples/tls-plugin-request.json \
+  --authorization "CHANGE-SEC-2048" \
+  --allow-network
+```
+
+Características:
+
+- lotes de hasta 500 destinos;
+- timeout por operación;
+- máximo de 32 workers;
+- inventario de versión, cipher, certificado y peer;
+- un fallo no interrumpe el resto del lote.
+
+### Findings Ticket Sync
+
+Convierte hallazgos en planes de trabajo o tickets Jira/ServiceNow. El modo predeterminado no modifica sistemas externos.
+
+```bash
+orion plugins run findings_ticket_sync \
+  --input samples/ticket-plugin-request.json \
+  --authorization "SECURITY-REVIEW-7781"
+```
+
+Para aplicar cambios reales deben coincidir tres decisiones explícitas:
+
+1. `"apply": true` en la entrada;
+2. `--allow-side-effects` en la CLI;
+3. `--allow-network` para comunicarse con Jira o ServiceNow.
+
+## Crear plugins externos
+
+Un paquete externo implementa `BasePlugin` y publica un entry point:
+
+```toml
+[project.entry-points."orion.plugins"]
+cloud_posture = "my_orion_extension.plugin:CloudPosturePlugin"
+```
+
+Después de instalarlo, aparecerá automáticamente:
+
+```bash
+orion plugins list
+```
+
+ORION rechaza identificadores duplicados, registra errores de descubrimiento y valida tanto la entrada como la salida de cada extensión.
+
+Consulta [docs/PLUGIN_SYSTEM.md](docs/PLUGIN_SYSTEM.md) para el contrato completo, ejemplos y reglas de desarrollo.
+
+## Calidad y CI
+
+El workflow `Plugin Runtime CI` ejecuta en Python 3.10, 3.11, 3.12 y 3.13:
+
+- Ruff sobre la capa de runtime;
+- comprobación de formato;
+- mypy;
+- pytest;
+- `orion plugins doctor`;
+- validación del manifiesto generado;
+- construcción de wheel;
+- instalación limpia y smoke test del paquete construido.
+
+## Diseño de seguridad
+
+ORION aplica defensa en profundidad:
+
+- autorización antes de ejecutar;
+- red deshabilitada salvo consentimiento explícito;
+- efectos externos deshabilitados salvo consentimiento explícito;
+- *dry-run* por defecto para ticketing;
+- límites de tamaño, tiempo y concurrencia;
+- errores normalizados;
+- contratos inmutables por plugin;
+- resultados aptos para auditoría, MCP y automatización.
+
+## Documentación principal
+
+- [Sistema de plugins](docs/PLUGIN_SYSTEM.md)
+- [Skill principal](orion/SKILL.md)
+- [Arquitectura general](orion/ARCHITECTURE.md)
+- [Entrada para agentes](skills/ai-entrypoint.md)
+- [Instrucciones seguras](skills/agent-instructions.md)
+
+## Licencia
+
+MIT. Las contribuciones deben mantener el enfoque defensivo, autorizado, reversible y auditable del proyecto.
 
 **Powered by ORION IA**
