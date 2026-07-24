@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import base64
+import mimetypes
 import os
 from dataclasses import asdict, dataclass
 from pathlib import Path
@@ -9,7 +11,41 @@ from typing import Iterable
 
 from orion.plugins.core import JsonObject, PluginRegistry, dumps_json
 
-_ALLOWED_SUFFIXES = {".md", ".json", ".py", ".toml", ".yml", ".yaml", ".txt"}
+_TEXT_SUFFIXES = {
+    ".cfg",
+    ".css",
+    ".csv",
+    ".html",
+    ".ini",
+    ".js",
+    ".json",
+    ".jsonl",
+    ".log",
+    ".md",
+    ".ps1",
+    ".py",
+    ".sh",
+    ".svg",
+    ".toml",
+    ".ts",
+    ".tsx",
+    ".txt",
+    ".xml",
+    ".yaml",
+    ".yml",
+}
+_BINARY_SUFFIXES = {
+    ".gif",
+    ".jpeg",
+    ".jpg",
+    ".mp3",
+    ".ogg",
+    ".pdf",
+    ".png",
+    ".wav",
+    ".webp",
+}
+_ALLOWED_SUFFIXES = _TEXT_SUFFIXES | _BINARY_SUFFIXES
 _EXCLUDED_PARTS = {
     ".git",
     ".github",
@@ -22,7 +58,14 @@ _EXCLUDED_PARTS = {
     "dist",
     "node_modules",
 }
-_MAX_RESOURCE_BYTES = 512 * 1024
+_EXCLUDED_NAMES = {
+    ".env",
+    ".npmrc",
+    ".pypirc",
+    "credentials.json",
+    "secrets.json",
+}
+_DEFAULT_MAX_RESOURCE_BYTES = 2 * 1024 * 1024
 
 
 @dataclass(frozen=True, slots=True)
@@ -32,6 +75,7 @@ class ResourceDescriptor:
     name: str
     media_type: str
     size_bytes: int
+    binary: bool
 
     def to_dict(self) -> JsonObject:
         return asdict(self)
@@ -40,8 +84,14 @@ class ResourceDescriptor:
 class ResourceCatalog:
     """Bounded, path-safe catalog of repository knowledge resources."""
 
-    def __init__(self, root: str | Path | None = None) -> None:
+    def __init__(self, root: str | Path | None = None, max_resource_bytes: int | None = None) -> None:
         self.root = Path(root).resolve() if root else self._default_root()
+        configured_limit = max_resource_bytes or int(
+            os.getenv("ORION_RESOURCE_MAX_BYTES", str(_DEFAULT_MAX_RESOURCE_BYTES))
+        )
+        if configured_limit <= 0:
+            raise ValueError("max_resource_bytes must be positive")
+        self.max_resource_bytes = configured_limit
 
     @staticmethod
     def _default_root() -> Path:
@@ -67,6 +117,7 @@ class ResourceCatalog:
                     name=path.name,
                     media_type=self._media_type(path),
                     size_bytes=path.stat().st_size,
+                    binary=path.suffix.lower() in _BINARY_SUFFIXES,
                 )
             )
         return tuple(descriptors)
@@ -76,6 +127,7 @@ class ResourceCatalog:
         return {
             "project": "ORION-HACKING-ETICO-Y-CIBERSEGURIDAD",
             "manifest_uri": "orion://manifest",
+            "mcp_capabilities_uri": "orion://mcp/capabilities",
             "plugin_count": len(registry.list()),
             "plugins": [
                 {
@@ -87,14 +139,41 @@ class ResourceCatalog:
             "resources": [descriptor.to_dict() for descriptor in self.list()],
         }
 
+    def descriptor(self, relative_path: str) -> ResourceDescriptor:
+        normalized = self._resolve(relative_path).relative_to(self.root).as_posix()
+        for descriptor in self.list():
+            if descriptor.path == normalized:
+                return descriptor
+        raise FileNotFoundError(f"resource not found: {relative_path}")
+
     def read(self, relative_path: str) -> str:
-        path = self._resolve(relative_path)
-        if not path.is_file() or path.suffix.lower() not in _ALLOWED_SUFFIXES:
-            raise FileNotFoundError(f"resource not found: {relative_path}")
-        size = path.stat().st_size
-        if size > _MAX_RESOURCE_BYTES:
-            raise ValueError(f"resource exceeds {_MAX_RESOURCE_BYTES} bytes: {relative_path}")
-        return path.read_text(encoding="utf-8", errors="replace")
+        descriptor = self.descriptor(relative_path)
+        if descriptor.binary:
+            raise ValueError(f"resource is binary: {relative_path}")
+        return self._resolve(relative_path).read_text(encoding="utf-8", errors="replace")
+
+    def read_bytes(self, relative_path: str) -> bytes:
+        self.descriptor(relative_path)
+        return self._resolve(relative_path).read_bytes()
+
+    def read_mcp(self, relative_path: str) -> str | bytes:
+        descriptor = self.descriptor(relative_path)
+        return self.read_bytes(relative_path) if descriptor.binary else self.read(relative_path)
+
+    def payload(self, relative_path: str) -> JsonObject:
+        descriptor = self.descriptor(relative_path)
+        payload: JsonObject = {
+            "uri": descriptor.uri,
+            "path": descriptor.path,
+            "mimeType": descriptor.media_type,
+            "size": descriptor.size_bytes,
+            "encoding": "base64" if descriptor.binary else "utf-8",
+        }
+        if descriptor.binary:
+            payload["blob"] = base64.b64encode(self.read_bytes(relative_path)).decode("ascii")
+        else:
+            payload["text"] = self.read(relative_path)
+        return payload
 
     def search(self, query: str, limit: int = 20) -> list[JsonObject]:
         normalized = query.strip().casefold()
@@ -105,6 +184,17 @@ class ResourceCatalog:
         for descriptor in self.list():
             if len(matches) >= bounded_limit:
                 break
+            if descriptor.binary:
+                if normalized in descriptor.path.casefold():
+                    matches.append(
+                        {
+                            "uri": descriptor.uri,
+                            "path": descriptor.path,
+                            "mimeType": descriptor.media_type,
+                            "snippet": "binary resource",
+                        }
+                    )
+                continue
             try:
                 text = self.read(descriptor.path)
             except (OSError, ValueError):
@@ -118,6 +208,7 @@ class ResourceCatalog:
                 {
                     "uri": descriptor.uri,
                     "path": descriptor.path,
+                    "mimeType": descriptor.media_type,
                     "snippet": text[start:end].replace("\n", " ").strip(),
                 }
             )
@@ -139,9 +230,11 @@ class ResourceCatalog:
             relative_parts = path.relative_to(self.root).parts
             if any(part in _EXCLUDED_PARTS for part in relative_parts):
                 continue
+            if path.name in _EXCLUDED_NAMES or path.name.startswith(".env."):
+                continue
             if path.suffix.lower() not in _ALLOWED_SUFFIXES:
                 continue
-            if path.stat().st_size > _MAX_RESOURCE_BYTES:
+            if path.stat().st_size > self.max_resource_bytes:
                 continue
             yield path.resolve()
 
@@ -155,11 +248,14 @@ class ResourceCatalog:
 
     @staticmethod
     def _media_type(path: Path) -> str:
-        return {
+        explicit = {
             ".md": "text/markdown",
-            ".json": "application/json",
             ".py": "text/x-python",
             ".toml": "application/toml",
-            ".yml": "application/yaml",
             ".yaml": "application/yaml",
-        }.get(path.suffix.lower(), "text/plain")
+            ".yml": "application/yaml",
+        }
+        if path.suffix.lower() in explicit:
+            return explicit[path.suffix.lower()]
+        guessed, _ = mimetypes.guess_type(path.name)
+        return guessed or ("application/octet-stream" if path.suffix.lower() in _BINARY_SUFFIXES else "text/plain")
