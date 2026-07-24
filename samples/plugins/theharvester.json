@@ -1,0 +1,7 @@
+{
+  "domain": "example.org",
+  "sources": ["crtsh", "duckduckgo"],
+  "limit": 200,
+  "dns_lookup": false,
+  "quiet": true
+}
