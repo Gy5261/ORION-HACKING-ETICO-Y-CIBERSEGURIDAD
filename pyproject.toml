@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "orion-hacking-etico"
-version = "2.0.0"
-description = "Plugin and MCP runtime for authorized defensive security and OSINT"
+version = "2.1.0"
+description = "Universal MCP and plugin runtime for authorized defensive security and OSINT"
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.10"
