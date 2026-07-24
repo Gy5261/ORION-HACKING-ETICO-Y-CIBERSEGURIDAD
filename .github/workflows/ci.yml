@@ -1,79 +1,60 @@
-name: CI Diagnostic
+name: CI
 
 on:
   push:
+    branches: [main]
+  pull_request:
     branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
-  issues: write
 
 concurrency:
-  group: ci-diagnostic-main
+  group: ci-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
-  diagnose:
-    name: Diagnose
+  verify:
+    name: Verify
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Run reproducible checks
-        id: checks
-        shell: bash
+
+      - name: Install package
         run: |
-          set +e
-          : > ci-diagnostic.log
-          failed=0
+          python -m pip install --upgrade pip
+          python -m pip install .
+          python -m pip check
 
-          run_check() {
-            label="$1"
-            shift
-            {
-              echo
-              echo "===== ${label} ====="
-              echo "+ $*"
-              "$@"
-              code=$?
-              echo "exit_code=${code}"
-            } >> ci-diagnostic.log 2>&1
-            if [ "$code" -ne 0 ]; then
-              failed=1
-            fi
-          }
-
-          run_check "python" python --version
-          run_check "pip" python -m pip --version
-          run_check "install" python -m pip install .
-          run_check "compile" python -m compileall -q orion tools
-          run_check "registry" python -c "from orion.plugins.core import PluginRegistry; r=PluginRegistry(); print([p.metadata.plugin_id for p in r.list()]); assert len(r.list()) == 9"
-          run_check "doctor" python -m orion plugins doctor
-          run_check "validator" python tools/validate_repository.py
-
-          cat ci-diagnostic.log
-          echo "failed=${failed}" >> "$GITHUB_OUTPUT"
-          exit "$failed"
-      - name: Publish failure report
-        if: failure()
-        env:
-          GH_TOKEN: ${{ github.token }}
-          REPOSITORY: ${{ github.repository }}
-          SHA: ${{ github.sha }}
-        shell: bash
+      - name: Validate source
         run: |
-          {
-            echo "Automated CI diagnostic for commit \`${SHA}\`."
-            echo
-            echo '```text'
-            tail -n 350 ci-diagnostic.log
-            echo '```'
-          } > ci-issue.md
-          gh issue create \
-            --repo "$REPOSITORY" \
-            --title "CI diagnostic ${SHA:0:8}" \
-            --body-file ci-issue.md
+          python -m compileall -q orion tools
+          python tools/validate_repository.py
+
+      - name: Validate runtime
+        run: |
+          python -m orion plugins doctor
+          python -m orion plugins list --json > /tmp/orion-plugins.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from orion.plugins.core import PluginRegistry
+
+          registry = PluginRegistry()
+          identifiers = [plugin.metadata.plugin_id for plugin in registry.list()]
+          assert len(identifiers) == 9, identifiers
+          assert len(set(identifiers)) == 9, identifiers
+
+          manifest = json.loads(Path("/tmp/orion-plugins.json").read_text(encoding="utf-8"))
+          assert manifest["manifest_version"] == "2.0"
+          assert len(manifest["plugins"]) == 9
+          print("ORION CI verification passed")
+          PY
