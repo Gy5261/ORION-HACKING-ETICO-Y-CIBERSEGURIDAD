@@ -1,0 +1,81 @@
+name: Authorized ORION audit — rampses.pages.dev
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - ".github/workflows/authorized-rampses-audit.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout ORION
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install ORION
+        run: python -m pip install -e .
+
+      - name: Verify plugin runtime
+        run: |
+          orion plugins list --health
+          orion plugins doctor
+
+      - name: Prepare authorized inputs
+        run: |
+          cat > /tmp/orion-ioc.json <<'JSON'
+          {
+            "iocs": ["https://rampses.pages.dev/"],
+            "timeout": 10,
+            "workers": 1,
+            "external_sources": false
+          }
+          JSON
+
+          cat > /tmp/orion-tls.json <<'JSON'
+          {
+            "targets": ["rampses.pages.dev:443"],
+            "timeout": 10,
+            "workers": 1
+          }
+          JSON
+
+      - name: Run native ORION URL and DNS inspection
+        run: |
+          orion plugins run ioc_enricher \
+            --input /tmp/orion-ioc.json \
+            --output orion-ioc-result.json \
+            --authorization USER-AUTH-2026-07-29-RAMPSES \
+            --actor chatgpt-authorized-audit \
+            --allow-network
+          cat orion-ioc-result.json
+
+      - name: Run native ORION TLS posture audit
+        run: |
+          orion plugins run tls_posture_audit \
+            --input /tmp/orion-tls.json \
+            --output orion-tls-result.json \
+            --authorization USER-AUTH-2026-07-29-RAMPSES \
+            --actor chatgpt-authorized-audit \
+            --allow-network
+          cat orion-tls-result.json
+
+      - name: Upload audit evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: orion-rampses-audit
+          path: |
+            orion-ioc-result.json
+            orion-tls-result.json
+          if-no-files-found: error
+          retention-days: 7
