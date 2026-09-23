@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ORION operator-provisioned lab approval",
+  "description": "Structural contract only. Runtime additionally checks active dates, 24-hour maximum duration, revocation, distinct reviewer labels, request fingerprint, actor/reference match and atomic usage quota. This is not proof of legal consent.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "authorization", "actor", "asset_owner", "approved_by", "purpose", "legal_basis_reference", "environment", "not_before", "expires_at", "revoked", "request_sha256", "max_uses"],
+  "properties": {
+    "schema_version": {"type": "integer", "const": 1},
+    "authorization": {"type": "string", "minLength": 12, "maxLength": 512},
+    "actor": {"type": "string", "minLength": 3, "maxLength": 512},
+    "asset_owner": {"type": "string", "minLength": 3, "maxLength": 512},
+    "approved_by": {"type": "string", "minLength": 3, "maxLength": 512},
+    "purpose": {"type": "string", "minLength": 3, "maxLength": 512},
+    "legal_basis_reference": {"type": "string", "minLength": 3, "maxLength": 512},
+    "environment": {"type": "string", "const": "isolated-lab"},
+    "not_before": {"type": "string", "format": "date-time"},
+    "expires_at": {"type": "string", "format": "date-time"},
+    "revoked": {"type": "boolean"},
+    "request_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "max_uses": {"type": "integer", "minimum": 1, "maximum": 100}
+  }
+}

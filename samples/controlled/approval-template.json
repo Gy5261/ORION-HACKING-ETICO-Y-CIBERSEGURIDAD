@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "authorization": "DRAFT-NOT-AUTHORIZED-001",
+  "actor": "replace-operator",
+  "asset_owner": "replace-asset-owner",
+  "approved_by": "replace-independent-reviewer",
+  "purpose": "DRAFT: describe the exact defensive laboratory objective",
+  "legal_basis_reference": "DRAFT: reference independently reviewed permission",
+  "environment": "isolated-lab",
+  "not_before": "2000-01-01T00:00:00Z",
+  "expires_at": "2000-01-01T00:15:00Z",
+  "revoked": true,
+  "request_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "max_uses": 1
+}
