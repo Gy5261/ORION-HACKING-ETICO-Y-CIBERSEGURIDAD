@@ -1,0 +1,5 @@
+{
+  "iocs": ["127.0.0.1", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"],
+  "external_sources": false,
+  "workers": 1
+}
