@@ -1,5 +1,8 @@
 # ORION 2.0 Plugin System
 
+> **Alcance vigente:** las referencias históricas a integración online o tickets remotos son descripciones de adaptadores, no permisos efectivos. En el perfil actual sólo la clasificación IOC local, la planificación de tickets y el TLS de laboratorio con aprobación exacta tienen rutas admitidas. Consultar [capacidades verificadas](VERIFIED_CAPABILITIES.md) y [operación controlada](CONTROLLED_OPERATION.md).
+
+
 ORION converts security capabilities into typed, discoverable, auditable plugins. The runtime is the source of truth for CLI, MCP, manifests, tests, and external integrations.
 
 ## Architecture
