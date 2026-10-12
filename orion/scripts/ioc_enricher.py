@@ -48,7 +48,11 @@ def parse_args() -> argparse.Namespace:
 def load_iocs(args: argparse.Namespace) -> List[str]:
     values = list(args.ioc)
     if args.input:
-        data = json.loads(open(args.input, "r", encoding="utf-8").read())
+        with open(args.input, "rb") as handle:
+            raw = handle.read(1024 * 1024 + 1)
+        if len(raw) > 1024 * 1024:
+            raise ValueError("IOC input exceeds 1 MiB")
+        data = json.loads(raw)
         if isinstance(data, list):
             values.extend(str(item) for item in data)
         else:
@@ -62,6 +66,8 @@ def load_iocs(args: argparse.Namespace) -> List[str]:
             deduped.append(cleaned)
     if not deduped:
         raise ValueError("No se recibieron IOCs.")
+    if len(deduped) > 500 or any(len(ioc) > 2048 for ioc in deduped):
+        raise ValueError("IOC count or item length exceeds the configured limit")
     return deduped
 
 
@@ -153,7 +159,12 @@ def enrich_external(ioc_type: str, value: str, timeout: float) -> Dict[str, Any]
     return integrations
 
 
-def build_record(value: str, timeout: float) -> Dict[str, Any]:
+def build_record(value: str, timeout: float, *, allow_network: bool = False) -> Dict[str, Any]:
+    """Classify an IOC offline by default. Online enrichment requires explicit opt-in.
+
+    The direct CLI does not expose online mode in the controlled profile.
+    All external-source operations remain subject to the higher-level policy.
+    """
     ioc_type = classify_ioc(value)
     record: Dict[str, Any] = {
         "value": value,
@@ -172,7 +183,7 @@ def build_record(value: str, timeout: float) -> Dict[str, Any]:
             "is_reserved": ip.is_reserved,
         }
     elif ioc_type == "domain":
-        record["local"] = dns_lookup(value)
+        record["local"] = {"normalized": value.casefold(), "dns_performed": False}
     elif ioc_type == "url":
         parsed = urllib.parse.urlparse(value)
         record["local"] = {
@@ -180,11 +191,19 @@ def build_record(value: str, timeout: float) -> Dict[str, Any]:
             "host": parsed.hostname,
             "path": parsed.path,
         }
-        if parsed.hostname:
-            record["local"]["dns"] = dns_lookup(parsed.hostname)
+        record["local"]["dns_performed"] = False
     elif ioc_type == "hash":
         record["local"] = {"algorithm_guess": {32: "md5", 40: "sha1", 64: "sha256"}.get(len(value))}
-    record["external"] = enrich_external(ioc_type, value, timeout)
+    if allow_network:
+        if not isinstance(timeout, (int, float)) or not 0.1 <= timeout <= 30:
+            raise ValueError("online timeout must be between 0.1 and 30 seconds")
+        if ioc_type in {"domain", "url"}:
+            hostname = value if ioc_type == "domain" else urllib.parse.urlsplit(value).hostname
+            if hostname:
+                record["local"]["dns"] = dns_lookup(hostname)
+                record["local"]["dns_performed"] = True
+        record["external"] = enrich_external(ioc_type, value, timeout)
+    record["classification_only"] = not allow_network
     return record
 
 
