@@ -20,6 +20,8 @@ classifiers = [
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: 3.15",
   "Topic :: Security",
 ]
 
@@ -42,9 +44,9 @@ photon = "orion.plugins.osint:PhotonPlugin"
 mcp = ["mcp>=1.27,<2"]
 dev = [
   "build>=1.2,<2",
-  "mypy>=1.14,<2",
+  "mypy>=2.4,<3",
   "pytest>=8,<10",
-  "ruff>=0.9,<1",
+  "ruff>=0.17,<1",
 ]
 all = ["mcp>=1.27,<2"]
 

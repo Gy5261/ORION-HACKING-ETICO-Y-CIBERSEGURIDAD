@@ -3,15 +3,18 @@
 from __future__ import annotations
 
 import json
+import math
 import os
 import shutil
+import signal
 import subprocess
 import sys
 import tempfile
+import threading
 import time
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Mapping, Sequence
+from typing import Any, BinaryIO, Mapping, Sequence
 
 from .core import JsonObject, PluginHealth, ToolUnavailableError
 
@@ -93,6 +96,35 @@ class ToolRunner:
             },
         )
 
+    @staticmethod
+    def _drain(pipe: BinaryIO, buffer: bytearray, overflow: list[bool]) -> None:
+        """Always drain pipes; retain only bounded output in memory."""
+        try:
+            while True:
+                chunk = pipe.read(65536)
+                if not chunk:
+                    break
+                available = max(0, _MAX_STREAM_BYTES - len(buffer))
+                buffer.extend(chunk[:available])
+                if len(chunk) > available:
+                    overflow[0] = True
+        finally:
+            pipe.close()
+
+    @staticmethod
+    def _stop_process(process: subprocess.Popen[bytes]) -> None:
+        """Stop a dedicated process group on POSIX; kill the child on Windows."""
+        if os.name == "posix":
+            try:
+                os.killpg(process.pid, signal.SIGKILL)
+                return
+            except ProcessLookupError:
+                return
+        try:
+            process.kill()
+        except ProcessLookupError:
+            pass
+
     def run(
         self,
         arguments: Sequence[str],
@@ -104,43 +136,81 @@ class ToolRunner:
         resolved = self.resolve()
         if resolved is None:
             raise ToolUnavailableError(self.health().message)
-        if timeout_seconds <= 0:
-            raise ValueError("timeout_seconds must be positive")
+        if type(timeout_seconds) not in {int, float} or not math.isfinite(timeout_seconds) or timeout_seconds <= 0:
+            raise ValueError("timeout_seconds must be finite and positive")
         command = [*resolved.command_prefix, *[str(argument) for argument in arguments]]
+        if any("\x00" in argument for argument in command):
+            raise ValueError("NUL bytes are not allowed in tool arguments")
         env = self._environment(environment)
-        started = time.perf_counter()
-        try:
-            completed = subprocess.run(
-                command,
-                cwd=str(working_directory) if working_directory else None,
-                env=env,
-                stdin=subprocess.DEVNULL,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                timeout=timeout_seconds,
-                check=False,
-                shell=False,
-            )
-        except subprocess.TimeoutExpired as exc:
-            stdout = self._decode(exc.stdout)
-            stderr = self._decode(exc.stderr)
-            raise TimeoutError(
-                f"{self.spec.tool_id} exceeded {timeout_seconds:.1f}s; stdout={stdout!r}; stderr={stderr!r}"
-            ) from exc
+        started = time.perf_counter_ns()
 
-        duration_ms = round((time.perf_counter() - started) * 1000)
-        stdout = self._decode(completed.stdout)
-        stderr = self._decode(completed.stderr)
+        process = subprocess.Popen(
+            command,
+            cwd=str(working_directory) if working_directory else None,
+            env=env,
+            stdin=subprocess.DEVNULL,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            shell=False,
+            start_new_session=os.name == "posix",
+            creationflags=getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0) if os.name == "nt" else 0,
+        )
+        assert process.stdout is not None and process.stderr is not None
+        stdout_bytes, stderr_bytes = bytearray(), bytearray()
+        stdout_overflow, stderr_overflow = [False], [False]
+        readers = (
+            threading.Thread(target=self._drain, args=(process.stdout, stdout_bytes, stdout_overflow),
+                             name="orion-tool-stdout", daemon=True),
+            threading.Thread(target=self._drain, args=(process.stderr, stderr_bytes, stderr_overflow),
+                             name="orion-tool-stderr", daemon=True),
+        )
+        for reader in readers:
+            reader.start()
+        timed_out = False
+        try:
+            return_code = process.wait(timeout=timeout_seconds)
+        except subprocess.TimeoutExpired:
+            timed_out = True
+            self._stop_process(process)
+            try:
+                process.wait(timeout=5)
+            except subprocess.TimeoutExpired:
+                self._stop_process(process)
+            return_code = process.returncode
+
+        for reader in readers:
+            reader.join(timeout=2)
+        if any(reader.is_alive() for reader in readers):
+            self._stop_process(process)
+            for reader in readers:
+                reader.join(timeout=2)
+            raise RuntimeError(f"{self.spec.tool_id} retained open subprocess output handles")
+        duration_ms = round((time.perf_counter_ns() - started) / 1_000_000)
+
+        stdout = self._decode(bytes(stdout_bytes))
+        stderr = self._decode(bytes(stderr_bytes))
+        if stdout_overflow[0]:
+            stdout += "\n[ORION STDOUT TRUNCATED AT 2 MiB]"
+        if stderr_overflow[0]:
+            stderr += "\n[ORION STDERR TRUNCATED AT 2 MiB]"
+        if timed_out:
+            raise TimeoutError(
+                f"{self.spec.tool_id} exceeded {timeout_seconds:.1f}s; "
+                f"stdout={stdout[:512]!r}; stderr={stderr[:512]!r}"
+            )
+
         result: JsonObject = {
             "tool": self.spec.tool_id,
-            "return_code": completed.returncode,
+            "return_code": return_code,
             "duration_ms": duration_ms,
             "stdout": stdout,
             "stderr": stderr,
+            "stdout_truncated": stdout_overflow[0],
+            "stderr_truncated": stderr_overflow[0],
         }
-        if completed.returncode != 0:
+        if return_code != 0:
             raise RuntimeError(
-                f"{self.spec.tool_id} exited with code {completed.returncode}: {stderr or stdout}"
+                f"{self.spec.tool_id} exited with code {return_code}: {(stderr or stdout)[:2048]}"
             )
         return result
 

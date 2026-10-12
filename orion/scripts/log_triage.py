@@ -28,31 +28,31 @@ Formato JSON esperado:
 
 import json
 import sys
-from datetime import datetime
+from datetime import datetime, timezone
 from collections import defaultdict, Counter
 from typing import Dict, List, Any
 
 
 def parse_timestamp(ts_str: str) -> datetime | None:
-    """Intenta parsear timestamp en varios formatos comunes."""
-    formats = [
-        "%Y-%m-%dT%H:%M:%SZ",
-        "%Y-%m-%d %H:%M:%S",
-        "%Y-%m-%dT%H:%M:%S",
-        "%d/%m/%Y %H:%M:%S",
-    ]
-    for fmt in formats:
+    """Return comparable UTC instants; legacy timestamps without offsets use UTC."""
+    if not isinstance(ts_str, str):
+        return None
+    try:
+        parsed = datetime.fromisoformat(ts_str.replace("Z", "+00:00"))
+    except ValueError:
         try:
-            return datetime.strptime(ts_str, fmt)
+            parsed = datetime.strptime(ts_str, "%d/%m/%Y %H:%M:%S")
         except ValueError:
-            continue
-    return None
+            return None
+    if parsed.utcoffset() is None:
+        parsed = parsed.replace(tzinfo=timezone.utc)
+    return parsed.astimezone(timezone.utc)
 
 
 def classify_severity(event: Dict[str, Any]) -> str:
     """Clasifica severity de un evento basado en tipo y contenido."""
-    severity = event.get("severity", "info").lower()
-    event_type = event.get("type", "").lower()
+    severity = str(event.get("severity") or "info").lower()
+    event_type = str(event.get("type") or "").lower()
     
     # Prioridades predefinidas
     critical_patterns = ["failed_login_attempts", "privilege_escalation", "malware", "breach"]
@@ -87,6 +87,14 @@ def main() -> int:
     if not isinstance(events, list):
         print(json.dumps({"error": "Events must be a JSON array"}))
         return 1
+    for index, event in enumerate(events):
+        if not isinstance(event, dict):
+            print(json.dumps({"error": f"Event {index} must be a JSON object"}))
+            return 1
+        for field in ("user", "source", "type", "severity", "timestamp"):
+            if event.get(field) is not None and not isinstance(event[field], str):
+                print(json.dumps({"error": f"Event {index} field {field} must be a string"}))
+                return 1
     
     # Inicializa contadores y estructuras
     summary = {
@@ -100,7 +108,8 @@ def main() -> int:
         "timeline": {
             "first_event": None,
             "last_event": None,
-            "events_per_hour": defaultdict(int)
+            "events_per_hour": defaultdict(int),
+            "invalid_timestamps": 0
         },
         "top_users": [],
         "top_sources": [],
@@ -112,6 +121,7 @@ def main() -> int:
     source_counter = Counter()
     type_counter = Counter()
     time_buckets = defaultdict(int)
+    observed_timestamps: list[tuple[datetime, str]] = []
     
     # Procesa eventos
     for event in events:
@@ -142,10 +152,14 @@ def main() -> int:
                 hour_bucket = parsed_ts.strftime("%Y-%m-%d %H:00")
                 time_buckets[hour_bucket] += 1
                 
-                if summary["timeline"]["first_event"] is None:
-                    summary["timeline"]["first_event"] = ts
-                summary["timeline"]["last_event"] = ts
+                observed_timestamps.append((parsed_ts, ts))
+            else:
+                summary["timeline"]["invalid_timestamps"] += 1
     
+    if observed_timestamps:
+        summary["timeline"]["first_event"] = min(observed_timestamps, key=lambda item: item[0])[1]
+        summary["timeline"]["last_event"] = max(observed_timestamps, key=lambda item: item[0])[1]
+
     # Compila resultados
     summary["users"] = sorted({e.get("user") for e in events if e.get("user")})
     summary["sources"] = sorted({e.get("source") for e in events if e.get("source")})

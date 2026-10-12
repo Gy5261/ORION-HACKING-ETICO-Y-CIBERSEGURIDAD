@@ -64,3 +64,18 @@ python -m orion plugins doctor
 ```
 
 Las pruebas emplean datos sintéticos, archivos temporales, ASGI en memoria y transportes loopback. La instalación de dependencias de CI sí requiere acceso a sus repositorios de paquetes; las pruebas no realizan evaluaciones de terceros.
+
+
+## Python 3.15 — modernización y pruebas
+
+**Versión recomendada:** Python 3.15.0 estable (9 de octubre de 2026), no la RC1. Se conserva soporte de instalación desde Python 3.10 para no romper automatizaciones existentes. La CI comprueba Python 3.12 y 3.15 en Linux y Python 3.15 en Windows.
+
+```bash
+python -m orion runtime-info --json
+python orion/scripts/run_skill_sanity.py
+python tools/benchmark_runtime.py --iterations 500 --samples 5
+```
+
+La CLI inspecciona características observadas del intérprete. El benchmark mide operaciones locales: **no** supone aceleraciones, auditorías reales, soporte de terceros ni conformidad de seguridad. La ejecución de procesos externos tiene captura acotada y deadlines efectivos; el timeout lógico de plugins Python en proceso continúa sin aislamiento forzoso.
+
+Detalles técnicos y límites: [Migración a Python 3.15](docs/PYTHON_315_MIGRATION.md).

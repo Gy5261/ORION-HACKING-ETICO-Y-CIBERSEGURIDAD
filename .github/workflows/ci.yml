@@ -16,9 +16,19 @@ concurrency:
 
 jobs:
   verify:
-    name: Verify
-    runs-on: ubuntu-latest
-    timeout-minutes: 20
+    name: Verify / Python ${{ matrix.python }} / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {os: ubuntu-latest, python: "3.12"}
+          - {os: ubuntu-latest, python: "3.15"}
+          - {os: windows-latest, python: "3.15"}
+    defaults:
+      run:
+        shell: bash
 
     steps:
       - name: Checkout exact revision
@@ -28,9 +38,9 @@ jobs:
           persist-credentials: false
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
-          python-version: "3.12"
+          python-version: ${{ matrix.python }}
           cache: pip
 
       - name: Install package and MCP SDK
@@ -51,6 +61,8 @@ jobs:
           python -m ruff check \
             orion/mcp \
             orion/resources.py \
+            orion/runtime_info.py \
+            tests/test_python315_hardening.py \
             tests/test_mcp_compat.py \
             tests/test_mcp_transports.py
 
@@ -66,19 +78,31 @@ jobs:
             tests/test_mcp_compat.py \
             tests/test_mcp_transports.py
 
+      - name: Test full offline suite
+        run: python -m pytest -v
+
+      - name: Check isolated script sanity
+        run: python orion/scripts/run_skill_sanity.py
+
+      - name: Build wheel and sdist
+        run: python -m build --outdir "$RUNNER_TEMP/orion-dist"
+
+      - name: Report runtime capabilities
+        run: python -m orion runtime-info --json
+
       - name: Validate runtime
         run: |
           set -euo pipefail
-          python -m orion plugins doctor > /tmp/orion-doctor.json
-          python -m orion plugins list --json > /tmp/orion-manifest.json
-          python -m orion.mcp.server --transport streamable-http --print-config > /tmp/orion-mcp-config.json
+          python -m orion plugins doctor > orion-doctor.json
+          python -m orion plugins list --json > orion-manifest.json
+          python -m orion.mcp.server --transport streamable-http --print-config > orion-mcp-config.json
           python - <<'PY'
           import json
           from pathlib import Path
 
-          doctor = json.loads(Path("/tmp/orion-doctor.json").read_text(encoding="utf-8"))
-          manifest = json.loads(Path("/tmp/orion-manifest.json").read_text(encoding="utf-8"))
-          mcp_config = json.loads(Path("/tmp/orion-mcp-config.json").read_text(encoding="utf-8"))
+          doctor = json.loads(Path("orion-doctor.json").read_text(encoding="utf-8"))
+          manifest = json.loads(Path("orion-manifest.json").read_text(encoding="utf-8"))
+          mcp_config = json.loads(Path("orion-mcp-config.json").read_text(encoding="utf-8"))
 
           assert doctor["ok"] is True, doctor
           assert doctor["plugin_count"] == 9, doctor
@@ -86,5 +110,5 @@ jobs:
           assert len(manifest["plugins"]) == 9, manifest
           assert mcp_config["transport"] == "streamable-http", mcp_config
           assert mcp_config["endpoint"].endswith("/mcp"), mcp_config
-          print("ORION 2.1 verification passed")
+          print("ORION Python 3.15 / compatible runtime verification passed")
           PY
