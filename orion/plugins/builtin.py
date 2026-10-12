@@ -2,9 +2,6 @@
 
 from __future__ import annotations
 
-import ipaddress
-import time
-import urllib.parse
 from concurrent.futures import ThreadPoolExecutor
 from typing import Callable, Iterable
 
@@ -69,34 +66,10 @@ class IocEnricherPlugin(BasePlugin):
 
     @staticmethod
     def _local_record(value: str) -> JsonObject:
+        """One offline implementation shared by the CLI and plugin runtime."""
         from orion.scripts import ioc_enricher as engine
 
-        ioc_type = engine.classify_ioc(value)
-        record: JsonObject = {
-            "value": value,
-            "type": ioc_type,
-            "observed_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-            "local": {},
-            "external": {},
-        }
-        if ioc_type == "ip":
-            ip = ipaddress.ip_address(value)
-            record["local"] = {
-                "version": ip.version,
-                "is_private": ip.is_private,
-                "is_global": ip.is_global,
-                "is_multicast": ip.is_multicast,
-                "is_reserved": ip.is_reserved,
-            }
-        elif ioc_type == "domain":
-            record["local"] = {"normalized": value.casefold(), "dns_performed": False}
-        elif ioc_type == "url":
-            parsed = urllib.parse.urlsplit(value)
-            record["local"] = {"scheme": parsed.scheme, "host": parsed.hostname, "path": parsed.path,
-                               "dns_performed": False}
-        elif ioc_type == "hash":
-            record["local"] = {"algorithm_guess": {32: "md5", 40: "sha1", 64: "sha256"}.get(len(value))}
-        return record
+        return engine.build_record(value, 5.0, allow_network=False)
 
     def run(self, payload: JsonObject, context: PluginContext) -> JsonObject:
         from orion.scripts import ioc_enricher as engine
@@ -105,7 +78,7 @@ class IocEnricherPlugin(BasePlugin):
         iocs = list(dict.fromkeys(item.strip() for item in payload["iocs"] if item.strip()))
         timeout = float(payload.get("timeout", 5.0))
         external_sources = bool(payload.get("external_sources", False))
-        build = (lambda value: engine.build_record(value, timeout)) if external_sources else self._local_record
+        build = (lambda value: engine.build_record(value, timeout, allow_network=True)) if external_sources else self._local_record
         items = _parallel_map(build, iocs, _workers(payload, len(iocs)))
         return {"tool": "ioc_enricher", "count": len(items), "items": items}
 
