@@ -111,6 +111,24 @@ jobs:
       - name: Check isolated script sanity
         run: python orion/scripts/run_skill_sanity.py
 
+      - name: Build and verify standalone knowledge site
+        if: runner.os == 'Linux' && matrix.python == '3.15'
+        run: |
+          set -euo pipefail
+          export SOURCE_DATE_EPOCH="$(git log -1 --format=%ct)"
+          python -m orion.scripts.build_singlefile_site
+          python tools/verify_singlefile.py orion/ORION-HACKING-singlefile.html --js-output orion-site-syntax.js
+          node --check orion-site-syntax.js
+
+      - name: Upload verified standalone HTML
+        if: runner.os == 'Linux' && matrix.python == '3.15'
+        uses: actions/upload-artifact@v4
+        with:
+          name: orion-standalone-html
+          path: orion/ORION-HACKING-singlefile.html
+          if-no-files-found: error
+          retention-days: 14
+
       - name: Build wheel and sdist
         run: python -m build --outdir "$RUNNER_TEMP/orion-dist"
 
