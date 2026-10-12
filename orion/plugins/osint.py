@@ -9,6 +9,7 @@ from __future__ import annotations
 import urllib.error
 import urllib.parse
 import urllib.request
+from ipaddress import ip_address
 from pathlib import Path
 from typing import Any, Mapping
 
@@ -119,6 +120,7 @@ class SpiderFootPlugin(BasePlugin):
         del context
         operation = str(payload["operation"])
         server = str(payload.get("server_url", "http://127.0.0.1:5001")).rstrip("/")
+        self._validate_local_service(server)
         timeout = _timeout(payload, 60)
 
         if operation == "start":
@@ -146,13 +148,41 @@ class SpiderFootPlugin(BasePlugin):
         return {"tool": "spiderfoot", "result": result}
 
     @staticmethod
+    def _validate_local_service(server: str) -> None:
+        """Only an explicit local SpiderFoot service; never a remote target URL."""
+        parsed = urllib.parse.urlsplit(server)
+        if (parsed.scheme not in {"http", "https"} or not parsed.hostname
+                or parsed.username is not None or parsed.password is not None
+                or parsed.query or parsed.fragment or parsed.path not in {"", "/"}):
+            raise ValueError("SpiderFoot server_url must be a plain local HTTP(S) origin")
+        if parsed.hostname != "localhost":
+            try:
+                if not ip_address(parsed.hostname).is_loopback:
+                    raise ValueError("SpiderFoot service must be loopback-only")
+            except ValueError as exc:
+                raise ValueError("SpiderFoot server must use localhost or a loopback IP literal") from exc
+        try:
+            parsed.port
+        except ValueError as exc:
+            raise ValueError("invalid SpiderFoot local port") from exc
+
+    @staticmethod
     def _request(url: str, timeout: float, fields: Mapping[str, str] | None = None) -> Any:
         data = urllib.parse.urlencode(fields).encode("utf-8") if fields else None
         request = urllib.request.Request(url, data=data, method="POST" if fields else "GET")
         request.add_header("Accept", "application/json")
+        class NoRedirect(urllib.request.HTTPRedirectHandler):
+            def redirect_request(self, req: Any, fp: Any, code: int, msg: str,
+                                 headers: Any, newurl: str) -> None:
+                return None
+
+        opener = urllib.request.build_opener(urllib.request.ProxyHandler({}), NoRedirect())
         try:
-            with urllib.request.urlopen(request, timeout=timeout) as response:
-                raw = response.read(8 * 1024 * 1024).decode("utf-8", errors="replace")
+            with opener.open(request, timeout=timeout) as response:
+                raw_bytes = response.read(1024 * 1024 + 1)
+                if len(raw_bytes) > 1024 * 1024:
+                    raise ValueError("SpiderFoot response exceeds the 1 MiB limit")
+                raw = raw_bytes.decode("utf-8", errors="replace")
         except urllib.error.HTTPError as exc:
             body = exc.read(64 * 1024).decode("utf-8", errors="replace")
             raise RuntimeError(f"SpiderFoot HTTP {exc.code}: {body}") from exc
