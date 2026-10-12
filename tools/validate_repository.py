@@ -37,7 +37,7 @@ def dotted_name(node: ast.AST) -> str:
 
 def validate_source() -> None:
     for path in sorted((*((ROOT / "orion").rglob("*.py")), *((ROOT / "tools").rglob("*.py")))):
-        tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
+        tree = ast.parse(path.read_text(encoding="utf-8-sig"), filename=str(path))
         for node in ast.walk(tree):
             if not isinstance(node, ast.Call):
                 continue
