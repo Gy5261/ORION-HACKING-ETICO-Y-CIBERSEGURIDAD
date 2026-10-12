@@ -64,3 +64,13 @@ python -m orion plugins doctor
 ```
 
 Las pruebas emplean datos sintéticos, archivos temporales, ASGI en memoria y transportes loopback. La instalación de dependencias de CI sí requiere acceso a sus repositorios de paquetes; las pruebas no realizan evaluaciones de terceros.
+
+## Estado verificable de las capacidades
+
+La [matriz de capacidades y límites](docs/VERIFIED_CAPABILITIES.md) distingue funciones implementadas, probadas, deshabilitadas y no evaluadas. El informe generado es una plantilla, nunca evidencia de una evaluación ejecutada. La comprobación adicional sin objetivos externos se reproduce con:
+
+```bash
+python orion/scripts/run_skill_sanity.py
+```
+
+No confundir este control de sanidad con un pentest ni con la validación de integraciones OSINT online. Consulte también la guía de operación controlada antes de usar ejemplos anteriores.
