@@ -27,10 +27,11 @@ Salida:
 
 import html
 import json
+import os
 import pathlib
 import re
 import sys
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Dict, List, Tuple
 from collections import defaultdict
 
@@ -40,7 +41,13 @@ OUT_PATHS = [
     REPO_ROOT / "orion" / "ORION-HACKING-singlefile.html",
 ]
 INCLUDE_EXTS = {".md", ".json", ".py", ".ps1", ".sh"}
-SKIP_PARTS = {"__pycache__", ".git", "node_modules", ".venv"}
+SKIP_PARTS = {"__pycache__", ".git", ".github", "node_modules", ".venv",
+              "evidence", "private", "audit", "engagements", "build", "dist"}
+SKIP_NAMES = {"credentials.json", "secrets.json", "approval.json", "lab-approval.json"}
+PUBLISHED_ROOTS = {"README.md", "AGENTS.md", "orion", "docs", "samples", "schemas",
+                   "skills", "evals", "eval-results", "tools"}
+MAX_SINGLE_FILE_BYTES = 1024 * 1024
+MAX_TOTAL_BYTES = 16 * 1024 * 1024
 
 
 def slugify(value: str) -> str:
@@ -118,19 +125,26 @@ def extract_summary(path: pathlib.Path, max_length: int = 200) -> str:
 
 
 def files_to_include() -> List[pathlib.Path]:
-    """Retorna lista ordenada de archivos a incluir."""
-    files = []
-    
-    for path in sorted(REPO_ROOT.rglob("*")):
-        if not path.is_file():
+    """Publish only documented project locations, never arbitrary local files."""
+    files: List[pathlib.Path] = []
+    total_bytes = 0
+    root = REPO_ROOT.resolve()
+    for path in sorted(root.rglob("*")):
+        rel = path.relative_to(root)
+        if not rel.parts or rel.parts[0] not in PUBLISHED_ROOTS:
             continue
-        if path.suffix not in INCLUDE_EXTS:
+        if path.is_symlink() or not path.is_file() or any(part.startswith(".") or part in SKIP_PARTS
+                                                        for part in rel.parts):
             continue
-        if any(part in SKIP_PARTS for part in path.parts):
+        if path.name.casefold() in SKIP_NAMES or path.suffix.casefold() not in INCLUDE_EXTS:
             continue
-        
+        file_bytes = path.stat().st_size
+        if file_bytes > MAX_SINGLE_FILE_BYTES:
+            continue
+        total_bytes += file_bytes
+        if total_bytes > MAX_TOTAL_BYTES:
+            raise ValueError("publication exceeds 16 MiB; select smaller documentation inputs")
         files.append(path)
-    
     return files
 
 
@@ -203,7 +217,7 @@ def build_sections(files: List[pathlib.Path]) -> Tuple[str, str, List[Dict], Dic
             "summary": summary,
             "content": text,
             "anchor": anchor,
-            "last_modified": datetime.fromtimestamp(path.stat().st_mtime).isoformat(),
+            "last_modified": datetime.fromtimestamp(path.stat().st_mtime, timezone.utc).isoformat(),
         })
     
     return "\n".join(nav_parts), "\n".join(body_parts), data, dict(stats)
@@ -244,7 +258,7 @@ def build_html() -> str:
         "format": "singlefile-html",
         "version": "1.0",
         "scrapeable": True,
-        "generated": datetime.now().isoformat(),
+        "generated": datetime.fromtimestamp(int(os.environ.get("SOURCE_DATE_EPOCH", str(int(datetime.now(timezone.utc).timestamp())))), timezone.utc).isoformat(),
         "stats": {
             "total_documents": total_docs,
             "total_size_bytes": total_size,
@@ -257,7 +271,7 @@ def build_html() -> str:
         dataset,
         ensure_ascii=False,
         indent=2,
-    ).replace("</script>", "<\\/script>")  # Previene ruptura de script tag
+    ).replace("<", "\\u003c").replace(">", "\\u003e")  # Escape all HTML parser delimiters
     
     print(f"âœ“ {total_docs} documentos, {total_size:,} bytes totales", file=sys.stderr)
     
@@ -435,7 +449,7 @@ def build_html() -> str:
     
     .filter {{
       border: 1px solid var(--line);
-      background: var(--panel-stro);
+      background: var(--panel-strong);
       color: var(--muted);
       border-radius: 999px;
       padding: 0.4rem 0.7rem;
@@ -818,16 +832,14 @@ def build_html() -> str:
       <div class="main-shell">
         <section class="masthead">
           <div class="masthead-copy">
-            <h2>Base de Conocimientos
-
- Integrada</h2>
+            <h2>Base de conocimientos integrada</h2>
           </div>
           <div class="masthead-badge">JSON embebido Â· Sin dependencias externas</div>
         </section>
         
         <section class="hero">
           <h2>ORION-HACKING Singlefile</h2>
-          <p>PÃ¡gina HTML autÃ³noma que contiene la base de conocimientos completa con bÃºsqueda en el cliente, filtrado interactivo y dataset JSON embebido para scraping por agentes IA. Sin requiere conexiÃ³n de red ni servidor externo.</p>
+          <p>PÃ¡gina HTML autÃ³noma que contiene la base de conocimientos completa con bÃºsqueda en el cliente, filtrado interactivo y dataset JSON embebido para scraping por agentes IA. No requiere conexión de red ni servidor externo.</p>
           <div class="info-box">
             <strong>CaracterÃ­sticas:</strong> Texto completo searchable, navegaciÃ³n por categorÃ­a, responsivo, accesible, datos machine-readable.
           </div>
@@ -869,6 +881,9 @@ def build_html() -> str:
       const cards = Array.from(document.querySelectorAll('.doc-card'));
       const tocLinks = Array.from(document.querySelectorAll('.toc-link'));
       const visibleCount = document.getElementById('visible-count');
+      const searchable = new Map(cards.map(card => [card, [
+        card.dataset.title || '', card.dataset.path || '', card.textContent || ''
+      ].join('\\n').toLowerCase()]));
       const activeFilterLabel = document.getElementById('active-filter');
       let activeFilter = 'all';
 
@@ -877,11 +892,7 @@ def build_html() -> str:
         let shown = 0;
         
         cards.forEach(card => {{
-          const cardHaystack = [
-            (card.dataset.title || ''),
-            (card.dataset.path || ''),
-            (card.textContent || '')
-          ].join('\\n').toLowerCase();
+          const cardHaystack = searchable.get(card) || '';
 
           const categoryOk = activeFilter === 'all' || card.dataset.category === activeFilter;
           const queryOk = !query || cardHaystack.includes(query);
@@ -916,7 +927,16 @@ def build_html() -> str:
       }});
 
       if (search) {{
-        search.addEventListener('input', applyFilters);
+        let pending = false;
+        search.addEventListener('input', () => {{
+          if (!pending) {{
+            pending = true;
+            requestAnimationFrame(() => {{
+              pending = false;
+              applyFilters();
+            }});
+          }}
+        }});
       }}
       
       applyFilters();
