@@ -86,7 +86,7 @@ class LocalHttpGuard:
             return
         pairs = [(key.lower(), value) for key, value in scope.get("headers", [])]
         headers = dict(pairs)
-        for name in (b"host", b"origin", b"content-length"):
+        for name in (b"host", b"origin", b"content-length", b"transfer-encoding"):
             if sum(key == name for key, _ in pairs) > 1:
                 await self._reject(send, 400, "duplicate security-sensitive header")
                 return
@@ -99,6 +99,17 @@ class LocalHttpGuard:
             await self._reject(send, 403, "invalid Origin")
             return
         length = headers.get(b"content-length")
+        transfer_encoding = headers.get(b"transfer-encoding")
+        if transfer_encoding is not None:
+            if length is not None:
+                await self._reject(send, 400, "Content-Length and Transfer-Encoding must not coexist")
+                return
+            if transfer_encoding.strip().lower() != b"chunked":
+                await self._reject(send, 400, "unsupported Transfer-Encoding")
+                return
+        if scope.get("method") not in {"POST", "PUT", "PATCH"} and transfer_encoding is not None:
+            await self._reject(send, 400, "streamed request bodies are not allowed for this method")
+            return
         if length is not None:
             if not length.isdigit():
                 await self._reject(send, 400, "invalid Content-Length")
@@ -107,6 +118,9 @@ class LocalHttpGuard:
                 await self._reject(send, 413, "request body too large")
                 return
         if scope.get("method") not in {"POST", "PUT", "PATCH"}:
+            if length is not None and int(length) > 0:
+                await self._reject(send, 400, "request body is not allowed for this method")
+                return
             await self.app(scope, receive, send)
             return
         body = bytearray()
