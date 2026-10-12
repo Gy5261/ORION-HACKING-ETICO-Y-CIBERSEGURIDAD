@@ -41,15 +41,24 @@ def parse_args() -> argparse.Namespace:
 
 
 def load_findings(path: str) -> List[Dict[str, Any]]:
-    with open(path, "r", encoding="utf-8") as handle:
-        data = json.load(handle)
+    with open(path, "rb") as handle:
+        raw = handle.read(1024 * 1024 + 1)
+    if len(raw) > 1024 * 1024:
+        raise ValueError("finding input exceeds 1 MiB")
+    data = json.loads(raw)
     if isinstance(data, dict):
         for key in ("findings", "items", "results"):
             if isinstance(data.get(key), list):
-                return data[key]
+                return _validate_findings(data[key])
     if isinstance(data, list):
-        return data
+        return _validate_findings(data)
     raise ValueError("Formato de hallazgos no soportado.")
+
+
+def _validate_findings(rows: List[Any]) -> List[Dict[str, Any]]:
+    if not 1 <= len(rows) <= 1000 or any(not isinstance(row, dict) for row in rows):
+        raise ValueError("findings must contain between 1 and 1000 JSON objects")
+    return rows
 
 
 def normalize_severity(finding: Dict[str, Any]) -> str:
@@ -59,16 +68,16 @@ def normalize_severity(finding: Dict[str, Any]) -> str:
         or finding.get("priority")
         or "medium"
     ).strip().lower()
-    return value if value in SEVERITY_TO_PRIORITY else "medium"
+    if value not in SEVERITY_TO_PRIORITY:
+        raise ValueError(f"unsupported severity: {value[:48]}")
+    return value
 
 
 def summary_for(finding: Dict[str, Any]) -> str:
-    return str(
-        finding.get("title")
-        or finding.get("name")
-        or finding.get("finding")
-        or "Hallazgo sin titulo"
-    ).strip()
+    title = finding.get("title") or finding.get("name") or finding.get("finding")
+    if not isinstance(title, str) or not title.strip():
+        raise ValueError("every ticket plan requires an explicit finding title")
+    return title.strip()
 
 
 def description_for(finding: Dict[str, Any]) -> str:
@@ -126,6 +135,7 @@ def post_json(url: str, payload: Dict[str, Any], headers: Dict[str, str]) -> Dic
 
 
 def apply_jira(plan: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    raise PermissionError("Jira writes are disabled by the controlled ORION profile")
     base_url = os.environ["JIRA_BASE_URL"].rstrip("/")
     email = os.environ["JIRA_EMAIL"]
     token = os.environ["JIRA_API_TOKEN"]
@@ -139,6 +149,7 @@ def apply_jira(plan: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
 
 def apply_servicenow(plan: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    raise PermissionError("ServiceNow writes are disabled by the controlled ORION profile")
     instance = os.environ["SNOW_INSTANCE"].rstrip("/")
     user = os.environ["SNOW_USER"]
     password = os.environ["SNOW_PASSWORD"]
@@ -158,7 +169,7 @@ def apply_servicenow(plan: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 def write_output(payload: Dict[str, Any], output: str | None) -> None:
     rendered = json.dumps(payload, indent=2, ensure_ascii=False)
     if output:
-        with open(output, "w", encoding="utf-8") as handle:
+        with open(output, "x", encoding="utf-8") as handle:
             handle.write(rendered + "\n")
     else:
         print(rendered)
@@ -167,6 +178,8 @@ def write_output(payload: Dict[str, Any], output: str | None) -> None:
 def main() -> int:
     try:
         args = parse_args()
+        if args.apply:
+            raise PermissionError("ticket creation is disabled; export a reviewable plan instead")
         findings = load_findings(args.input)
         plan = build_plan(findings, args.mode)
         payload: Dict[str, Any] = {"mode": args.mode, "count": len(plan), "items": plan}
