@@ -1,29 +1,9 @@
-# eval-results/
+# Salidas de ejemplo y evidencias
 
-## Propósito
+Esta carpeta contiene **muestras** del formato de hallazgos y triaje, junto con un documento que explica cómo verificar ORION. No es un almacén de evidencias de clientes ni un registro de auditoría inmutable.
 
-Esta carpeta contiene los resultados de evaluaciones, pruebas de sanidad y reportes generados por el framework **ORION Hacking Ético**.
+- `normalized-findings.json`: salida histórica ilustrativa, su estructura puede diferir de las versiones actuales del normalizador.
+- `log-triage.json`: ejemplo histórico, no un reporte de incidente real.
+- `skill-evaluation.md`: registro de alcance, criterios de aceptación y limitaciones.
 
-Los archivos aquí son salidas de scripts de evaluación y sirven como:
-- Ejemplos de salida esperada
-- Registros de evaluaciones de skills
-- Datos de prueba normalizados
-
-## Archivos incluidos
-
-- **`skill-evaluation.md`** — Reporte detallado de la evaluación del skill ORION (estructura, scripts, integridad y recomendaciones).
-- **`normalized-findings.json`** — Ejemplo de hallazgos de seguridad normalizados (formato estandarizado para procesamiento posterior).
-- **`log-triage.json`** — Ejemplo de resumen de triage de logs/events.
-
-## Uso recomendado
-
-Estos archivos sirven como referencia para:
-- Desarrolladores que extiendan el framework
-- Agentes IA/MCP que necesiten entender el formato de salida esperado
-- Pruebas de integración y validación automática
-
-Todo el contenido está orientado exclusivamente a **ciberseguridad ética, auditoría autorizada y mejora defensiva**.
-
----
-
-*Parte del sistema ORION - Powered by ORION IA*
+Los resultados actuales se generan ejecutando la suite con el commit y el intérprete indicados. La CI almacena registros en GitHub Actions. No modificar los ejemplos para aparentar un resultado de pruebas nuevas.
