@@ -1,296 +1,90 @@
-#!/usr/bin/env powershell
+#requires -Version 7.0
 <#
 .SYNOPSIS
-ORION-HACKING Safe Tooling Bootstrap para Windows
-Instala herramientas seguras y auditables necesarias para evaluaciones de seguridad.
-
+Operator-controlled, conservative Windows tooling installer.
 .DESCRIPTION
-Script que facilita instalación controlada de herramientas de seguridad via WinGet.
-Requiere revisión manual de cada paquete antes de instalación.
-Soporta instalación selectiva o completa.
-
-.PARAMETER SkipReview
-Omite confirmación interactiva (úsalo solo después de validar)
-
-.PARAMETER Category
-Especifica categoría: 'all', 'core', 'network', 'web', 'osint'
-
+Shows a deterministic plan by default, without network or system changes.
+With -Apply and -AcceptAgreements, verifies exact WinGet package IDs before
+installation. A repository list does not prove that a package exists.
 .EXAMPLE
-./install-safe-tooling.ps1
 ./install-safe-tooling.ps1 -Category core
-./install-safe-tooling.ps1 -SkipReview
-
-.NOTES
-Autor: ORION-HACKING
-Requiere: PowerShell 5.1+, WinGet instalado, acceso Admin
-Política: Revisión manual de cada paquete, documentación de cambios
+./install-safe-tooling.ps1 -Category core -Apply -AcceptAgreements
 #>
-
-[CmdletBinding()]
+[CmdletBinding(SupportsShouldProcess = $true, ConfirmImpact = 'High')]
 param(
-    [switch]$SkipReview,
     [ValidateSet('all', 'core', 'network', 'web', 'osint')]
-    [string]$Category = 'all'
+    [string]$Category = 'core',
+    [switch]$Apply,
+    [switch]$AcceptAgreements
 )
 
-$ErrorActionPreference = "Stop"
+Set-StrictMode -Version Latest
+$ErrorActionPreference = 'Stop'
 
-# Colores para salida
-$StatusColor = @{
-    'Success' = 'Green'
-    'Warning' = 'Yellow'
-    'Error'   = 'Red'
-    'Info'    = 'Cyan'
-}
-
-# Definición de herramientas por categoría
-$ToolCategories = @{
-    'core' = @(
-        @{name = 'Python.Python.3.12'; description = 'Lenguaje Python 3.12' },
-        @{name = 'Git.Git'; description = 'Control de versiones distribuido' },
-        @{name = 'Microsoft.VisualStudioCode'; description = 'Editor de código' }
-    )
-    'network' = @(
-        @{name = 'WiresharkFoundation.Wireshark'; description = 'Análisis de tráfico de red' },
-        @{name = 'Insecure.Nmap'; description = 'Scanner de puertos (host discovery)' },
-        @{name = 'nmap:ncat'; description = 'Cliente/servidor TCP multipropósito' },
-        @{name = 'tcpdump'; description = 'Captura de paquetes línea de comandos' }
-    )
-    'web' = @(
-        @{name = 'Insecure.Burp-Suite-Community'; description = 'Proxy HTTP/HTTPS para testing' },
-        @{name = 'zaproxy:zaproxy'; description = 'OWASP ZAP - Scanner web automático' },
-        @{name = 'postman:postman'; description = 'Cliente API y testing' }
-    )
-    'osint' = @(
-        @{name = 'amass:amass'; description = 'Enumeración de subdominios y asset discovery' },
-        @{name = 'shodan:shodan-cli'; description = 'Cliente CLI de Shodan' }
-    )
-}
-
-# Herramientas recomendadas adicionales (información)
-$AdditionalTools = @(
-    @{source = 'chocolatey'; name = 'hashcat'; description = 'Acelerador de password cracking' },
-    @{source = 'chocolatey'; name = 'dngrecon'; description = 'Enumeración de DNS' }
+$Catalog = @(
+    [pscustomobject]@{ Category = 'core'; Id = 'Python.Python.3.15'; Purpose = 'Python 3.15 estable' },
+    [pscustomobject]@{ Category = 'core'; Id = 'Git.Git'; Purpose = 'Control de versiones' },
+    [pscustomobject]@{ Category = 'core'; Id = 'Microsoft.PowerShell'; Purpose = 'PowerShell 7' },
+    [pscustomobject]@{ Category = 'core'; Id = 'Microsoft.VisualStudioCode'; Purpose = 'Editor de codigo' },
+    [pscustomobject]@{ Category = 'network'; Id = 'Insecure.Nmap'; Purpose = 'Inventario de redes autorizadas' },
+    [pscustomobject]@{ Category = 'network'; Id = 'WiresharkFoundation.Wireshark'; Purpose = 'Analisis local de trafico' }
 )
 
-function Write-Header {
-    param([string]$Text)
-    Write-Host ""
-    Write-Host "=" * 60 -ForegroundColor Cyan
-    Write-Host $Text -ForegroundColor Cyan
-    Write-Host "=" * 60
+$Selected = @($Catalog | Where-Object { $Category -eq 'all' -or $_.Category -eq $Category } |
+              Sort-Object -Property Category, Id)
+$Plan = [ordered]@{
+    component = 'ORION controlled tooling bootstrap'
+    os = 'Windows'
+    mode = if ($Apply) { 'apply' } else { 'plan' }
+    selected_category = $Category
+    contact_network = [bool]$Apply
+    package_count = $Selected.Count
+    packages = @($Selected)
+    warning = 'Validar procedencia, licencias y alcance antes de instalar.'
 }
 
-function Write-Status {
-    param(
-        [string]$Message,
-        [string]$Type = 'Info'
-    )
-    $Color = $StatusColor[$Type]
-    Write-Host "[$Type]" -ForegroundColor $Color -NoNewline
-    Write-Host " $Message"
+if (-not $Apply) {
+    $Plan | ConvertTo-Json -Depth 6
+    exit 0
 }
 
-function Confirm-AdminRole {
-    $IsAdmin = ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]'Administrator')
-    
-    if (-not $IsAdmin) {
-        Write-Status "Este script requiere permisos de Administrador" 'Error'
-        Write-Status "Por favor, ejecuta PowerShell como Administrador" 'Error'
-        return $false
-    }
-    return $true
+if ($Selected.Count -eq 0) {
+    throw "No hay identificadores WinGet comprobados para la categoria '$Category'."
+}
+if (-not $AcceptAgreements) {
+    throw 'Para ejecutar instalaciones, especifique -Apply -AcceptAgreements explicitamente.'
+}
+if (-not (Get-Command winget -ErrorAction SilentlyContinue)) {
+    throw 'WinGet no esta disponible. Instale o repare App Installer y compruebe winget --version.'
 }
 
-function Test-WinGet {
-    try {
-        $version = winget --version 2>&1
-        Write-Status "WinGet encontrado: $version" 'Success'
-        return $true
-    } catch {
-        Write-Status "WinGet no está instalado o no está accesible" 'Error'
-        return $false
+$Results = New-Object System.Collections.Generic.List[object]
+foreach ($Package in $Selected) {
+    $Destination = "$($Package.Id) desde la fuente winget"
+    if (-not $PSCmdlet.ShouldProcess($Destination, 'Validar e instalar')) {
+        $Results.Add([pscustomobject]@{ id = $Package.Id; status = 'not_applied' })
+        continue
     }
+    # Exact-ID resolution protects against typos and unsupported package names.
+    & winget show --exact --id $Package.Id --source winget --accept-source-agreements |
+        Out-Null
+    if ($LASTEXITCODE -ne 0) {
+        $Results.Add([pscustomobject]@{ id = $Package.Id; status = 'not_found'; exit_code = $LASTEXITCODE })
+        continue
+    }
+    & winget install --exact --id $Package.Id --source winget --silent --accept-source-agreements --accept-package-agreements --disable-interactivity |
+        Out-Null
+    if ($LASTEXITCODE -ne 0) {
+        $Results.Add([pscustomobject]@{ id = $Package.Id; status = 'failed'; exit_code = $LASTEXITCODE })
+        continue
+    }
+    $Results.Add([pscustomobject]@{ id = $Package.Id; status = 'installer_returned_success' })
 }
 
-function Show-ToolInfo {
-    param(
-        [array]$Tools,
-        [string]$CategoryName
-    )
-    
-    Write-Host ""
-    Write-Host "Herramientas de categoría: $CategoryName" -ForegroundColor Magenta
-    Write-Host "-" * 60
-    
-    foreach ($tool in $Tools) {
-        Write-Host "  • " -ForegroundColor Green -NoNewline
-        Write-Host "$($tool.name)" -ForegroundColor Yellow -NoNewline
-        Write-Host " - $($tool.description)" -ForegroundColor DarkGray
-    }
+$Output = [ordered]@{
+    ok = (@($Results | Where-Object { $_.status -in @('failed', 'not_found') }).Count -eq 0)
+    verification = 'WinGet exit codes only; runtime installation must be inspected separately'
+    results = @($Results)
 }
-
-function Get-ToolsToInstall {
-    $toolsToInstall = @()
-    
-    if ($Category -eq 'all') {
-        foreach ($cat in $ToolCategories.Keys) {
-            $toolsToInstall += $ToolCategories[$cat]
-        }
-    } else {
-        $toolsToInstall = $ToolCategories[$Category]
-    }
-    
-    return $toolsToInstall
-}
-
-function Show-ReviewPrompt {
-    param(
-        [array]$Tools
-    )
-    
-    Write-Header "REVISIÓN DE PAQUETES ANTES DE INSTALAR"
-    
-    Write-Host ""
-    Write-Host "Se procede a instalar los siguientes paquetes:" -ForegroundColor Yellow
-    Write-Host ""
-    
-    $count = 1
-    foreach ($tool in $Tools) {
-        Write-Host "$count. $($tool.name)" -ForegroundColor Cyan
-        Write-Host "   Descripción: $($tool.description)" -ForegroundColor DarkGray
-        Write-Host ""
-        $count++
-    }
-    
-    Write-Status "IMPORTANTE: Revisa cada paquete, su fuente y propósito" 'Warning'
-    Write-Status "Asegúrate de que confías en cada herramienta antes de instalarla" 'Warning'
-    Write-Host ""
-    
-    $response = Read-Host "¿Deseas continuar? (si/no)"
-    return ($response -eq 'si' -or $response -eq 's')
-}
-
-function Install-Tool {
-    param(
-        [string]$ToolName,
-        [int]$Index,
-        [int]$Total
-    )
-    
-    try {
-        Write-Status "[$Index/$Total] Instalando $ToolName..." 'Info'
-        
-        $output = winget install --id $ToolName --accept-package-agreements --accept-source-agreements -q | Out-String
-        
-        if ($LASTEXITCODE -eq 0) {
-            Write-Status "[$Index/$Total] ✓ $ToolName instalado exitosamente" 'Success'
-            return $true
-        } else {
-            Write-Status "[$Index/$Total] ✗ Error instalando $ToolName (código: $LASTEXITCODE)" 'Error'
-            return $false
-        }
-    } catch {
-        Write-Status "[$Index/$Total] ✗ Excepción: $_" 'Error'
-        return $false
-    }
-}
-
-function Show-Summary {
-    param(
-        [int]$Successful,
-        [int]$Failed,
-        [int]$Total
-    )
-    
-    Write-Header "RESUMEN DE INSTALACIÓN"
-    
-    Write-Host "Total de herramientas procesadas: $Total"
-    Write-Host "Instaladas correctamente: " -NoNewline
-    Write-Host "$Successful" -ForegroundColor Green
-    Write-Host "Errores: " -NoNewline
-    if ($Failed -gt 0) {
-        Write-Host "$Failed" -ForegroundColor Red
-    } else {
-        Write-Host "$Failed" -ForegroundColor Green
-    }
-    
-    Write-Host ""
-    Write-Status "Próximos pasos:" 'Info'
-    Write-Host "  1. Verifica que las herramientas estén correctamente instaladas"
-    Write-Host "  2. Consulta la documentación de cada herramienta"
-    Write-Host "  3. Configura permisos de firewall si es necesario"
-    Write-Host "  4. Registra los cambios en tu sistema"
-    
-    Write-Host ""
-    Write-Status "Herramientas adicionales (instalación manual recomendada):" 'Info'
-    foreach ($tool in $AdditionalTools) {
-        Write-Host "  • $($tool.source):$($tool.name) - $($tool.description)" -ForegroundColor DarkGray
-    }
-}
-
-function Main {
-    Write-Header "ORION-HACKING Safe Tooling Bootstrap"
-    Write-Host "Instalación controlada y auditada de herramientas de seguridad"
-    Write-Host ""
-    
-    # 1. Verifica permisos
-    if (-not (Confirm-AdminRole)) {
-        exit 1
-    }
-    Write-Status "✓ Acceso de Administrador confirmado" 'Success'
-    
-    # 2. Verifica WinGet
-    if (-not (Test-WinGet)) {
-        exit 1
-    }
-    
-    # 3. Obtiene herramientas según categoría
-    $tools = Get-ToolsToInstall
-    
-    if (-not $tools -or $tools.Count -eq 0) {
-        Write-Status "No hay herramientas para instalar en la categoría: $Category" 'Warning'
-        exit 0
-    }
-    
-    # 4. Muestra información
-    Write-Status "Herramientas seleccionadas para instalar ($($tools.Count))" 'Info'
-    foreach ($category in $ToolCategories.Keys) {
-        if ($Category -eq 'all' -or $Category -eq $category) {
-            Show-ToolInfo -Tools $ToolCategories[$category] -CategoryName $category
-        }
-    }
-    
-    # 5. Pide confirmación (excepto si -SkipReview)
-    if (-not $SkipReview) {
-        if (-not (Show-ReviewPrompt -Tools $tools)) {
-            Write-Status "Instalación cancelada por usuario" 'Warning'
-            exit 0
-        }
-    } else {
-        Write-Status "Omitiendo revisión interactiva (-SkipReview)" 'Warning'
-    }
-    
-    # 6. Instala herramientas
-    Write-Header "INICIANDO INSTALACIÓN"
-    
-    $successful = 0
-    $failed = 0
-    
-    foreach ($tool in $tools) {
-        if (Install-Tool -ToolName $tool.name -Index ($successful + $failed + 1) -Total $tools.Count) {
-            $successful++
-        } else {
-            $failed++
-        }
-    }
-    
-    # 7. Muestra resumen
-    Show-Summary -Successful $successful -Failed $failed -Total $tools.Count
-    
-    # Retorna código de salida apropiado
-    exit ($failed -gt 0 ? 1 : 0)
-}
-
-# Punto de entrada
-Main
+$Output | ConvertTo-Json -Depth 5
+if (-not $Output.ok) { exit 1 }
