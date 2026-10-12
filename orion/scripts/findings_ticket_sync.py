@@ -14,11 +14,9 @@ Modos:
 from __future__ import annotations
 
 import argparse
-import base64
 import json
 import os
 import sys
-import urllib.request
 from typing import Any, Dict, Iterable, List
 
 
@@ -123,47 +121,14 @@ def build_plan(findings: Iterable[Dict[str, Any]], mode: str) -> List[Dict[str, 
     return plan
 
 
-def post_json(url: str, payload: Dict[str, Any], headers: Dict[str, str]) -> Dict[str, Any]:
-    request = urllib.request.Request(
-        url,
-        data=json.dumps(payload).encode("utf-8"),
-        headers={**headers, "Content-Type": "application/json"},
-        method="POST",
-    )
-    with urllib.request.urlopen(request, timeout=15) as response:
-        return json.loads(response.read().decode("utf-8"))
-
-
 def apply_jira(plan: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Public compatibility API: external writes are deliberately disabled."""
     raise PermissionError("Jira writes are disabled by the controlled ORION profile")
-    base_url = os.environ["JIRA_BASE_URL"].rstrip("/")
-    email = os.environ["JIRA_EMAIL"]
-    token = os.environ["JIRA_API_TOKEN"]
-    auth = base64.b64encode(f"{email}:{token}".encode("utf-8")).decode("ascii")
-    headers = {"Authorization": f"Basic {auth}", "Accept": "application/json"}
-    created = []
-    for item in plan:
-        result = post_json(f"{base_url}/rest/api/3/issue", {"fields": item["jira_fields"]}, headers)
-        created.append({"summary": item["summary"], "ticket": result.get("key"), "raw": result})
-    return created
 
 
 def apply_servicenow(plan: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Public compatibility API: external writes are deliberately disabled."""
     raise PermissionError("ServiceNow writes are disabled by the controlled ORION profile")
-    instance = os.environ["SNOW_INSTANCE"].rstrip("/")
-    user = os.environ["SNOW_USER"]
-    password = os.environ["SNOW_PASSWORD"]
-    auth = base64.b64encode(f"{user}:{password}".encode("utf-8")).decode("ascii")
-    headers = {"Authorization": f"Basic {auth}", "Accept": "application/json"}
-    created = []
-    for item in plan:
-        result = post_json(
-            f"{instance}/api/now/table/incident",
-            item["servicenow_fields"],
-            headers,
-        )
-        created.append({"summary": item["summary"], "ticket": result.get("result", {}).get("number"), "raw": result})
-    return created
 
 
 def write_output(payload: Dict[str, Any], output: str | None) -> None:
