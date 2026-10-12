@@ -89,12 +89,11 @@ class IocEnricherPlugin(BasePlugin):
                 "is_reserved": ip.is_reserved,
             }
         elif ioc_type == "domain":
-            record["local"] = engine.dns_lookup(value)
+            record["local"] = {"normalized": value.casefold(), "dns_performed": False}
         elif ioc_type == "url":
-            parsed = urllib.parse.urlparse(value)
-            record["local"] = {"scheme": parsed.scheme, "host": parsed.hostname, "path": parsed.path}
-            if parsed.hostname:
-                record["local"]["dns"] = engine.dns_lookup(parsed.hostname)
+            parsed = urllib.parse.urlsplit(value)
+            record["local"] = {"scheme": parsed.scheme, "host": parsed.hostname, "path": parsed.path,
+                               "dns_performed": False}
         elif ioc_type == "hash":
             record["local"] = {"algorithm_guess": {32: "md5", 40: "sha1", 64: "sha256"}.get(len(value))}
         return record
