@@ -121,3 +121,18 @@ El filtrado por nombre no detecta todos los secretos. No publique el directorio 
 Las restricciones son intencionalmente incompatibles con automatizaciones que ejecutaban OSINT online, creación de tickets o escucha remota en 2.x. Este PR no es un lanzamiento; requiere decisión de versión mayor antes de distribuirse como reemplazo. El manifiesto estático histórico conserva metadatos antiguos: para inspección efectiva use el manifiesto generado en ejecución y `orion_control_status`.
 
 No use los scripts históricos de `orion/scripts/` como atajo. Sus llamadas directas y sus CLI no pasan necesariamente por `ExecutionPolicy`. Tampoco quedan cubiertos plugins Python de terceros, políticas personalizadas o modificaciones locales del código. La revisión no ha certificado el HTML autónomo, todos los playbooks, el aislamiento del sistema operativo, clientes comerciales, OAuth, ni la nueva revisión MCP 2026-07-28.
+
+## Actualización de scripts independientes (12 de octubre de 2026)
+
+El perfil controlado se aplica también a las rutas de CLI reforzadas en esta revisión:
+
+- `orion/scripts/ioc_enricher.py` sólo clasifica sin DNS ni fuentes externas desde su CLI.
+- `orion/scripts/tls_posture_audit.py` envía la solicitud a `OrionRuntime` y exige referencia de autorización, permiso de red, revisión exacta y cuota. El inventario de certificados produce una huella DER SHA-256, **no** valida confianza PKI ni inventa fechas de vencimiento.
+- `orion/scripts/http_surface_audit.py` inspecciona ficheros de cabeceras sin red con `--input`. El modo `--allow-loopback` sólo admite IP literales loopback y HEAD, con límites de tamaño y sin redirecciones ni proxy.
+- `orion/scripts/findings_ticket_sync.py` admite planes locales; `--apply` rechaza todas las escrituras remotas.
+- `orion/scripts/evidence_manifest.py` inventaría SHA-256 con ficheros regulares y límites; no certifica cadena de custodia.
+- Los instaladores WinGet y Linux son modo plan por defecto; aplicar requiere intervención administrativa explícita.
+- `orion/scripts/expand_markdown_docs.py` dejó de expandir documentos con escenarios sintéticos y funciona como auditor de solo lectura.
+
+Los motores Python invocados de forma directa por código de terceros continúan siendo una superficie de confianza y no constituyen sandbox del sistema operativo. No ejecutar el runtime, scripts ni adaptadores con privilegios elevados en equipos de usuarios no confiables.
+
