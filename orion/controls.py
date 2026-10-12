@@ -119,23 +119,14 @@ def load_private_json(raw: str) -> dict[str, Any]:
 
 
 def needs_network(plugin_id: str, payload: Mapping[str, Any], declared: bool, effects: bool) -> bool:
-    """Recognize the existing IP/hash-only IOC path, which performs no DNS lookup."""
+    """Return the permission needed by a validated request, never by metadata alone.
+
+    All IOC types are classified without DNS or network when external_sources is false.
+    Callers MUST validate the input schema before consulting this function.
+    """
     if effects:
         return True
     if plugin_id == "ioc_enricher" and payload.get("external_sources", False) is False:
-        values = payload.get("iocs", [])
-        if not isinstance(values, list) or not values:
-            return declared
-        for value in values:
-            if not isinstance(value, str):
-                return declared
-            value = value.strip()
-            if re.fullmatch(r"(?:[a-fA-F0-9]{32}|[a-fA-F0-9]{40}|[a-fA-F0-9]{64})", value):
-                continue
-            try:
-                ipaddress.ip_address(value)
-            except ValueError:
-                return declared
         return False
     return declared
 
