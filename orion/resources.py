@@ -167,30 +167,46 @@ class ResourceCatalog:
         return result
 
     def search(self, query: str, limit: int = 20) -> list[JsonObject]:
-        normalized = query.strip().casefold()
-        if not 2 <= len(normalized) <= 512:
+        """Rank literal matches without unbounded repository scans or network use.
+
+        This is bounded lexical retrieval, not semantic search. The scanning budget
+        prevents expensive repeated reads of arbitrary operator-published trees.
+        """
+        if not isinstance(query, str) or not 2 <= len(query.strip()) <= 512:
             raise ValueError("query must contain 2 to 512 characters")
-        results: list[JsonObject] = []
+        if type(limit) is not int or not 1 <= limit <= 100:
+            raise ValueError("search limit must be an integer from 1 to 100")
+        normalized = query.strip().casefold()
+        scanned_bytes = 0
+        scanned_budget = 32 * 1024 * 1024
+        ranked: list[tuple[int, JsonObject]] = []
         for descriptor in self.list():
-            if len(results) >= max(1, min(limit, 100)):
-                break
+            path_name = descriptor.path.casefold()
+            path_match = normalized in path_name
             if descriptor.binary:
-                if normalized in descriptor.path.casefold():
-                    results.append({"uri": descriptor.uri, "path": descriptor.path,
-                                    "mimeType": descriptor.media_type, "snippet": "binary resource"})
+                if path_match:
+                    ranked.append((100, {"uri": descriptor.uri, "path": descriptor.path,
+                                        "mimeType": descriptor.media_type, "snippet": "binary resource"}))
                 continue
+            if scanned_bytes + descriptor.size_bytes > scanned_budget:
+                break
+            scanned_bytes += descriptor.size_bytes
             try:
-                text = self.read(descriptor.path)
-            except (OSError, ValueError):
+                content = self.read(descriptor.path)
+            except (OSError, UnicodeError, ValueError):
                 continue
-            position = text.casefold().find(normalized)
-            if position < 0 and normalized not in descriptor.path.casefold():
+            folded = content.casefold()
+            position = folded.find(normalized)
+            if not path_match and position < 0:
                 continue
+            score = (100 if path_match else 0) + (10 if position >= 0 else 0)
             start = max(0, position - 160) if position >= 0 else 0
-            end = min(len(text), position + len(normalized) + 320) if position >= 0 else 320
-            results.append({"uri": descriptor.uri, "path": descriptor.path, "mimeType": descriptor.media_type,
-                            "snippet": text[start:end].replace("\n", " ").strip()})
-        return results
+            end = min(len(content), position + len(query) + 320) if position >= 0 else 320
+            ranked.append((score, {"uri": descriptor.uri, "path": descriptor.path,
+                                   "mimeType": descriptor.media_type,
+                                   "snippet": content[start:end].replace("\n", " ").strip()}))
+        ranked.sort(key=lambda item: (-item[0], item[1]["path"]))
+        return [item for _, item in ranked[:limit]]
 
     def index(self) -> JsonObject:
         registry = PluginRegistry(load_external=False)

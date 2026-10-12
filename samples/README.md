@@ -1,10 +1,7 @@
-# Samples / Ejemplos
+# Muestras controladas de ORION
 
-Esta carpeta contiene archivos de muestra utilizados por los scripts y evaluaciones de ORION.
+Los archivos JSON son **datos sintéticos para pruebas y documentación**. Dominios, direcciones, hallazgos y etiquetas no constituyen activos evaluados ni consentimiento de sus propietarios.
 
-## Archivos incluidos
+Para reproducir operaciones offline use `samples/controlled/offline-iocs.json` y las pruebas unitarias. La plantilla de aprobación de laboratorio está revocada y caducada deliberadamente; no se puede utilizar para activar una prueba de red. No incluir secretos de producción ni datos personales en este directorio.
 
-- `events.sample.json` → Ejemplo de eventos de logs para triaje
-- `findings.sample.json` → Hallazgos normalizados (formato estándar ORION)
-
-Powered by ORION IA
+Los ejemplos antiguos de OSINT online pueden estar denegados por la política controlada vigente. Consulte `docs/CONTROLLED_OPERATION.md` antes de ejecutarlos.

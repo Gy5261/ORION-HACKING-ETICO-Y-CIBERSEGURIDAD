@@ -1,30 +1,7 @@
-# evals/
+# Casos de evaluación cualitativa
 
-## Propósito
+`evals.json` contiene **prompts y criterios esperados para revisión manual de comportamiento** de un agente IA que utilice ORION. No se ejecutan automáticamente, no incluyen respuestas de un modelo y no miden precisión, tasa de éxito ni seguridad de forma estadística.
 
-Esta carpeta contiene el conjunto de **evaluaciones (prompts de prueba)** diseñadas para validar el comportamiento del skill **ORION** bajo diferentes escenarios de ciberseguridad ética.
+Las pruebas automatizadas reproducibles se encuentran en `tests/`. Para ejecutarlas usar `python -m pytest`. Los experimentos con agentes deben conservar entradas, salida, modelo, configuración, versión, evaluador y rúbrica explícita, además de respetar los controles de autorización.
 
-## Objetivos Principales
-
-- Verificar cobertura amplia de dominios de ciberseguridad
-- Validar enrutamiento inteligente y uso correcto de módulos/playbooks
-- Comprobar estrictos guardrails éticos y rechazo de solicitudes maliciosas
-- Evaluar calidad, estructura y utilidad de las respuestas
-- Probar compatibilidad con agentes IA y MCP
-
-## Archivos
-
-- **`evals.json`** — Catálogo principal de casos de prueba con metadatos.
-- **`README.md`** — Esta documentación.
-
-## Uso
-
-1. Revisar / extender las evaluaciones en `evals.json`
-2. Ejecutar pruebas usando scripts en `orion/scripts/`
-3. Revisar resultados en `eval-results/`
-
-**Solo hacking ético y auditoría autorizada.**
-
----
-
-*Sistema de evaluación continua de ORION - Powered by ORION IA*
+No usar el catálogo para afirmar que todos los escenarios se completaron satisfactoriamente.

@@ -1,0 +1,4 @@
+interface:
+  display_name: "ORION Ciberseguridad"
+  short_description: "Auditoría defensiva autorizada con evidencias y controles"
+  brand_color: "#174D40"

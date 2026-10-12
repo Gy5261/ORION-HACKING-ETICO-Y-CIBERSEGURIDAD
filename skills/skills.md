@@ -1,73 +1,41 @@
-# Skills y plugins ORION
+# Sistema de capacidades ORION
 
-La carpeta `skills/` ya no contiene únicamente descripciones conceptuales. Ahora publica el contrato legible por máquinas del runtime funcional de ORION.
+Esta carpeta describe contratos de ejecución defensiva; **un contrato publicado no implica que una integración pueda utilizarse**. La fuente ejecutable es `PluginRegistry` en `orion/plugins/core.py`, y la política vigente se encuentra en `orion/controls.py`.
 
-## Archivos
+## Archivos y fuente de verdad
 
-- `skills.json`: manifiesto generado desde los plugins ejecutables;
-- `plugin.schema.json`: JSON Schema formal del manifiesto;
-- `ai-entrypoint.md`: orden de carga para agentes, MCP y LLM;
-- `agent-instructions.md`: reglas obligatorias de autorización y seguridad.
+- `skills.json`: inventario estático para descubrimiento. El campo `python_runtime` de un inventario estático no representa el intérprete actualmente instalado.
+- `plugin.schema.json`: estructura del inventario, no validación de autorización.
+- `ai-entrypoint.md`: instrucciones para agentes confiables.
+- `agent-instructions.md`: controles y límites de alcance.
+- `orion/SKILL.md`: guía de carga progresiva, limitada a instrucciones actuales.
 
-## Fuente de verdad
+Para consultar contratos efectivos, usar `python -m orion plugins list --json --health` y `python -m orion plugins describe ID --health`. El `doctor` revisa disponibilidad local y no prueba conectividad externa ni cumplimiento legal.
 
-Las clases de `orion/plugins/builtin.py` son la fuente de verdad para los plugins oficiales. El manifiesto puede regenerarse con:
+## Matriz real del perfil controlado
+
+| Plugin | Funcionamiento admitido |
+| --- | --- |
+| `ioc_enricher` | Clasificación offline de IP, hash, dominio y URL sin DNS |
+| `tls_posture_audit` | Sólo laboratorio con aprobación exacta, red permitida y auditoría |
+| `findings_ticket_sync` | Planificación local; no envía tickets |
+| `spiderfoot` | Adaptador instalado si existe dependencia; ejecución online denegada |
+| `theharvester`, `sherlock`, `osint_spy`, `phoneinfoga`, `photon` | Contratos visibles; ejecución online denegada |
+
+El protocolo MCP local expone herramientas y recursos sólo para el operador confiable. No dispone de OAuth remoto ni conformidad con revisiones del protocolo que no hayan sido implementadas y probadas.
+
+## Integraciones de terceros
+
+Los entry points del grupo `orion.plugins` no se cargan por defecto. Sólo se habilitan mediante `PluginRegistry(load_external=True)` cuando el operador controla el código y sus dependencias. No otorgar a un agente acceso para activar este modo automáticamente.
+
+## Ejecución y comprobación
 
 ```bash
-orion plugins export-manifest --output skills/skills.json
+python -m pip install -e ".[dev,mcp]"
+python -m orion plugins doctor
+python -m orion plugins run ioc_enricher --input samples/controlled/offline-iocs.json --authorization LOCAL-CLASSIFICATION-001
+python tools/validate_repository.py
+python -m pytest
 ```
 
-Esto evita que nombre, versión, permisos, schemas y capacidades queden desincronizados del código real.
-
-## Plugins oficiales
-
-| Plugin | Categoría | Riesgo | Red | Efectos externos | Uso principal |
-|---|---|---:|---:|---:|---|
-| `ioc_enricher` | OSINT Intelligence | Bajo | Sí | No | Clasificación, DNS y enriquecimiento opcional de IOCs |
-| `tls_posture_audit` | Web / Network | Bajo | Sí | No | Inventario y auditoría defensiva de TLS |
-| `findings_ticket_sync` | Automation / Reporting | Medio | Condicional | Sí | Planificación o creación aprobada de tickets |
-
-## Flujo para agentes
-
-1. Leer `agent-instructions.md`.
-2. Cargar y validar `skills.json`.
-3. Elegir un plugin por capacidad, riesgo y permisos.
-4. Consultar su contrato con `orion plugins describe`.
-5. Construir un objeto JSON conforme a `input_schema`.
-6. Confirmar autorización, actor y permisos mínimos.
-7. Ejecutar mediante CLI, Python o adaptador MCP.
-8. Conservar el resultado completo para auditoría.
-
-## Resultados
-
-El runtime devuelve una envoltura uniforme con:
-
-- `plugin_id`;
-- `plugin_version`;
-- `request_id`;
-- `actor`;
-- `ok`;
-- `duration_ms`;
-- `data` o `error`;
-- `warnings`.
-
-## Extensibilidad
-
-Los paquetes externos pueden publicar plugins mediante:
-
-```toml
-[project.entry-points."orion.plugins"]
-my_plugin = "my_package.plugin:MyPlugin"
-```
-
-ORION descubre estas extensiones automáticamente, rechaza identificadores duplicados y muestra fallos de carga mediante `orion plugins doctor`.
-
-## Compatibilidad y seguridad
-
-- Python 3.10 o superior;
-- interfaces JSON estables;
-- red y efectos externos deshabilitados por defecto;
-- autorización obligatoria en plugins oficiales;
-- uso exclusivamente defensivo, educativo o expresamente autorizado.
-
-Consulta `docs/PLUGIN_SYSTEM.md`, `orion/SKILL.md` y `orion/PLAYBOOK_INDEX.md` para metodología y documentación técnica ampliada.
+Conservar `request_id`, versión, entrada autorizada, salida, errores, tiempos y limitaciones. No registrar datos sensibles innecesarios. Consultar [operación controlada](../docs/CONTROLLED_OPERATION.md) y [matriz de capacidades](../docs/VERIFIED_CAPABILITIES.md).

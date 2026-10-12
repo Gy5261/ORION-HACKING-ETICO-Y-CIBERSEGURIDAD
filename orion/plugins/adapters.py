@@ -230,11 +230,19 @@ class ToolRunner:
         env = {key: value for key, value in os.environ.items() if key in allowed}
         env.setdefault("PYTHONUNBUFFERED", "1")
         if extra:
+            if len(extra) > 32:
+                raise ValueError("too many tool environment overrides")
+            blocked = {"PATH", "PYTHONPATH", "PYTHONHOME", "PYTHONSTARTUP",
+                       "PYTHONINSPECT", "LD_PRELOAD", "LD_LIBRARY_PATH",
+                       "ORION_LAB_APPROVAL_FILE", "ORION_AUDIT_DATABASE", "ORION_EMERGENCY_STOP"}
             for key, value in extra.items():
-                if not key or not key.replace("_", "A").isalnum() or len(key) > 128:
+                if not isinstance(key, str) or not key or not key.replace("_", "A").isalnum() or len(key) > 128:
                     raise ValueError(f"invalid environment variable name: {key!r}")
-                if len(value) > 16_384:
-                    raise ValueError(f"environment variable {key!r} is too large")
+                normalized = key.upper()
+                if normalized in blocked or normalized.startswith(("DYLD_", "LD_", "PYTHON")):
+                    raise ValueError(f"protected environment variable cannot be overridden: {key!r}")
+                if not isinstance(value, str) or len(value) > 4096 or "\x00" in value:
+                    raise ValueError(f"invalid environment variable value for {key!r}")
                 env[key] = value
         return env
 

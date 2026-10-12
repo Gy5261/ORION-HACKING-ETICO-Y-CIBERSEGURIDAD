@@ -36,21 +36,19 @@ def dotted_name(node: ast.AST) -> str:
 
 
 def validate_source() -> None:
-    for path in sorted((ROOT / "orion").rglob("*.py")):
-        if "scripts" in path.parts:
-            continue
-        tree = ast.parse(path.read_text(encoding="utf-8"), filename=str(path))
+    for path in sorted((*((ROOT / "orion").rglob("*.py")), *((ROOT / "tools").rglob("*.py")))):
+        tree = ast.parse(path.read_text(encoding="utf-8-sig"), filename=str(path))
         for node in ast.walk(tree):
             if not isinstance(node, ast.Call):
                 continue
             name = dotted_name(node.func)
             if name in FORBIDDEN_CALLS:
                 raise AssertionError(f"forbidden process API {name} in {path}")
-            if name == "subprocess.run":
+            if name in {"subprocess.run", "subprocess.Popen"}:
                 keywords = {keyword.arg: keyword.value for keyword in node.keywords if keyword.arg}
                 shell = keywords.get("shell")
                 if not isinstance(shell, ast.Constant) or shell.value is not False:
-                    raise AssertionError(f"subprocess.run must set shell=False in {path}")
+                    raise AssertionError(f"{name} must set shell=False in {path}")
 
 
 def validate_plugins() -> None:
@@ -72,6 +70,10 @@ def validate_manifest() -> None:
     manifest_path = ROOT / "skills" / "skills.json"
     static = json.loads(manifest_path.read_text(encoding="utf-8"))
     runtime = PluginRegistry(load_external=False).manifest()
+    from orion import __version__
+
+    if static["runtime"]["version"] != __version__:
+        raise AssertionError("static manifest runtime version is stale")
     static_ids = {plugin["plugin_id"] for plugin in static["plugins"]}
     runtime_ids = {plugin["plugin_id"] for plugin in runtime["plugins"]}
     if static_ids != runtime_ids:
@@ -90,8 +92,36 @@ def validate_resources() -> None:
     raise AssertionError("resource catalog allowed path traversal")
 
 
+def validate_json_sources() -> None:
+    """Reject duplicate keys and non-finite values in committed JSON assets."""
+    roots = ("samples", "skills", "schemas", "evals", "eval-results")
+    for folder in roots:
+        for path in sorted((ROOT / folder).rglob("*.json")):
+            if path.stat().st_size > 1024 * 1024:
+                raise AssertionError(f"JSON file exceeds 1 MiB inspection budget: {path}")
+
+            def distinct_keys(pairs: list[tuple[str, object]]) -> dict[str, object]:
+                found: dict[str, object] = {}
+                for key, value in pairs:
+                    if key in found:
+                        raise ValueError(f"duplicate JSON key: {key}")
+                    found[key] = value
+                return found
+
+            def finite_only(value: str) -> None:
+                raise ValueError(f"nonfinite JSON literal: {value}")
+
+            try:
+                json.loads(path.read_text(encoding="utf-8"), object_pairs_hook=distinct_keys,
+                           parse_constant=finite_only)
+            except (ValueError, UnicodeError) as exc:
+                raise AssertionError(f"invalid JSON file {path}: {exc}") from exc
+
+
+
 def main() -> int:
     validate_source()
+    validate_json_sources()
     validate_plugins()
     validate_manifest()
     validate_resources()

@@ -68,12 +68,14 @@ def test_integrity() -> dict[str, Any]:
     """Comprobar referencias locales usando el verificador existente."""
     process = run([sys.executable, str(SCRIPTS / "check_integrity.py")])
     try:
-        data = _json_output(process)
+        data = json.loads(process.stdout)
         summary = data["summary"]
-        ok = summary["docs_checked"] > 0 and summary["missing_refs"] == 0
+        if process.returncode not in {0, 1}:
+            raise ValueError(f"link verifier failed unexpectedly: {process.stderr[:200]}")
+        ok = process.returncode == 0 and summary["docs_checked"] > 0 and summary["missing_refs"] == 0
         return _result(ok, "Integridad de referencias Markdown", exit_code=process.returncode,
                        docs_checked=summary["docs_checked"], missing_refs=summary["missing_refs"],
-                       examples=data.get("missing_refs", [])[:5])
+                       examples=data.get("missing_refs", [])[:15])
     except (ValueError, KeyError, TypeError) as exc:
         return _result(False, "Salida inválida de verificación de referencias",
                        exit_code=process.returncode, error=str(exc))

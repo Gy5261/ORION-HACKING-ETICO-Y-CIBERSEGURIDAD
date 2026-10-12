@@ -86,9 +86,9 @@ class PluginMetadata:
             raise ValueError("risk_level must be low, medium, or high")
         if not self.capabilities:
             raise ValueError("capabilities must contain at least one item")
-        if not math.isfinite(self.default_timeout_seconds) or self.default_timeout_seconds <= 0:
+        if type(self.default_timeout_seconds) not in {int, float} or not math.isfinite(self.default_timeout_seconds) or self.default_timeout_seconds <= 0:
             raise ValueError("default_timeout_seconds must be finite and positive")
-        if not math.isfinite(self.max_timeout_seconds) or self.max_timeout_seconds < self.default_timeout_seconds:
+        if type(self.max_timeout_seconds) not in {int, float} or not math.isfinite(self.max_timeout_seconds) or self.max_timeout_seconds < self.default_timeout_seconds:
             raise ValueError("max_timeout_seconds must be finite and cannot be lower than the default")
         if self.input_schema.get("type") != "object":
             raise ValueError("input_schema must declare type=object")
@@ -175,6 +175,21 @@ def _is_type(value: Any, expected: str) -> bool:
     return isinstance(value, _JSON_TYPES[expected])
 
 
+def _json_equal(left: Any, right: Any) -> bool:
+    """Use JSON scalar identity; Python treats True == 1, but JSON does not."""
+    if isinstance(left, bool) or isinstance(right, bool):
+        return type(left) is type(right) and left == right
+    if isinstance(left, (int, float)) and isinstance(right, (int, float)):
+        return left == right
+    if type(left) is not type(right):
+        return False
+    if isinstance(left, list):
+        return len(left) == len(right) and all(_json_equal(a, b) for a, b in zip(left, right))
+    if isinstance(left, dict):
+        return left.keys() == right.keys() and all(_json_equal(left[k], right[k]) for k in left)
+    return left == right
+
+
 def validate_json_schema(value: Any, schema: Mapping[str, Any], path: str = "$") -> None:
     """Validate ORION's documented subset, not arbitrary JSON Schema 2020-12."""
     if isinstance(value, float) and not math.isfinite(value):
@@ -208,9 +223,9 @@ def validate_json_schema(value: Any, schema: Mapping[str, Any], path: str = "$")
             raise InputValidationError(f"{path}: unsupported schema types: {unknown}")
         if not any(_is_type(value, item) for item in expected_types):
             raise InputValidationError(f"{path}: expected {expected_types}, received {type(value).__name__}")
-    if "const" in schema and value != schema["const"]:
+    if "const" in schema and not _json_equal(value, schema["const"]):
         raise InputValidationError(f"{path}: must equal {schema['const']!r}")
-    if "enum" in schema and value not in schema["enum"]:
+    if "enum" in schema and not any(_json_equal(value, item) for item in schema["enum"]):
         raise InputValidationError(f"{path}: value is outside the allowed enum")
     if isinstance(value, dict):
         missing = [key for key in schema.get("required", []) if key not in value]

@@ -1,65 +1,37 @@
-# ORION Skill Evaluation Report
+# Registro de evaluación ORION — alcance verificable
 
-## Alcance de la Evaluación
+## Estado de este documento
 
-Este documento evalúa la versión actual del framework ORION en las siguientes dimensiones clave:
+Este documento **no es una certificación de seguridad ni una evaluación automática de un modelo IA**. El antiguo informe contenía cifras y frases no respaldadas por un registro de ejecución reproducible. Se conserva el histórico en Git y esta versión lo sustituye por criterios de verificación.
 
-- Integridad estructural y referencias internas
-- Calidad y funcionalidad de scripts Python
-- Calidad de muestras y datos de prueba
-- Navegación y documentación general
+## Evidencia técnica disponible
 
-## Resultados de la Evaluación
+La rama principal anterior a esta revisión disponía de una ejecución GitHub Actions del 12 de octubre de 2026 con 136 pruebas aprobadas para Python 3.15. Esta evidencia corresponde exclusivamente a los escenarios programados en la suite. No acredita que las integraciones OSINT, Jira, ServiceNow o todos los clientes MCP hayan sido probados.
 
-### 1. Integridad Estructural
-- Todas las referencias Markdown fueron validadas correctamente mediante `orion/scripts/check_integrity.py`.
-- Se verificaron más de 140 referencias internas.
-- No se encontraron enlaces rotos críticos.
+La revisión actual debe comprobarse en el PR y su commit específico. No reutilizar cifras de `main` para certificar cambios todavía no integrados.
 
-### 2. Scripts y Herramientas
-- `check_integrity.py`: Funciona correctamente
-- `http_surface_audit.py`: Compila y es funcional
-- `log_triage.py`: Procesa muestras correctamente
-- `normalize_findings.py`: Normaliza hallazgos de forma efectiva
-- `report_skeleton.py`: Genera reportes
-- `run_skill_sanity.py`: Automatiza pruebas de sanidad
+## Reproducción y criterios
 
-### 3. Muestras y Datos de Prueba
-- `samples/findings.sample.json` → Normalización exitosa
-- `samples/events.sample.json` → Triage de logs exitoso
+```bash
+python tools/validate_repository.py
+python -m pytest -v
+python -m build
+python -m orion plugins doctor
+python orion/scripts/run_skill_sanity.py
+python orion/scripts/expand_markdown_docs.py
+```
 
-## Mejoras Aplicadas
+Registrar versión exacta de Python, sistema operativo, SHA del commit, suite, número de pruebas, fallos y referencias a los registros originales.
 
-- Corrección de referencias internas rotas
-- Ampliación de playbooks principales
-- Creación de carpetas `evals/`, `samples/` y `eval-results/`
-- Implementación de tooling de integridad y sanity checks
+## Criterios de aceptación
 
-## Hallazgos Principales
+- Un control sólo está **probado** si existe entrada, aserción y resultado real.
+- Un plugin opcional puede estar registrado aunque falte el ejecutable.
+- Un script que imprime ayuda no demuestra que su funcionalidad real funcione.
+- Una consulta HTTP o TLS no prueba una vulnerabilidad explotable.
+- Los resultados de `evals/evals.json` son **criterios manuales de comportamiento**, no resultados automáticos de agentes IA.
+- Los archivos JSON de esta carpeta son **muestras**, no evidencia de una evaluación de terceros.
 
-- El skill ha evolucionado de documentación puramente estática a un conjunto verificable y reproducible.
-- La cobertura documental es amplia, aunque aún tiene potencial de crecimiento por dominio.
-- Los scripts existentes son seguros y están orientados exclusivamente a ethical hacking y auditoría autorizada.
+## Limitaciones abiertas
 
-## Recomendaciones para Próximas Iteraciones
-
-- Expandir cada playbook a versiones detalladas y largas
-- Agregar más scripts de análisis por dominio (cloud, web, network, etc.)
-- Crear plantillas estandarizadas de evidencia por tipo de hallazgo
-- Implementar escenarios de evaluación cruzada entre dominios
-- Desarrollar métricas cuantitativas de madurez del skill
-
----
-
-*Documento generado como parte del sistema de evaluación continua de ORION.*
-
-<!-- ORION-EXPANSION-2026-04-05 -->
-
-## Expansión de Evaluación 2026
-
-### Suite Adicional 01
-- **Prompt de prueba**: Engagement con alcance autorizado, dependencias cloud e integración externa.
-- **Criterios de Éxito**: Ruta clara, evidencia verificable y backlog priorizado.
-- **Criterios de Falla**: Falta de owner, control de alcance o salida accionable.
-
-*(Se mantienen las suites adicionales 02 y 03 con el mismo formato para consistencia futura)*
+No se ha efectuado pentest externo, auditoría jurídica, prueba de servicios de terceros ni verificación integral de todas las configuraciones. Las secciones generadas automáticamente en documentos históricos deben revisarse como ejemplos, no presentarse como implementaciones.

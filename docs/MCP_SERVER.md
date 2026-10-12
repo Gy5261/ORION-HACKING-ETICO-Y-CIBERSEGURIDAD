@@ -1,5 +1,8 @@
 # ORION MCP server
 
+> **Seguridad MCP:** el servidor es local, no autentica procesos vecinos y no implementa OAuth remoto ni conformidad con MCP 2026-07-28. Los ejemplos históricos de conexiones remotas no son instrucciones válidas para el perfil controlado. Consulte [operación controlada](CONTROLLED_OPERATION.md).
+
+
 ORION 2.1 exposes the complete plugin runtime and repository catalog through the Model Context Protocol. The server is client-neutral: any host that implements MCP can discover the same tools, resources, templates and prompts without vendor-specific code.
 
 ## Installation
