@@ -79,3 +79,12 @@ python tools/benchmark_runtime.py --iterations 500 --samples 5
 La CLI inspecciona características observadas del intérprete. El benchmark mide operaciones locales: **no** supone aceleraciones, auditorías reales, soporte de terceros ni conformidad de seguridad. La ejecución de procesos externos tiene captura acotada y deadlines efectivos; el timeout lógico de plugins Python en proceso continúa sin aislamiento forzoso.
 
 Detalles técnicos y límites: [Migración a Python 3.15](docs/PYTHON_315_MIGRATION.md).
+
+
+## Auditoría transversal de código — octubre de 2026
+
+El [registro de cambios por carpeta](docs/FOLDER_AUDIT_2026-10-12.md) describe las correcciones en controles, plugins, MCP, scripts, pruebas, datos, documentación y CI. Este registro separa resultados reproducibles, cambios de política y pendientes.
+
+**Operación real:** el modo IOC local no resuelve DNS; los scripts de tickets sólo crean planes; TLS exige aprobación de laboratorio y declara que el certificado no fue validado por una PKI; el análisis HTTP usa cabeceras guardadas o loopback explícito. Los instaladores muestran un plan antes de aplicar.
+
+Las pruebas automáticas no demuestran que todos los integradores externos funcionen ni que el código carezca de defectos. No utilizar listas de capacidades como evidencia de vulnerabilidades o despliegues certificados.
