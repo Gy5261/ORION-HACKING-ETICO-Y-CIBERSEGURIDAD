@@ -18,7 +18,7 @@ from pathlib import Path
 from typing import Any
 
 from orion.controls import lab_preflight
-from orion.plugins.core import OrionRuntime, PluginContext
+from orion.plugins.core import AuthorizationError, OrionRuntime, PluginContext
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
@@ -123,7 +123,12 @@ def main(argv: list[str] | None = None) -> int:
         payload = {"targets": targets, "workers": args.workers, "timeout": args.timeout}
         context = PluginContext(authorization=args.authorization, actor=args.actor,
                                 allow_network=args.allow_network)
-        result = OrionRuntime().execute("tls_posture_audit", payload, context)
+        try:
+            result = OrionRuntime().execute("tls_posture_audit", payload, context)
+        except AuthorizationError as exc:
+            write_output({"ok": False, "error": {"type": "AuthorizationError", "message": str(exc)},
+                          "targets_succeeded": 0, "targets_failed": 0}, args.output)
+            return 1
         report = result.to_dict()
         items = report.get("data", {}).get("items", []) if report.get("ok") else []
         report["targets_succeeded"] = sum("error" not in item for item in items)
