@@ -217,7 +217,7 @@ def build_sections(files: List[pathlib.Path]) -> Tuple[str, str, List[Dict], Dic
             "summary": summary,
             "content": text,
             "anchor": anchor,
-            "last_modified": datetime.fromtimestamp(path.stat().st_mtime, timezone.utc).isoformat(),
+            "last_modified": datetime.fromtimestamp(int(os.environ["SOURCE_DATE_EPOCH"]) if "SOURCE_DATE_EPOCH" in os.environ else path.stat().st_mtime, timezone.utc).isoformat(),
         })
     
     return "\n".join(nav_parts), "\n".join(body_parts), data, dict(stats)
