@@ -1,5 +1,8 @@
 # Instrucciones obligatorias para agentes ORION
 
+> **Control efectivo:** la versión actual de ORION deniega toda escritura externa y las consultas OSINT online, incluso con banderas de permiso. Los pasos de creación de tickets que aparecen más abajo son requisitos hipotéticos para otro perfil, **no** funcionalidades habilitadas. Los agentes no pueden autoaprobar excepciones.
+
+
 Estas reglas aplican a cualquier IA, agente, adaptador MCP, operador humano o automatización que utilice ORION.
 
 ## Principios no negociables
