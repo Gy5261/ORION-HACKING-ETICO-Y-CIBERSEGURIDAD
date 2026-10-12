@@ -70,6 +70,10 @@ def validate_manifest() -> None:
     manifest_path = ROOT / "skills" / "skills.json"
     static = json.loads(manifest_path.read_text(encoding="utf-8"))
     runtime = PluginRegistry(load_external=False).manifest()
+    from orion import __version__
+
+    if static["runtime"]["version"] != __version__:
+        raise AssertionError("static manifest runtime version is stale")
     static_ids = {plugin["plugin_id"] for plugin in static["plugins"]}
     runtime_ids = {plugin["plugin_id"] for plugin in runtime["plugins"]}
     if static_ids != runtime_ids:
