@@ -2,6 +2,10 @@
 
 from __future__ import annotations
 
+# Python 3.15 defers this dependency when only interpreter diagnostics are requested.
+# Earlier supported Python versions ignore __lazy_modules__ safely.
+__lazy_modules__ = ["orion.plugins.core"]
+
 import argparse
 import json
 import sys
@@ -9,26 +13,46 @@ from pathlib import Path
 from typing import Any, Sequence
 
 from orion import __version__
+from orion.controls import MAX_DOCUMENT_BYTES
 from orion.plugins.core import (
     OrionPluginError,
     OrionRuntime,
     PluginContext,
     PluginRegistry,
-    dumps_json,
     validate_json_schema,
 )
 
 
 def _read_json(path: str) -> dict[str, Any]:
-    raw = sys.stdin.read() if path == "-" else Path(path).read_text(encoding="utf-8")
-    payload = json.loads(raw)
+    """Read no more than the control document budget, rejecting duplicate keys."""
+
+    if path == "-":
+        raw = sys.stdin.buffer.read(MAX_DOCUMENT_BYTES + 1)
+    else:
+        with Path(path).open("rb") as handle:
+            raw = handle.read(MAX_DOCUMENT_BYTES + 1)
+    if len(raw) > MAX_DOCUMENT_BYTES:
+        raise ValueError("plugin input exceeds the 1 MiB document limit")
+
+    def unique_keys(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
+        result: dict[str, Any] = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError(f"duplicate JSON key: {key}")
+            result[key] = value
+        return result
+
+    def reject_constant(value: str) -> None:
+        raise ValueError(f"non-finite JSON constant is not allowed: {value}")
+
+    payload = json.loads(raw, object_pairs_hook=unique_keys, parse_constant=reject_constant)
     if not isinstance(payload, dict):
         raise ValueError("plugin input must be a JSON object")
     return payload
 
 
 def _write_json(payload: Any, output: str | None = None) -> None:
-    rendered = dumps_json(payload) + "\n"
+    rendered = json.dumps(payload, indent=2, ensure_ascii=False, sort_keys=True, allow_nan=False) + "\n"
     if output:
         Path(output).write_text(rendered, encoding="utf-8")
     else:
@@ -42,6 +66,9 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
     subparsers = parser.add_subparsers(dest="command", required=True)
+
+    runtime_info = subparsers.add_parser("runtime-info", help="Inspect actual interpreter and Python 3.15 capabilities.")
+    runtime_info.add_argument("--json", action="store_true", help="Emit machine-readable JSON.")
 
     plugins = subparsers.add_parser("plugins", help="Inspect and execute plugins.")
     plugin_commands = plugins.add_subparsers(dest="plugin_command", required=True)
@@ -146,6 +173,11 @@ def main(argv: Sequence[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
     try:
+        if args.command == "runtime-info":
+            from orion.runtime_info import interpreter_report
+
+            _write_json(interpreter_report())
+            return 0
         registry = PluginRegistry()
         if args.command == "plugins" and args.plugin_command == "list":
             return _plugins_list(registry, args.json, args.health)
