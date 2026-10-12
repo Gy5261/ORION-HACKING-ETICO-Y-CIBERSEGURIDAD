@@ -1,5 +1,8 @@
 # OSINT integrations
 
+> **Estado efectivo (2026-10-12):** estos contratos describen adaptadores existentes, pero el perfil controlado bloquea consultas OSINT externas. Instalar un ejecutable no habilita autorización. Los comandos antiguos de ejecución en esta guía pueden terminar con una denegación intencional. SpiderFoot está restringido además a un servicio loopback sin redirecciones ni proxies.
+
+
 ORION 2.0 exposes six established OSINT projects through constrained adapters. The projects remain separate installations and retain their original licenses.
 
 | Plugin | Integration | Environment override | Side effects |
